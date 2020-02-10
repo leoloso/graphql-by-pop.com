@@ -1,0 +1,12 @@
+.site-head {
+  &__site-name {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  &__site-logo {
+    &>img {
+      max-height: var(--height-head-logo);
+    }
+  }
+}

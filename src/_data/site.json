@@ -1,0 +1,13 @@
+{
+  "name": "GraphQL by PoP",
+  "shortDesc": "CMS-agnostic GraphQL server in PHP",
+  "url": "https://graphql.getpop.org",
+  "authorEmail": "leo@getpop.org",
+  "authorHandle": "@losoviz",
+  "authorName": "Leonardo Losoviz",
+  "enableThirdPartyComments": false,
+  "maxPostsPerPage": 5,
+  "faviconPath": "/assets/favicon.png",
+  "squareLogoImgPath": "/assets/graphql-by-pop-logo.png",
+  "logoImgPath": "/assets/graphql-by-pop-logo-with-name.png"
+}

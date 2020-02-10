@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "text": "Learn",
+      "url": "/learn",
+      "external": false
+    },
+    {
+      "text": "Docs",
+      "url": "https://graphql-docs.getpop.org",
+      "external": true
+    },
+    {
+      "text": "Blog",
+      "url": "/blog",
+      "external": false
+    },
+    {
+      "text": "Downloads",
+      "url": "/downloads",
+      "external": false
+    },
+    {
+      "text": "GitHub",
+      "url": "https://github.com/getpop/graphql",
+      "external": true
+    }
+  ]
+}
