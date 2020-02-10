@@ -1,3 +1,5 @@
+![GraphQL by PoP logo](https://raw.githubusercontent.com/getpop/graphql.getpop.org/master/src/assets/graphql-by-pop-logo-with-name.jpg)
+
 # GraphQL by PoP site
 
 <!--
