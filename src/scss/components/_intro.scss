@@ -1,4 +1,18 @@
 .intro {
+  .bleed,
+  .bleed + * {
+    --flow-space: #{get-size('max')};
+  }
+  .bleed {
+    width: 100vw;
+    max-width: map-get($metrics, 'wrap-max-width');
+    margin-left: 50%; /*changing this value to 47% removes the horizontal scrollbar once the viewport is < 930px */
+    transform: translateX(
+      -50%
+    ); /* changing this value to 49% allows for the suggestion above to also eliminate the horizontal scroll. */
+    position: relative;
+  }
+
   &--colored {
     background: var(--color-theme-highlight-block);
   }
@@ -32,8 +46,8 @@
     &--center {
       text-align: center;
     }
-    >.emoji {
-      font-size: 9rem;
+    >.emoji--8 {
+      font-size: 8rem;
     }
   }
 }
