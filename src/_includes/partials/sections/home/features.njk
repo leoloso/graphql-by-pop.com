@@ -1,8 +1,22 @@
-<header class="[ pad-top-900 pad-bottom-max ]">
+<header class="[ intro ] [ pad-top-900 pad-bottom-max ]">
   <div class="[ inner-wrapper ] [ sf-flow ]">
     <h1 class="[ intro__heading{{ ' intro__heading--center' if page.url === '/' }} ] [ text-800 md:text-900 leading-tight ] [ p-name ]">Designed for optimal experience</h1>
-    {% if introSummary %}
-      <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-long ]">{{ introSummary | safe }}</div>
-    {% endif %}
+    <div class="[ nav ] [ pad-bottom-300 md:box-flex space-between ]">
+      <div class="[ home__snippet home__snippet--center ]">
+        <span class="[ emoji ]" aria-hidden="true">🏎</span>
+        <h2 class="[ home__snippet__heading ]">Fast</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </div>
+      <div class="[ home__snippet home__snippet--center pad-left-900 ]">
+        <span class="[ emoji ]" aria-hidden="true">🛴</span>
+        <h2 class="[ home__snippet__heading ]">Simple</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </div>
+      <div class="[ home__snippet home__snippet--center pad-left-900 ]">
+        <span class="[ emoji ]" aria-hidden="true">🚀</span>
+        <h2 class="[ home__snippet__heading ]">Powerful</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </div>
+    </div>
   </div>
 </header>

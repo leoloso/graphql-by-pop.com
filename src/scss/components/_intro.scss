@@ -1,5 +1,7 @@
 .intro {
-  background: var(--color-theme-highlight-block);
+  &__colored {
+    background: var(--color-theme-highlight-block);
+  }
 
   &__summary {
     --flow-space: #{get-size(500)};
@@ -23,6 +25,15 @@
     }
     &--center {
       text-align: center;
+    }
+  }
+
+  .home__snippet {
+    &--center {
+      text-align: center;
+    }
+    >.emoji {
+      font-size: 9rem;
     }
   }
 }
