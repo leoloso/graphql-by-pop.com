@@ -1,9 +1,17 @@
 <header class="[ intro ] [ intro--bgcolored-stroke ] [ pad-top-900 pad-bottom-max ]">
   <div class="[ inner-wrapper ] [ sf-flow ]">
-    <h1 class="[ intro__heading{{ ' intro__heading--center' if page.url === '/' }} ] [ text-800 md:text-900 leading-tight ] [ p-name ]">CMS-agnostic GraphQL server in PHP</h1>
-    <div class="[ nav ] [ box-flex align-center ]">
-      <span class="[ home__logo ]" aria-hidden="true"><img src="/assets/graphql-logo-with-name-square.png"></span>
-      <span class="[ home__logo ]" aria-hidden="true"><img src="/assets/php-elephant.png"></span>
+    <h1 class="[ intro__heading{{ ' intro__heading--center' if page.url === '/' }} ] [ text-800 md:text-900 leading-tight ] [ p-name ]">It comes in 2 flavours</h1>
+    <div class="[ nav ] [ md:box-flex space-between ]">
+      <div class="[ home__snippet home__snippet--center width-half pad-bottom-700 ]">
+        <span class="[ home__logo ]" aria-hidden="true"><img src="/assets/flavour-classic.png"></span>
+        <h2 class="[ home__snippet__heading ]">Classic</h2>
+        <p>Implementation of the official GraphQL spec</p>
+      </div>
+      <div class="[ home__snippet home__snippet--center width-half pad-bottom-700 ]">
+        <span class="[ home__logo ]" aria-hidden="true"><img src="/assets/flavour-extended.png"></span>
+        <h2 class="[ home__snippet__heading ]">Extended</h2>
+        <p>Converts the query into a scripting-language</p>
+      </div>
     </div>
   </div>
 </header>
