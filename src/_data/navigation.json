@@ -7,8 +7,8 @@
     },
     {
       "text": "Docs",
-      "url": "https://graphql-docs.getpop.org",
-      "external": true
+      "url": "/docs",
+      "external": false
     },
     {
       "text": "Blog",
