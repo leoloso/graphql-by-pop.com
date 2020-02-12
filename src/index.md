@@ -1,10 +1,10 @@
 ---
 layout: home
-title: GraphQL by PoP
-postsHeading: ✏️ See latest blog entries
+title: Superpower your GraphQL server
+postsHeading: Latest from our ✏️ Blog
 archiveButtonText: See all blog entries
 metaDesc: Welcome to the GraphQL by PoP site
-socialImage: ''
+socialImage: /assets/graphql-by-pop-logo.jpg
 ---
 
 ...
