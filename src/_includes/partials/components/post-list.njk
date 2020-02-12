@@ -10,7 +10,7 @@
                 <a href="{{ item.url }}" class="post-list__link" rel="bookmark">{{ item.data.title }}</a>
               </h3>
               <p>
-                {{ item.data.content | safe | striptags | truncate }} <a href="{{ item.url }}" class="post-list__link" rel="bookmark">Read more</a>
+                {{ item.data.content | safe | striptags | truncate(excerptLength) }} <a href="{{ item.url }}" class="post-list__link" rel="bookmark">{{ readMoreText }}</a>
               </p>
               <p><!--p class="text-500 gap-top-300 weight-mid"-->
                 <em><time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time></em>

@@ -6,7 +6,7 @@
   "authorHandle": "@losoviz",
   "authorName": "Leonardo Losoviz",
   "enableThirdPartyComments": false,
-  "maxPostsPerPage": 5,
+  "maxPostsPerPage": 3,
   "faviconPath": "/assets/favicon.png",
   "squareLogoImgPath": "/assets/graphql-by-pop-logo.png",
   "logoImgPath": "/assets/graphql-by-pop-logo-with-name.png"
