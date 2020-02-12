@@ -23,6 +23,8 @@
   --color-theme-primary-glare: #{get-color('primary-glare')};
   --color-theme-highlight: #{get-color('highlight')};
   --color-theme-highlight-block: #{get-color('highlight')};
+  --color-theme-highlight-dark: #{get-color('highlight')};
+  --color-theme-highlight-light: #{get-color('mid')};
 }
 
 @include dark-mode() {
@@ -39,6 +41,8 @@
   --color-theme-highlight: #{get-color('highlight')};
   --color-theme-highlight-block: #{get-color('slate')};
   --color-theme-feature-text: #{get-color('highlight')};
+  --color-theme-highlight-dark: #{get-color('slate')};
+  --color-theme-highlight-light: #{darken(get-color('mid'), 65%)};
 }
 
 body {

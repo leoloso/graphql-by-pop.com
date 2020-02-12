@@ -13,8 +13,11 @@
     position: relative;
   }
 
-  &--colored {
-    background: var(--color-theme-highlight-block);
+  &--bgcolored-dark {
+    background: var(--color-theme-highlight-dark);
+  }
+  &--bgcolored-stroke {
+    background: var(--color-theme-highlight-light);
   }
 
   &__summary {
