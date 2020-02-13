@@ -171,7 +171,8 @@ $stalfos-config: (
       'full': '100%',
       'half': percentage(1/2),
       'quarter': percentage(1/4),
-      'third': percentage(1/3)
+      'third': percentage(1/3),
+      'twothirds': percentage(2/3)
     ),
     'output': 'responsive',
     'property': 'width'

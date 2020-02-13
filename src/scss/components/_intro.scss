@@ -19,6 +19,10 @@
   &--bgcolored-stroke {
     background: var(--color-theme-highlight-light);
   }
+  &--bgcolored-medium {
+    background: var(--color-theme-highlight-medium);
+  }
+  
 
   &__summary {
     --flow-space: #{get-size(500)};

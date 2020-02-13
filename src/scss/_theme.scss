@@ -25,6 +25,7 @@
   --color-theme-highlight-block: #{get-color('highlight')};
   --color-theme-highlight-dark: #{get-color('highlight')};
   --color-theme-highlight-light: #{get-color('mid')};
+  --color-theme-highlight-medium: #{darken(get-color('mid'), 15%)};
 }
 
 @include dark-mode() {
@@ -43,6 +44,7 @@
   --color-theme-feature-text: #{get-color('highlight')};
   --color-theme-highlight-dark: #{get-color('slate')};
   --color-theme-highlight-light: #{darken(get-color('mid'), 65%)};
+  --color-theme-highlight-medium: #{darken(get-color('highlight'), 65%)};
 }
 
 body {
