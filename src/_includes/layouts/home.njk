@@ -20,11 +20,21 @@
 {% block content %}
   <main id="main-content" tabindex="-1">
     {% include "partials/sections/home/logos.njk" %}
-    {% include "partials/sections/home/features.njk" %}
-    {% include "partials/sections/home/flavours.njk" %}
-    {% include "partials/sections/home/superpower.njk" %}
-    {% include "partials/sections/home/wordpress.njk" %}
-    {% include "partials/sections/home/contribute.njk" %}
+    <div id="features" tabindex="-1">
+      {% include "partials/sections/home/features.njk" %}
+    </div>
+    <div id="flavours" tabindex="-1">
+      {% include "partials/sections/home/flavours.njk" %}
+    </div>
+    <div id="superpowers" tabindex="-1">
+      {% include "partials/sections/home/superpower.njk" %}
+    </div>
+    <div id="wordpress" tabindex="-1">
+      {% include "partials/sections/home/wordpress.njk" %}
+    </div>
+    <div id="contribute" tabindex="-1">
+      {% include "partials/sections/home/contribute.njk" %}
+    </div>
     {% include "partials/components/post-list.njk" %}
     {% include "partials/components/pagination.njk" %}
   </main>
