@@ -1,4 +1,4 @@
-![GraphQL by PoP logo](https://raw.githubusercontent.com/getpop/graphql.getpop.org/master/src/assets/graphql-by-pop-logo-with-name.jpg)
+![GraphQL by PoP logo](https://raw.githubusercontent.com/getpop/graphql-by-pop.com/master/src/assets/graphql-by-pop-logo-with-name.jpg)
 
 # GraphQL by PoP site
 
@@ -11,7 +11,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 -->
 
-This is the repo for the GraphQL by PoP site: https://graphql.getpop.org
+This is the repo for the GraphQL by PoP site: https://graphql-by-pop.com
 
 ## About this repo
 
@@ -19,7 +19,7 @@ This repo is a clone from [Hylia](https://github.com/hankchizljaw/hylia) (a star
 
 ## Install
 
-1. Clone or fork this repo: `git clone https://github.com/getpop/graphql.getpop.org`
+1. Clone or fork this repo: `git clone https://github.com/getpop/graphql-by-pop.com`
 2. `cd` into the project directory and run `npm install`
 3. Once all the dependencies are installed run `npm start`
 4. Open your browser at `http://localhost:8080` and away you go!
