@@ -7,9 +7,7 @@ tags:
   - website
 ---
 
-The new GraphQL by PoP website is now online! It is not fully ready though, since I must still complete the content in all the pages, which I will do during these upcoming days.
-
-The website is already online because today I start publishing a series on conceptualizing, designing and implementing a GraphQL server which I am writing for the [Log Rocket Blog](https://blog.logrocket.com), which is based on my experience with GraphQL by PoP. In the following days and weeks, I will also link to this new series (it's very promising, I promise!).
+The new GraphQL by PoP website is now online! It is not fully ready though, since I must still complete the content in all the pages, which I will do during these upcoming days and weeks.
 
 In the meantime, you can check the repos with the code:
 
