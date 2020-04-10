@@ -27,7 +27,6 @@ module.exports = {
         editLinks: true,
         lastUpdated: 'Last Updated',
         repo: 'getpop/graphql-by-pop.com',
-        // docsDir: 'docs/',
         nav: nav,
         sidebar: sidebar
     },
