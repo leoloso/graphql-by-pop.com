@@ -69,26 +69,24 @@ If your mu-plugins are installed under a different folder, please change this co
 composer update
 ```
 
-5. Install the must-use plugins in your project (this action is not triggered when first downloading the dependencies, so a subsequent `install` is needed):
+::: warning
+After this step, there should be file a `mu-require.php` under the `wp-content/mu-plugins` folder. If for some reason it is not there, run `composer update` again.
+:::
 
-```bash
-composer install
-```
-
-6. Add this code to the beginning of file `wp-config.php`:
+5. Add this code to the beginning of file `wp-config.php`:
 
 ```php
 // Load Composer’s autoloader
 require_once (__DIR__.'/vendor/autoload.php');
 ```
 
-7. Flush the re-write rules to enable the API endpoint:
+6. Flush the re-write rules to enable the API endpoint:
 
 - Log-in to the WordPress admin
 - Go to `Settings => Permalinks`
 - Click on the "Save Changes" button (no need to modify any input)
 
-8. Check that the GraphQL API works by executing a query against endpoint `/api/graphql`. Assuming that your site is installed under `http://localhost`, execute in terminal:
+7. Check that the GraphQL API works by executing a query against endpoint `/api/graphql`. Assuming that your site is installed under `http://localhost`, execute in terminal:
 
 ```bash
 curl \
@@ -98,7 +96,21 @@ curl \
   http://localhost/api/graphql/
 ```
 
-9. Celebrate 🥳
+The (formatted) response should be something like this:
+
+```json
+{
+    "data": {
+        "posts": [
+            {
+                "title":"Hello world!"
+            }
+        ]
+    }
+}
+```
+
+8. Celebrate 🥳
 
 ### Optionals
 
@@ -113,9 +125,9 @@ Header set Access-Control-Allow-Origin "*"
 </IfModule>
 ```
 
-2. Improve performance: Set-up the API endpoint through the `.htaccess` file
+2. Set-up the API endpoint through the `.htaccess` file
 
-Instead of adding dependency `"getpop/api-endpoints-for-wp"`, you can set-up the API endpoint `/api/graphql` by adding the following code in the root `.htaccess` file (before the WordPress rewrite code, which starts with `# BEGIN WordPress`):
+Instead of adding the API endpoint by code through dependency `"getpop/api-endpoints-for-wp"`, it can also be set-up with a rewrite rule in the `.htaccess` file. For this, add this code before the WordPress rewrite code (which starts with `# BEGIN WordPress`):
 
 ```apache
 <IfModule mod_rewrite.c>
