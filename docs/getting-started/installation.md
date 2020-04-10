@@ -1,8 +1,10 @@
 # Installation
 
-PoP requires PHP 7.1 or higher.
-
 To date, only the adapters for WordPress have been implemented.
+
+## Requirements
+
+GraphQL by PoP requires PHP 7.1 or higher.
 
 ## Installing on WordPress
 
