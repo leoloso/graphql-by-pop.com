@@ -111,13 +111,14 @@ const docsSidebar = [
     {
         title: 'Roadmap',
         children: [
-            'roadmap/scaffolding',
+            'roadmap/scaffolding-commands',
             'roadmap/testing',
             'roadmap/mutations',
             'roadmap/federation',
             'roadmap/tracing',
             ['roadmap/decoupling-requested-executed-queries', 'Decoupling queries'],
             'roadmap/serverless',
+            ['roadmap/laravel-symfony', 'Implement for Laravel/Symfony'],
         ]
     },
 ];

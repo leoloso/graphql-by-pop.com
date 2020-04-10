@@ -1,4 +1,0 @@
-# Scaffolding
-
-TODO
-
