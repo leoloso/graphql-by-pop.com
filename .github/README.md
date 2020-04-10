@@ -18,7 +18,7 @@ Make sure you have VuePress' requirements:
 Clone this repo and install all the dependencies by running:
 
 ```bash
-$ git clone https://github.com/getpop/graphql-by-pop.com
+$ git clone https://github.com/getpop/graphql-by-pop.com.git
 $ cd graphql-by-pop.com
 $ yarn install
 ```
