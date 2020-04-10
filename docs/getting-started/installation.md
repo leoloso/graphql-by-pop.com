@@ -47,8 +47,11 @@ Please make sure to have [Composer](https://getcomposer.org) installed, and crea
 }
 ```
 
-> Note: From owner `"getpop"`, only packages `"getpop/engine-wp"` and `"getpop/graphql"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink.<br/>
-> Package `"composer/installers"` is required to set-up the required mu-plugins.
+::: details What are these packages?
+From owner `"getpop"`, only packages `"getpop/engine-wp"` and `"getpop/graphql"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink.
+
+Package `"composer/installers"` is required to set-up the required mu-plugins.
+:::
 
 3. Add the following `"installer-paths"` under the `extra` section of your `composer.json` file:
 
@@ -64,18 +67,20 @@ Please make sure to have [Composer](https://getcomposer.org) installed, and crea
 }
 ```
 
-> Note: If your mu-plugins are installed under a different folder, please change this configuration accordingly.
+::: warning
+If your mu-plugins are installed under a different folder, please change this configuration accordingly.
+:::
 
 4. Download and install the packages in your project:
 
 ```bash
-$ composer update
+composer update
 ```
 
 5. Install the must-use plugins in your project (this action is not triggered when first downloading the dependencies, so a subsequent `install` is needed):
 
 ```bash
-$ composer install
+composer install
 ```
 
 6. Add this code to the beginning of file `wp-config.php`:
@@ -85,7 +90,7 @@ $ composer install
 require_once (__DIR__.'/vendor/autoload.php');
 ```
 
-7. Flush the re-write rules to enable the API endpoints:
+7. Flush the re-write rules to enable the API endpoint:
 
 - Log-in to the WordPress admin
 - Go to `Settings => Permalinks`
@@ -94,7 +99,7 @@ require_once (__DIR__.'/vendor/autoload.php');
 8. Check that the GraphQL API works by executing a query against endpoint `/api/graphql`. Assuming that your site is installed under `http://localhost`, execute in terminal:
 
 ```bash
-$ curl \
+curl \
   -X POST \
   -H "Content-Type: application/json" \
   --data '{ "query": "{ posts { title } }" }' \
@@ -131,6 +136,6 @@ RewriteRule ^api/graphql/?$ /?scheme=api&datastructure=graphql [L,P,QSA]
 </IfModule>
 ```
 
-### Scaffold a new WordPress site with the API installed
+### Scaffold a new WordPress site with the API installed, via Composer
 
 Follow the instructions under project [Bootstrap a PoP API for WordPress](https://github.com/leoloso/PoP-API-WP#creating-a-new-wordpress-site-with-pop-installed).
