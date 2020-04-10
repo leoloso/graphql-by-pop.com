@@ -1,0 +1,3 @@
+# Enum types
+
+TODO

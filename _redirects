@@ -1,7 +1,0 @@
-# These rules will change if you change your site’s custom domains or HTTPS settings
-
-# Redirect domain aliases to primary domain
-https://graphql.getpop.org/* https://graphql-by-pop.com/:splat 301!
-
-# Optional: Redirect default Netlify subdomain to primary domain
-https://graphql-by-pop.netlify.com/* https://graphql-by-pop.com/:splat 301!
