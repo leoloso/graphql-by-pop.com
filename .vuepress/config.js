@@ -48,9 +48,10 @@ module.exports = {
         ['@vuepress/google-analytics', {
             'ga': 'UA-163297507-1'
         }],
-        ['@vuepress/pwa', {
-            serviceWorker: true,
-            updatePopup: true
-        }],
+        // Enable PWA after documentation is ready
+        // ['@vuepress/pwa', {
+        //     serviceWorker: true,
+        //     updatePopup: true
+        // }],
     ]
 }
