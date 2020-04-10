@@ -19,6 +19,15 @@ module.exports = {
             type: 'text/css',
             href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap'
         },],
+        ['link', { rel: 'icon', href: '/logo.png' }],
+        ['link', { rel: 'manifest', href: '/manifest.json' }],
+        ['meta', { name: 'theme-color', content: '#b9d9ed' }],
+        ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+        ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+        ['link', { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon-152x152.png' }],
+        ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#ffffff' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
+        ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
     ],
     theme: 'default-prefers-color-scheme',
     themeConfig: {
@@ -35,6 +44,13 @@ module.exports = {
         ['@vuepress/medium-zoom', true],
         ['@vuepress/search', {
             searchMaxSuggestions: 10,
-        }]
+        }],
+        ['@vuepress/google-analytics', {
+            'ga': 'UA-163297507-1'
+        }],
+        ['@vuepress/pwa', {
+            serviceWorker: true,
+            updatePopup: true
+        }],
     ]
 }
