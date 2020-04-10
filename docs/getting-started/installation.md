@@ -88,16 +88,9 @@ Instead of adding dependency `"getpop/api-endpoints-for-wp"`, you can set-up the
 
 ```apache
 <IfModule mod_rewrite.c>
+# Rewrite from api/graphql/ to /?scheme=api&datastructure=graphql
 RewriteEngine On
 RewriteBase /
-
-# Rewrite from /some-url/api/graphql/ to /some-url/?scheme=api&datastructure=graphql
-RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^(.*)/api/graphql/?$ /$1/?scheme=api&datastructure=graphql [L,P,QSA]
-
-# b. Homepage single endpoint (root)
-# Rewrite from api/graphql/ to /?scheme=api&datastructure=graphql
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^api/graphql/?$ /?scheme=api&datastructure=graphql [L,P,QSA]
