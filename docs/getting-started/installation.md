@@ -12,7 +12,9 @@ GraphQL by PoP requires PHP 7.1 or higher.
 
 _Coming soon..._
 
-### Via Composer
+### Manual process, via Composer
+
+Please make sure to have [Composer](https://getcomposer.org) installed, and create file `composer.json` in your project. Then complete the following steps.
 
 1. Make sure your `composer.json` file has the configuration below to accept minimum stability `"dev"`:
 
@@ -32,34 +34,64 @@ _Coming soon..._
     "require": {
         "getpop/engine-wp": "dev-master",
         "getpop/postmeta-wp": "dev-master",
+        "getpop/posts-api": "dev-master",
         "getpop/pages-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/postmedia-wp": "dev-master",
         "getpop/graphql": "dev-master",
-        "getpop/api-endpoints-for-wp": "dev-master"
+        "getpop/api-endpoints-for-wp": "dev-master",
+        "composer/installers": "~1.0"
     }
 }
 ```
 
-> Note: Only packages `"getpop/engine-wp"` and `"getpop/graphql"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink
+> Note: From owner `"getpop"`, only packages `"getpop/engine-wp"` and `"getpop/graphql"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink.<br/>
+> Package `"composer/installers"` is required to set-up the required mu-plugins.
 
-3. Download and install the packages in your project:
+3. Add the following `"installer-paths"` under the `extra` section of your `composer.json` file:
+
+```json
+{
+    "extra": {
+        "installer-paths": {
+            "wp-content/mu-plugins/{$name}": [
+                "type:wordpress-muplugin"
+            ]
+        }
+    }
+}
+```
+
+> Note: If your mu-plugins are installed under a different folder, please change this configuration accordingly.
+
+4. Download and install the packages in your project:
 
 ```bash
 $ composer update
 ```
 
-4. Install the mu-plugins in your project (somehow, this action is not triggered when first downloading the dependencies, so a subsequent `install` is needed):
+5. Install the must-use plugins in your project (this action is not triggered when first downloading the dependencies, so a subsequent `install` is needed):
 
 ```bash
 $ composer install
 ```
 
-5. Check that the GraphQL API works by executing a query against endpoint `/api/graphql`.
+6. Add this code to the beginning of file `wp-config.php`:
 
-Assuming that your server is `http://localhost`, execute in terminal:
+```php
+// Load Composer’s autoloader
+require_once (__DIR__.'/vendor/autoload.php');
+```
+
+7. Flush the re-write rules to enable the API endpoints:
+
+- Log-in to the WordPress admin
+- Go to `Settings => Permalinks`
+- Click on the "Save Changes" button (no need to modify any input)
+
+8. Check that the GraphQL API works by executing a query against endpoint `/api/graphql`. Assuming that your site is installed under `http://localhost`, execute in terminal:
 
 ```bash
 $ curl \
@@ -68,6 +100,8 @@ $ curl \
   --data '{ "query": "{ posts { title } }" }' \
   http://localhost/api/graphql/
 ```
+
+9. Celebrate 🥳
 
 #### Optionals
 
