@@ -127,7 +127,7 @@ Header set Access-Control-Allow-Origin "*"
 
 2. Set-up the API endpoint through the `.htaccess` file
 
-Instead of adding the API endpoint by code through dependency `"getpop/api-endpoints-for-wp"`, it can also be set-up with a rewrite rule in the `.htaccess` file. For this, add this code before the WordPress rewrite code (which starts with `# BEGIN WordPress`):
+Instead of defining the API endpoint by code through dependency `"getpop/api-endpoints-for-wp"`, it can also be set-up with a rewrite rule in the `.htaccess` file. For this, remove that dependency from composer, and add the code below before the WordPress rewrite section (which starts with `# BEGIN WordPress`):
 
 ```apache
 <IfModule mod_rewrite.c>
