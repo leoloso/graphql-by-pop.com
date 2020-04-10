@@ -2,7 +2,8 @@ const docsSidebar = [
     {
         title: 'Getting Started',
         children: [
-            'getting-started/installation',
+            'getting-started/intro',
+            'getting-started/installation/wordpress',
             'getting-started/configuration',
             'getting-started/scaffolding',
             'getting-started/repositories',

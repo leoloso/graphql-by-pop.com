@@ -9,7 +9,7 @@ export default ({
     router.addRoutes([
         {
             path: '/docs/',
-            redirect: `/docs/getting-started/installation.html`
+            redirect: `/docs/getting-started/intro.html`
         },
         {
             path: '/docs/extended/',

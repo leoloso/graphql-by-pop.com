@@ -1,18 +1,10 @@
-# Installation
+# Installing on WordPress
 
-To date, only the adapters for WordPress have been implemented.
-
-## Requirements
-
-GraphQL by PoP requires PHP 7.1 or higher.
-
-## Installing on WordPress
-
-### By WordPress plugin
+## By WordPress plugin
 
 _Coming soon..._
 
-### Manual process, via Composer
+## Manual process, via Composer
 
 Please make sure to have [Composer](https://getcomposer.org) installed, and create file `composer.json` in your project. Then complete the following steps.
 
@@ -108,7 +100,7 @@ curl \
 
 9. Celebrate 🥳
 
-#### Optionals
+### Optionals
 
 1. To accept external API queries, add the snippet below in file `.htaccess`:
 
@@ -136,6 +128,6 @@ RewriteRule ^api/graphql/?$ /?scheme=api&datastructure=graphql [L,P,QSA]
 </IfModule>
 ```
 
-### Scaffold a new WordPress site with the API installed, via Composer
+## Scaffold a new WordPress site with the API installed, via Composer and WP-CLI
 
 Follow the instructions under project [Bootstrap a PoP API for WordPress](https://github.com/leoloso/PoP-API-WP#creating-a-new-wordpress-site-with-pop-installed).
