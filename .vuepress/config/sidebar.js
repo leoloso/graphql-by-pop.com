@@ -102,6 +102,13 @@ const docsSidebar = [
         ]
     },
     {
+        title: 'Troubleshooting',
+        children: [
+            'troubleshooting/common-errors',
+            'troubleshooting/known-issues',
+        ]
+    },
+    {
         title: 'API Reference',
         children: [
             'api-reference/package-directory',
