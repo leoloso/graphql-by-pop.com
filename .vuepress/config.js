@@ -28,6 +28,10 @@ module.exports = {
         ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#ffffff' }],
         ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
+        ['meta', { property: 'og:image', content: 'https://graphql-by-pop.com/assets/graphql-by-pop-logo.jpg' }],
+        ['meta', { name: 'twitter:image', content: 'https://graphql-by-pop.com/assets/graphql-by-pop-logo.jpg' }],
+        ['meta', { property: 'og:image:alt', content: 'GraphQL by PoP logo' }],
+        ['meta', { name: 'twitter:image:alt', content: 'GraphQL by PoP logo' }],
     ],
     theme: 'default-prefers-color-scheme',
     themeConfig: {
