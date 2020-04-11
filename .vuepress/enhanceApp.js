@@ -12,14 +12,6 @@ export default ({
             redirect: `/docs/getting-started/intro.html`
         },
         {
-            path: '/docs/extended/',
-            redirect: `/docs/extended/intro.html`
-        },
-        {
-            path: '/docs/schema-design/',
-            redirect: `/docs/schema-design/schema-multiverse.html`
-        },
-        {
             path: '/tutorials/',
             redirect: `/tutorials/cms-agnostic-resolver.html`
         },
