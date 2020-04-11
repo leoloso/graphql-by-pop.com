@@ -1,5 +1,5 @@
 # Optional: Redirect default Netlify subdomain to primary domain
 https://graphql-by-pop.netlify.com/* https://graphql-by-pop.com/:splat 301!
 # Redirects defined in enhanceApp.js
-https://graphql-by-pop.netlify.com/docs/ https://graphql-by-pop.com/docs/getting-started/intro.html
-https://graphql-by-pop.netlify.com/tutorials/ https://graphql-by-pop.com/tutorials/cms-agnostic-resolver.html
+https://graphql-by-pop.com/docs/ https://graphql-by-pop.com/docs/getting-started/intro.html
+https://graphql-by-pop.com/tutorials/ https://graphql-by-pop.com/tutorials/cms-agnostic-resolver.html
