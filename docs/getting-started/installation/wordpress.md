@@ -26,7 +26,7 @@ Please make sure to have [Composer](https://getcomposer.org) installed, and crea
     "require": {
         "getpop/engine-wp": "dev-master",
         "getpop/postmeta-wp": "dev-master",
-        "getpop/posts-api": "dev-master",
+        "getpop/posts-wp": "dev-master",
         "getpop/pages-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
