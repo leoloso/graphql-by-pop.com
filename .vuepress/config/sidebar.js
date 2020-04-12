@@ -4,10 +4,11 @@ const docsSidebar = [
         children: [
             'getting-started/intro',
             'getting-started/installation/wordpress',
-            'getting-started/configuration',
-            'getting-started/scaffolding',
             'getting-started/repositories',
-            'getting-started/clients',
+            'getting-started/configuration',
+            'getting-started/versioning',
+            'getting-started/directory-structure',
+            'getting-started/clients-for-demos',
         ]
     },
     {
@@ -119,14 +120,15 @@ const docsSidebar = [
     {
         title: 'Roadmap',
         children: [
+            'roadmap/convention-over-configuration',
             'roadmap/scaffolding-commands',
             'roadmap/testing',
             'roadmap/mutations',
             'roadmap/federation',
             'roadmap/tracing',
             ['roadmap/decoupling-requested-executed-queries', 'Decoupling queries'],
-            'roadmap/serverless',
-            ['roadmap/laravel-symfony', 'Implement for Laravel/Symfony'],
+            'roadmap/serverless-wordpress',
+            ['roadmap/laravel-symfony', 'Laravel/Symfony'],
         ]
     },
 ];

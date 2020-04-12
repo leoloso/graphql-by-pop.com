@@ -1,4 +1,4 @@
-# Implement adapters for Laravel/Symfony/others
+# Implement adapters for Laravel/Symfony
 
 TODO
 
