@@ -122,7 +122,6 @@ const docsSidebar = [
         children: [
             'roadmap/convention-over-configuration',
             'roadmap/scaffolding-commands',
-            'roadmap/testing',
             'roadmap/mutations',
             'roadmap/federation',
             'roadmap/tracing',
