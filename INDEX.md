@@ -47,7 +47,7 @@
       "details": "The resolvers attach themselves to the types. Each field can be handled by different resolvers, and the chosen one is selected on runtime, depending on the context."
     },
     {
-      "icon": "👩🏽‍🦰",
+      "icon": "🌗",
       "title": "→ Public/private schema managed through ACLs",
       "details": "From a single source of truth, expose different schemas for different users, managing it through Access Control Lists based on the user being logged-in or not, roles, capabilities, or custom rules."
     },
@@ -65,6 +65,11 @@
       "icon": "🤖",
       "title": "→ Automatic namespacing",
       "details": "No need to worry if different teams or 3rd party providers using the same names for their types and interfaces. Create neater schemas by removing the 'MyCompanyName' prefix from your types, you won't need it."
+    },
+    {
+      "icon": "👩🏻‍🔧",
+      "title": "→ Proactive warnings/deprecations",
+      "details": "Issues with the query are shown in the response to the query, and not just when doing introspection. Avoid your users from never finding out that your schema has been upgraded!"
     }
   ],
   "footer": "Made with ❤️ by Leonardo Losoviz"
