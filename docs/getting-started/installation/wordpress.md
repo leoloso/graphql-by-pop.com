@@ -1,5 +1,11 @@
 # Installing on WordPress
 
+::: warning Release under progress!
+We are currently creating a release for all the components, and this task will take a few days. Until then, GraphQL by PoP cannot be installed.
+
+Thanks for your patience.
+:::
+
 ## By WordPress plugin
 
 _Coming soon..._
