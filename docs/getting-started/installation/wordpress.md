@@ -1,27 +1,25 @@
 # Installing on WordPress
 
-::: warning Release under progress!
-We are currently creating a release for all the components, and this task will take a few days. Until then, GraphQL by PoP cannot be installed.
-
-Thanks for your patience.
-:::
-
 ## By WordPress plugin
 
 _Coming soon..._
 
 ## Manual process, via Composer
 
-Please make sure to have [Composer](https://getcomposer.org) installed, and create file `composer.json` in your project. Then complete the following steps.
+Please make sure to have [Composer](https://getcomposer.org) installed, and file `composer.json` in the root of your project. If you do not have this file, run this command to create it:
 
-1. Make sure your `composer.json` file has the configuration below to accept minimum stability `"dev"`:
+```bash
+composer init -n
+```
+
+Then complete the following steps.
+
+1. Make sure your `composer.json` file has the entries below to accept minimum stability `"dev"`:
 
 ```json
 {
-    ...
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    ...
+    "prefer-stable": true
 }
 ```
 
@@ -47,7 +45,13 @@ Please make sure to have [Composer](https://getcomposer.org) installed, and crea
 ::: details What are these packages?
 From owner `"getpop"`, only packages `"getpop/engine-wp"` and `"getpop/graphql"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink.
 
-Package `"composer/installers"` is required to set-up the required mu-plugins.
+Package `"composer/installers"` is required to set-up some required must-use plugins.
+:::
+
+::: details Can install from tagged releases?
+We are currently creating a release for all the required components from the [PoP repo](https://github.com/getpop), and this task will take several days. Until then, components must be installed using the `"dev-master"` version.
+
+Please notice that the README file from unreleased components may temporarily have the `build` badge showing `error`, and the `code quality` badge showing `project not found`. Their code is, however, working well; the problem comes from PSR-2 and static analysis rules executed by [Travis](https://travis-ci.com) not yet satisfied, and the component's project not yet set-up in [Scrutinizer](https://scrutinizer-ci.com). We are fixing these issues component by component, as we release them.
 :::
 
 3. Add the following `"installer-paths"` under the `extra` section of your `composer.json` file:
@@ -115,7 +119,7 @@ The (formatted) response should be something like this:
 }
 ```
 
-8. Celebrate 🥳
+8. Celebrate! 🥳🕺🏻💃🏼🙌
 
 ### Optionals
 
