@@ -133,15 +133,10 @@ const docsSidebar = [
     },
 ];
 const tutorialsSidebar = [
-    // {
-    //     title: 'Tutorials',
-    //     children: [
-            'cms-agnostic-resolver',
-            'localized-newsletter',
-            'filling-void-with-directive',
-            'creating-access-control-rule',
-    //     ]
-    // }
+    'cms-agnostic-resolver',
+    'localized-newsletter',
+    'filling-void-with-directive',
+    'creating-access-control-rule',
 ];
 module.exports = {
     '/docs/': docsSidebar,
