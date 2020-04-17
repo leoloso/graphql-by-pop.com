@@ -100,6 +100,7 @@ const docsSidebar = [
             'architecture/public-private-schema',
             'architecture/rapid-iteration',
             'architecture/cms-agnosticism',
+            'architecture/converting-from-pql-to-gql',
         ]
     },
     {
