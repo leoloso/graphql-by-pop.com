@@ -70,7 +70,7 @@ const docsSidebar = [
             ['extended/intro', 'Intro'],
             'extended/full-schema',
             'extended/pql',
-            'extended/pql-features',
+            'extended/pql-language-features',
             'extended/pql-syntax',
             'extended/pql-advanced',
         ]

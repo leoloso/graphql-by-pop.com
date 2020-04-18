@@ -1,6 +1,6 @@
-# PQL features
+# PQL language features
 
-PQL adds several language features over GQL. This is a summary of them:
+PQL adds several language features over GQL. This is a summary of them.
 
 ## Operators
 
