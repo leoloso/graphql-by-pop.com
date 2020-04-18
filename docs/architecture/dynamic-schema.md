@@ -15,15 +15,15 @@ In the example below, field `excerpt` does not normally support field arg `lengt
 //2. New feature not yet available
 /?query=
   posts.
-    excerpt(length:30)
+    excerpt(length: 30)
 
 //3. New feature available under
 // experimental branch
 /?query=
   posts.
     excerpt(
-      length:30,
-      branch:experimental
+      length: 30,
+      branch: experimental
     )
 ```
 
