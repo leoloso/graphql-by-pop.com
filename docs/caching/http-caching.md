@@ -1,6 +1,6 @@
 # HTTP caching (PQL only)
 
-Through the [Cache Control](https://github.com/getpop/cache-control) package, GraphQL by PoP caches the response from the query using standard [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching). This works when sending the query with [PQL](https://graphql-by-pop.com/docs/extended/pql.html) only, but not using GQL (the standard GraphqL Query Language).
+Through the [Cache Control](https://github.com/getpop/cache-control) package, GraphQL by PoP caches the response from the query using standard [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching). This works when sending the query with [PQL](../extended/pql) only, but not using GQL (the standard GraphqL Query Language).
 
 ::: details Why is HTTP caching not supported for GQL?
 HTTP caching relies on the URL being a unique identifier of the request. GraphQL, however, submits all queries against the same endpoint, and passing the query in the body of the request through a POST operation, instead of a GET. Then, GraphQL queries cannot be distinguished from each other, and hence cannot be cached.
@@ -8,11 +8,11 @@ HTTP caching relies on the URL being a unique identifier of the request. GraphQL
 PQL doesn't have this issue because it is URL-based, so executing 2 queries will be done through 2 different URLs, and these can be uniquely identified and cached.
 :::
 
-The response will contain a `Cache-Control` header with the `max-age` value set at the time (in seconds) to cache the request, or `no-store` if the request must not be cached. Each field in the schema can configure its own `max-age` value, and the response's `max-age` is calculated as the lowest `max-age` among all requested fields (including [composable fields](https://graphql-by-pop.com/docs/extended/pql-language-features.html#composable-fields)).
+The response will contain a `Cache-Control` header with the `max-age` value set at the time (in seconds) to cache the request, or `no-store` if the request must not be cached. Each field in the schema can configure its own `max-age` value, and the response's `max-age` is calculated as the lowest `max-age` among all requested fields (including [composable fields](../extended/pql-language-features#composable-fields)).
 
 ## How it works
 
-A directive `<cacheControl>` is added to the [directive pipeline](https://graphql-by-pop.com/docs/architecture/the-directive-pipeline.html) for all fields. This directive is configured a `max-age` value for each field, and adds a `Cache-Control` header to the response with the lowest `max-age` value from all the requested fields in the query, or `no-store` if any field has `max-age`: 0.
+A directive `<cacheControl>` is added to the [directive pipeline](../architecture/the-directive-pipeline.html) for all fields. This directive is configured a `max-age` value for each field, and adds a `Cache-Control` header to the response with the lowest `max-age` value from all the requested fields in the query, or `no-store` if any field has `max-age`: 0.
 
 ## Examples
 

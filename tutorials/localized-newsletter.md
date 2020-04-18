@@ -1,6 +1,6 @@
 # Sending a localized newsletter, user by user
 
-This tutorial will make use of the [PQL](https://graphql-by-pop.com/docs/extended/pql.html) to satisfy an extensive functionality in a single query.
+This tutorial will make use of the [PQL](../docs/extended/pql) to satisfy an extensive functionality in a single query.
 
 Let's create an automated email-sending service to distribute blog posts. All the data comes from 3 separate sources:
 
@@ -266,7 +266,7 @@ By now we have collected the post data, saved under properties `content` and `da
 - `userData` is under `/` (root)
 - `content` and `date` are under `/post/`
 
-Hence, we must either move `userData` down to the `post` level, or move `content` and `date` up to the root level. Due to GraphQL by PoP's [dataloading engine architecture](https://graphql-by-pop.com/docs/architecture/dataloading-engine.html), only the latter option is feasible. Let's see why.
+Hence, we must either move `userData` down to the `post` level, or move `content` and `date` up to the root level. Due to GraphQL by PoP's [dataloading engine architecture](../docs/architecture/dataloading-engine), only the latter option is feasible. Let's see why.
 
 ## Understanding how GraphQL by PoP loads data
 
