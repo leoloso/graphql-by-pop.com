@@ -150,7 +150,6 @@ Field and directive argument names can be deduced from the schema.
 This query...
 
 ```pql
-// Query 1
 /?
 postId=1&
 query=
@@ -164,14 +163,13 @@ query=
 ...is equivalent to this query:
 
 ```pql
-// Query 2
 /?
 postId=1&
 query=
-  post(id:$postId).
-    date(format:d/m/Y)|
+  post(id: $postId).
+    date(format: d/m/Y)|
     title<
-      skip(if:false)
+      skip(if: false)
     >
 ```
 
