@@ -2,17 +2,18 @@
 
 The PQL (PoP Query Language) is the URL-based query syntax natively adopted by [PoP](https://github.com/leoloso/PoP) (the component model over which GraphQL by PoP is based). Based on the GraphQL syntax, the PQL attempts to address the issues produced by sending the query through the body of the request, as dony by GraphQL, by sending the query as a URL parameter instead.
 
-PQL is a subset of GQL (the Graph Query Language), hence every query written in GQL can also be written in PQL. GraphQL by PoP supports PQL natively, and GQL by converting it into PQL after parsing the query. The developer can choose to execute queries against the GraphQL by PoP server using either syntax.
+PQL is a superset of GQL (the Graph Query Language), hence every query written in GQL can also be written in PQL. GraphQL by PoP supports PQL natively, and GQL by converting it into PQL after parsing the query. The developer can choose to execute queries against the GraphQL by PoP server using either syntax.
 
 ## URL-based queries
 
 While the standard GraphQL query is sent in the body of the request, the PQL is sent through the URL. This has the following advantages:
 
-- It enables server-side caching
-- It removes the need for a client-side library to manipulate the query, leading to performance improvements and reduced amount of code to maintain
-- The API becomes easier to consume. For instance, we can visualize the results of the query directly on the browser, without depending on GraphiQL
+- It enables HTTP/server-side caching
+- It removes the need for a client-side library to manipulate the query, improving performance and reducing amount of code to maintain
+- The API can be consumed directly in the browser, without the need for tooling (such as GraphiQL)
+- It enables to use standards. For instance, use GET operations whenever appropriate (instead of always POST), pass variables through URL params, execute file uploads passing the data through the body, etc
 
-```
+```less
 ?query=...
 ```
 
@@ -22,13 +23,13 @@ The syntax in PQL is a re-imagining of the GraphQL syntax, supporting all the re
 
 It looks like this:
 
-```
+```less
 ?query=query1,query2,query3&variable1=value&fragment1=fragmentQuery
 ```
 
 Each query has this shape:
 
-```
+```less
 fieldName(fieldArgs)@alias<fieldDirective(directiveArgs)>
 ```
 
