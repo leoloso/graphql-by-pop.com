@@ -17,8 +17,7 @@ In the example below, field `excerpt` does not normally support field arg `lengt
   posts.
     excerpt(length: 30)
 
-//3. New feature available under
-// experimental branch
+//3. New feature available under experimental branch
 /?query=
   posts.
     excerpt(
