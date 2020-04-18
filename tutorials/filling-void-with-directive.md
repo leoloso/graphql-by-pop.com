@@ -1,10 +1,3 @@
-# Filling a void with a directive
+# Filling a void with a directive (WIP)
 
 TODO
-
-## Header
-
-### Subheader
-
-
-

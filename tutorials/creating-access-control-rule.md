@@ -1,8 +1,3 @@
-# Creating a custom Access Control rule
+# Creating a custom Access Control rule (WIP)
 
 TODO
-
-## Header
-
-### Subheader
-

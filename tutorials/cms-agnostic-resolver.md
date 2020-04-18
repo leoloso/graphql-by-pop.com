@@ -1,3 +1,3 @@
-# Implementing a CMS-agnostic resolver
+# Implementing a CMS-agnostic resolver (WIP)
 
 TODO
