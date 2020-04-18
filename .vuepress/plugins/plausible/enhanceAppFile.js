@@ -1,5 +1,5 @@
 export default ({ router }) => {
-    if (process.env.NODE_ENV === 'production' && /*PLAUSIBLE_DOMAIN && */ typeof window !== 'undefined') {
+    if (/*process.env.NODE_ENV === 'production' && *//*PLAUSIBLE_DOMAIN && */ typeof window !== 'undefined') {
         (function(w, d, s, o, f, js, fjs) {            
             w[o] = w[o] || function () {
                 (w[o].q = w[o].q || []).push(arguments)
@@ -15,10 +15,10 @@ export default ({ router }) => {
         window.plausible('page')
         window.plausible('trackPushState')
       
-        router.afterEach(function (to) {
-            window.plausible('page')
-            window.plausible('trackPushState')
-        })
+        // router.afterEach(function (to) {
+        //     window.plausible('page')
+        //     window.plausible('trackPushState')
+        // })
     }
 }
 
