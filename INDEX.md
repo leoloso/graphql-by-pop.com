@@ -160,7 +160,7 @@ The URL-based PoP Query Language (PQL) enables to send the query through GET, an
 
 Send your query using the PQL via GET.
 
-```pql
+```less
 /?query=
   posts.
     title|
@@ -220,7 +220,7 @@ PQL enables to compose fields, compose directives, control the execution order o
 
 Composed fields are resolved at the API-level.
 
-```pql
+```less
 /?
 format=Y-m-d&
 query=

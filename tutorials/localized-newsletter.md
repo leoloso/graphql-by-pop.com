@@ -40,7 +40,7 @@ By then, we have all the data: Rows of `email` and `emailContent` fields. We wil
 
 We can query field `posts` to find the latest published blog post:
 
-```pql
+```less
 posts(
   limit:1,
   order:date|DESC
@@ -62,7 +62,7 @@ Use `|` to fetch several fields from an object
 
 This query retrieves an array of posts. To operate with a single post, we can better use field `post`, which receives the ID by argument:
 
-```pql
+```less
 post(
   id:1
 ).
@@ -75,7 +75,7 @@ post(
 
 Fields argument names are optional. The query above is similar to the one below, which skips fieldArg name `"id"`:
 
-```pql
+```less
 post(1).
   id|
   title|
@@ -86,7 +86,7 @@ post(1).
 
 We can pass the ID through a variable, which is resolved through a URL parameter under the variable name. For the query below, we add param `postId=1` to the URL:
 
-```pql
+```less
 post($postId).
   id|
   title|
@@ -101,7 +101,7 @@ Use `$` to define a variable
 
 Finally, we add an alias to make the response more compact:
 
-```pql
+```less
 post($postId)@post.
   id|
   title|
@@ -118,7 +118,7 @@ Use `@` to define an alias
 
 The previous queries were demonstrating how to fetch data for the post. Now that we know, let's fetch the data needed for our use case: the `content` and `date` fields:
 
-```pql
+```less
 post($postId)@post.
   content|
   date(d/m/Y)@date
@@ -134,7 +134,7 @@ Use `[...]` to define an array and `,` to separate its items. The format for eac
 
 To fetch the list of newsletter subscribers from a REST endpoint, we can use field `getJSON` and specify the URL:
 
-```pql
+```less
 getJSON("https://newapi.getpop.org/wp-json/newsletter/v1/subscriptions")@userList
 ```
 
@@ -150,7 +150,7 @@ The previous list contains pairs of `email` and `lang` fields. Next, we calculat
 
 First, we extract the field `lang` from the array through field `extract` (which takes an array and a path):
 
-```pql
+```less
 getJSON("https://newapi.getpop.org/wp-json/newsletter/v1/subscriptions")@userList|
 extract(
   getSelfProp(%self%, userList),
@@ -166,7 +166,7 @@ Expression `%self%` contains an object which has a pointer to all data retrieved
 
 Then, we apply operator `arrayUnique`, and assign the results under alias `userLangs`:
 
-```pql
+```less
 getJSON("https://newapi.getpop.org/wp-json/newsletter/v1/subscriptions")@userList|
 arrayUnique(
   extract(
@@ -184,7 +184,7 @@ So far, we have a list of pairs of `email` and `lang` fields stored under proper
 
 First, we extract the list of all emails from `userList`, and place them under `userEmails`:
 
-```pql
+```less
 extract(
   getSelfProp(%self%, userList),
   email
@@ -195,7 +195,7 @@ extract(
 
 Our CRM exposes a REST endpoint which allows to filter users by email, like this:
 
-```pql
+```less
 /users/api/rest/?emails[]=email1&emails[]=email2&...
 ```
 
@@ -203,7 +203,7 @@ Then, we must generate the endpoint URL by converting the array of emails into a
 
 To generate the URL, we use a combination of `sprintf` and `arrayJoin`:
 
-```pql
+```less
 sprintf(
   "https://newapi.getpop.org/users/api/rest/?query=name|email%26emails[]=%s",
   [arrayJoin(
@@ -225,7 +225,7 @@ The PoP API (over which GraphQL by PoP is based) can also satisfy REST, through 
 
 Having generated the URL, we execute `getJSON` on it:
 
-```pql
+```less
 getJSON(
   sprintf(
     "https://newapi.getpop.org/users/api/rest/?query=name|email%26emails[]=%s",
@@ -241,7 +241,7 @@ getJSON(
 
 Finally, we must combine the 2 lists into one, generating a new list containing all user fields: `name`, `email` and `lang`. To achieve this, we use function `arrayFill`, which, given 2 arrays, returns an array containing the entries from each of them where the index (in this case, property `email`) is the same, and we save the results under property `userData`:
 
-```pql
+```less
 arrayFill(
   getJSON(
     sprintf(
@@ -272,7 +272,7 @@ Hence, we must either move `userData` down to the `post` level, or move `content
 
 When resolving the query to load data, the dataloader processes all elements from a same entity all at the same time, as to load all their data in a single query and completely avoiding the N+1 problem. Then, let's imagine that we have the following query:
 
-```pql
+```less
 posts.
   title|
   author.
@@ -295,7 +295,7 @@ To copy the `content` and `date` properties upwards to the root level, we use di
 2. The name of the properties to copy, in this case `content` and `date`
 3. (Optional) The name under which to copy the properties, in this case `postContent` and `postDate`
 
-```pql
+```less
 self.
   post($postId)@post<
     copyRelationalResults(
@@ -335,7 +335,7 @@ Every directive we create must indicate in which from these 3 slots it must be p
 
 Let's examine the query above together with the previous query bit that loads properties `content` and `date`:
 
-```pql
+```less
 post($postId)@post.
   content|
   date(d/m/Y)@date,
@@ -356,7 +356,7 @@ Field `self` is an identity field: It returns the same object currently being op
 
 As mentioned before, the dataloader loads data in stages, in which all data for a same type of entity (all posts, all users, etc) is fetched all together. Using `,` to separate a query makes it start iterating from the root all over again. Then, when processing this query...
 
-```pql
+```less
 post,
 self.post
 ```
@@ -371,7 +371,7 @@ That is exactly why we need it: Directive `<copyRelationalResults>` copies a pro
 
 We saw in the query above...
 
-```pql
+```less
 self.
   post($postId)@post<
     copyRelationalResults(
@@ -391,7 +391,7 @@ The real, underlying data structure in PoP is simply a set of relationships acro
 
 Finally, we can provide an explanation of why the query results in <a href="https://newapi.getpop.org/api/?postId=1&query=post($postId)@post.content|date(d/m/Y)@date,getJSON(%22https://newapi.getpop.org/wp-json/newsletter/v1/subscriptions%22)@userList|arrayUnique(extract(getSelfProp(%self%,userList),lang))@userLangs|extract(getSelfProp(%self%,userList),email)@userEmails|arrayFill(getJSON(sprintf(%22https://newapi.getpop.org/users/api/rest/?query=name|email%26emails[]=%s%22,[arrayJoin(getSelfProp(%self%,userEmails),%22%26emails[]=%22)])),getSelfProp(%self%,userList),email)@userData,self.post($postId)@post%3CcopyRelationalResults([content,%20date],[postContent,%20postDate])%3E">PoP native output</a> for directive `<copyRelationalResults>` are shown, but not in the <a href="https://newapi.getpop.org/api/graphql/?postId=1&query=post($postId)@post.content|date(d/m/Y)@date,getJSON(%22https://newapi.getpop.org/wp-json/newsletter/v1/subscriptions%22)@userList|arrayUnique(extract(getSelfProp(%self%,userList),lang))@userLangs|extract(getSelfProp(%self%,userList),email)@userEmails|arrayFill(getJSON(sprintf(%22https://newapi.getpop.org/users/api/rest/?query=name|email%26emails[]=%s%22,[arrayJoin(getSelfProp(%self%,userEmails),%22%26emails[]=%22)])),getSelfProp(%self%,userList),email)@userData,self.post($postId)@post%3CcopyRelationalResults([content,%20date],[postContent,%20postDate])%3E">GraphQL output</a>: The PoP native format displays all the data it has accumulated, thereby there it is. The GraphQL format, though, doesn't show it because the properties under which the data are copied to, `postContent` and `postDate`, are not being queried. If we do (adding 2 levels of `self` to make sure we query the data after it has been copied), the data then does appear in the response:
 
-```pql
+```less
 self.
   post($postId)@post<
     copyRelationalResults(
@@ -425,7 +425,7 @@ When executing functionality, the main difference between these 2 is the followi
 
 An operator is a field. A field computes a value from a single object; every field is executed independently of each other field, and it is executed once per object. For instance, for the following query...
 
-```pql
+```less
 post.
   title
 ```
@@ -434,7 +434,7 @@ post.
 
 Since operators are fields, we have the same situation: For the following query...
 
-```pql
+```less
 post.
   sprintf(
     "Post title is",
@@ -446,7 +446,7 @@ post.
 
 Directives work in a different way: They are executed just once on the set of affected objects, and on the set of affected properties for each object, and they can modify the value of these properties for each of the objects. For instance, for the following query:
 
-```pql
+```less
 posts.
   title<
     applyFunction(...)
@@ -469,7 +469,7 @@ Now we know why we are doing `content<translate>` instead of `translate(content)
 
 The following query takes care of translating the post content to all the different unique languages gathered earlier on from the user data:
 
-```pql
+```less
 self.
   self.
     getSelfProp(%self%, postContent)@postContent<
@@ -489,7 +489,7 @@ We can see that the `<translate>` directive takes 2 inputs through directive arg
 
 The `<translate>` directive did not override the original property on the object, but instead created additional ones which append the language code. Hence, by now, we have the following entries with the post content: `postContent` (original in English), `postContent-es` (Spanish), `postContent-fr` (French) and `postContent-de` (German). To homogenize it, we rename property `postContent` to `postContent-en` through directive `<renameProperty>`:
 
-```pql
+```less
 self.
   self.
     getSelfProp(%self%,postContent)@postContent<
@@ -518,7 +518,7 @@ By now, we have translated the post content to all different unique languages. N
 
 To achieve this, we will make use of directive `<forEach>` which iterates over an array, and passes each array item to its composed directive `<applyFunction>` through expression `%value%`. This directive then executes function `arrayAddItem` on each item, which adds an element (the translated post content) to an array (the user data). In order to deduce the selected language, it uses functions `extract` to get the `lang` property from the user data array, then injects it into `sprintf` to generate the corresponding `postContent-languagecode` property, which is then retrieved from the current object (the root) and placed under property `postContent` on the array. All field arguments needed by function `arrayAddItem` are injected by the directive `<applyFunction>` on runtime through the array defined in argument `addArguments`.
 
-```pql
+```less
 self.
   self.
     getSelfProp(%self%, userData)@userPostData<
@@ -555,7 +555,7 @@ Let's next deal with the greeting message, which must be translated to the user'
 
 We first add the message into the array containing all other user data under property `header`, and already customizing it with the user data. The logic is similar as in the previous query, for which we also use directive `<applyFunction>`, which can be executed within the same iteration of the previous `<forEach>` directive:
 
-```pql
+```less
 self.
   self.
     getSelfProp(%self%, userData)@userPostData<
@@ -587,7 +587,7 @@ Finally, we translate the message to the user's language. To do this, we use dir
 
 Finally the element is passed to the next composed directive, `<translate>`, which receives a string of arrays to translate as its affected fields, and an array of languages to translate to passed through expression `toLang` (which we create on-the-fly just for this purpose of communicating data across directives), and by setting argument `oneLanguagePerField` to `true` and `override` to `true` the directive knows to match each element on these 2 arrays to do the translation and place the result back on the original property.
 
-```pql
+```less
 self.
   self.
     self.
@@ -618,7 +618,7 @@ self.
 
 We are almost there! All that there is left to do is to generate the content for all the emails to send: arrays containing properties `content`, `to` and `subject`, and then this array is passed to directive `<sendByEmail>` which, voilà, does what it must do! (Or actually not: Since we don't want spam, the email sending is actually disabled... We just print the email data instead for this tutorial)
 
-```pql
+```less
 self.
   self.
     self.
@@ -672,7 +672,7 @@ self.
 
 We have everything we need! Let's get it all together into the one, final, complete query:
 
-```pql
+```less
 post($postId)@post.
   content|
   date(d/m/Y)@date,

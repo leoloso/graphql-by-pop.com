@@ -34,7 +34,7 @@ fieldName(fieldArgs)@alias<fieldDirective(directiveArgs)>
 
 To make it clear to visualize, the query can be split into several lines:
 
-```pql
+```less
 fieldName(
   fieldArgs
 )@alias<

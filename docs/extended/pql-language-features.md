@@ -6,7 +6,7 @@ PQL adds several language features over GQL. This is a summary of them.
 
 Standard operations, such as `not`, `or`, `and`, `if`, `equals`, `isNull`, `sprintf` and many others, are supported as fields:
 
-```pql
+```less
 1. ?query=not(true)
 2. ?query=or([1,0])
 3. ?query=and([1,0])
@@ -22,7 +22,7 @@ Standard operations, such as `not`, `or`, `and`, `if`, `equals`, `isNull`, `spri
 
 Arguments passed to a field can receive other fields or operators as input.
 
-```pql
+```less
 ?query=
   posts.
     if (
@@ -53,7 +53,7 @@ Through composable fields, the directive can be evaluated against the object, gr
 
 The example below implements the standard GraphQL `skip` directive, however it is able to decide if to skip the field or not based on a condition from the object itself:
 
-```pql
+```less
 /?query=
   posts.
     title|
@@ -71,7 +71,7 @@ A directive can modify the behaviour of another directive. Values can be passed 
 
 For instance, in the example below, directive `<forEach>` iterates through all the items in an array, passing each of them to its composed directive `<applyFunction>` through expression `%value%`.
 
-```pql
+```less
 ?query=
   echo([
     [banana, apple],
@@ -97,7 +97,7 @@ An expression, defined through symbols `%...%`, is a variable used by directives
 
 In the example below, an array contains strings to translate and the language to translate the string to. The array element is passed from directive `<forEach>` to directive `<advancePointerInArray>` through pre-defined expression `%value%`, and the language code is passed from directive `<advancePointerInArray>` to directive `<translate>` through variable `%toLang%`, which is defined only in the query:
 
-```pql
+```less
 /?query=
   echo([
     [
@@ -133,7 +133,7 @@ In the example below, an array contains strings to translate and the language to
 
 Exactly the same result above (`<skip(if(isNull(...)))>`) can be accomplished using the `?` operator: Adding it after a field, it skips the output of its value if it is null.
 
-```pql
+```less
 /?query=
   posts.
     title|
@@ -149,7 +149,7 @@ Field and directive argument names can be deduced from the schema.
 
 This query...
 
-```pql
+```less
 /?
 postId=1&
 query=
@@ -162,7 +162,7 @@ query=
 
 ...is equivalent to this query:
 
-```pql
+```less
 /?
 postId=1&
 query=

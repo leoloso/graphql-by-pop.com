@@ -194,6 +194,14 @@ pre code[class*="language-"] .token.comment
   color: slategray
 
 /******************************
+  HACK: Treat LESS as PQL (somewhat similar syntax)
+*******************************/
+
+div[class~="language-less"]:before {
+    content: "pql";
+}
+
+/******************************
   PAGE
 *******************************/
 
