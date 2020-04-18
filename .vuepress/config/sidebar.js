@@ -72,7 +72,6 @@ const docsSidebar = [
             'extended/pql',
             'extended/pql-language-features',
             'extended/pql-syntax',
-            'extended/pql-advanced',
         ]
     },
     {
