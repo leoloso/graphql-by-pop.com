@@ -17,7 +17,7 @@ While the standard GraphQL query is sent in the body of the request, the PQL is 
 ?query=...
 ```
 
-## Similar but different query syntax
+## PQL syntax
 
 The syntax in PQL is a re-imagining of the GraphQL syntax, supporting all the required elements (field names, arguments, variables, aliases, fragments and directives), however designed to be easy to both read and write in a single line, so the developer can already code the query in the browser without depending on special tooling.
 
@@ -48,3 +48,43 @@ fieldName(
 ::: tip
 Firefox already handles the multi-line query: Copy/pasting it into the URL bar works perfectly. Chrome and Safari, though, require to strip all the whitespaces and line returns before pasting the query into the URL bar.
 :::
+
+## Syntax elements
+
+The PQL syntax has the following elements:
+
+- `(key:value)` or `(value)`: Arguments (for fields/directives)
+- `[key:value]` or `[value]`: Array
+- `$`: Variable
+- `@`: Alias
+- `.`: Advance query relationship
+- `,`: Fetch another query, starting from the root
+- `|`: Fetch another field from the same query node
+- `<...>`: Directive
+- `%...%`: Directive expression
+- `--`: Fragment
+
+Example:
+
+```less
+/?
+query=
+  posts(
+    ids: [1, 1499, 1178],
+    order: $order
+  )@posts.
+    id|
+    date(format: d/m/Y)|
+    title<
+      skip(if: false)
+    >|
+    --props&
+order=title|ASC&
+props=
+  url|
+  author.
+    name|
+    url
+```
+
+[<a href="https://newapi.getpop.org/api/graphql/?order=title%7CASC&amp;props=url%7Cauthor.name%7Curl&amp;query=posts(ids:%5B1,1499,1178%5D,order:%24order)@posts.id%7Cdate(format:d/m/Y)%7Ctitle<skip(if:false)>%7C--props">View query results</a>]
