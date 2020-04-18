@@ -6,9 +6,17 @@ const docsSidebar = [
             'getting-started/installation/wordpress',
             'getting-started/repositories',
             'getting-started/configuration',
-            'getting-started/versioning',
             'getting-started/directory-structure',
-            'getting-started/clients-for-demos',
+        ]
+    },
+    {
+        title: 'Schema Features',
+        children: [
+            'schema-features/dynamic-schema',
+            'schema-features/field-directive-based-versioning',
+            'schema-features/automatic-namespacing',
+            'schema-features/errors-deprecations-warnings-logs',
+            'schema-features/persisted-fragments-and-queries',
         ]
     },
     {
@@ -23,19 +31,6 @@ const docsSidebar = [
             'schema-objects/types/scalars',
             'schema-objects/fields',
             'schema-objects/directives',
-        ]
-    },
-    {
-        title: 'Schema Design',
-        children: [
-            'schema-design/schema-multiverse',
-            'schema-design/automatic-namespacing',
-            'schema-design/versioning',
-            'schema-design/errors-deprecations-warnings-logs',
-            'schema-design/persisted-fragments-and-queries',
-            'schema-design/type-casting-and-validation',
-            'schema-design/filtering',
-            'schema-design/pagination',
         ]
     },
     {
@@ -67,7 +62,7 @@ const docsSidebar = [
     {
         title: 'Extended GraphQL',
         children: [
-            ['extended/intro', 'Intro'],
+            'extended/intro',
             'extended/full-schema',
             'extended/pql',
             'extended/pql-language-features',
@@ -96,7 +91,6 @@ const docsSidebar = [
             'architecture/directives-as-elemental-block',
             'architecture/extensibility',
             'architecture/code-first',
-            'architecture/dynamic-schema',
             'architecture/public-private-schema',
             'architecture/rapid-iteration',
             'architecture/cms-agnosticism',

@@ -35,3 +35,7 @@ Advantages:
 - Rapid iteration, such as allowing a selected group of testers to try out new features in production
 - Quick bug fixing, such as fixing a bug specifically for a client, without worrying about breaking changes for other clients
 - Field-based versioning
+
+## Schema multi-verse
+
+TODO

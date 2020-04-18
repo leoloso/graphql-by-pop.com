@@ -6,9 +6,18 @@ GraphQL by PoP is a CMS-agnostic GraphQL server in PHP, currently available for 
 
 PHP 7.1 or higher.
 
+## Demo API
+
+GraphQL by PoP has been installed on [this WordPress site](https://newapi.getpop.org), available under endpoint [https://newapi.getpop.org/api/graphql/](https://newapi.getpop.org/api/graphql/).
+
+You can play with it through the following clients:
+
+- [GraphiQL](https://newapi.getpop.org/graphiql/)
+- [GraphQL Voyager](https://newapi.getpop.org/graphql-interactive/)
+
 ## About this website
 
-The documentation and tutorial pages are being completed. Progress is recorded in these projects:
+This website is currently a work in progress. Status (to do/in progress/done) for the different pages is managed through these projects:
 
 - [Complete docs](https://github.com/getpop/graphql-by-pop.com/projects/1)
 - [Complete tutorials](https://github.com/getpop/graphql-by-pop.com/projects/3)
