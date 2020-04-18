@@ -1,5 +1,5 @@
 export default ({ router }) => {
-    if (/*process.env.NODE_ENV === 'production' && *//*PLAUSIBLE_DOMAIN && */ typeof window !== 'undefined') {
+    if (process.env.NODE_ENV === 'production' && /*PLAUSIBLE_DOMAIN && */ typeof window !== 'undefined') {
         (function(w, d, s, o, f, js, fjs) {            
             w[o] = w[o] || function () {
                 (w[o].q = w[o].q || []).push(arguments)
