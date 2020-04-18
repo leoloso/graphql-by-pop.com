@@ -1,4 +1,4 @@
-# Automatic namespacing
+# Automatic namespacing (WIP)
 
 TODO
 

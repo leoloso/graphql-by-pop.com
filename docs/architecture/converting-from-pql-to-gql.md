@@ -1,3 +1,3 @@
-# Converting from PQL to GQL
+# Converting from PQL to GQL (WIP)
 
 TODO

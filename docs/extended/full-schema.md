@@ -1,3 +1,3 @@
-# The full schema
+# The full schema (WIP)
 
 TODO

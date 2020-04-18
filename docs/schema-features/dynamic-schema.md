@@ -1,4 +1,4 @@
-# Dynamic schema
+# Dynamic schema (WIP)
 
 ## Many resolvers per field
 

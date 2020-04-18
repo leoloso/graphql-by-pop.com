@@ -1,4 +1,3 @@
-# Intro to Extended GraphQL
+# Intro to Extended GraphQL (WIP)
 
 TODO
-

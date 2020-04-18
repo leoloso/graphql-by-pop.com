@@ -1,3 +1,3 @@
-# Public/private schema
+# Public/private schema (WIP)
 
 TODO

@@ -1,4 +1,3 @@
-# Serverless WordPress
+# Serverless WordPress (WIP)
 
 TODO
-

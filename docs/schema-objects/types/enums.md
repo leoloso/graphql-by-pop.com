@@ -1,3 +1,3 @@
-# Enum types
+# Enum types (WIP)
 
 TODO

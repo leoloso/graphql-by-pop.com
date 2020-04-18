@@ -74,7 +74,7 @@ const docsSidebar = [
         children: [
             'going-further/multiple-endpoints',
             'going-further/rest-integration',
-            ['going-further/response-formats', 'Response formats'],
+            ['going-further/response-formats', 'Response formats (WIP)'],
         ]
     },
     {
@@ -85,7 +85,6 @@ const docsSidebar = [
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
             'architecture/dataloading-engine',
-            'architecture/time-complexity',
             'architecture/avoiding-n-plus-one-problem',
             'architecture/the-directive-pipeline',
             'architecture/directives-as-elemental-block',
@@ -120,9 +119,9 @@ const docsSidebar = [
             'roadmap/mutations',
             'roadmap/federation',
             'roadmap/tracing',
-            ['roadmap/decoupling-requested-executed-queries', 'Decoupling queries'],
+            ['roadmap/decoupling-requested-executed-queries', 'Decoupling queries (WIP)'],
             'roadmap/serverless-wordpress',
-            ['roadmap/laravel-symfony', 'Laravel/Symfony'],
+            ['roadmap/laravel-symfony', 'Laravel/Symfony (WIP)'],
         ]
     },
 ];

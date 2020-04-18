@@ -1,5 +1,3 @@
-# Errors, deprecations, warnings and logs
+# Errors, deprecations, warnings and logs (WIP)
 
 TODO
-
-<!-- ### Tracing -->

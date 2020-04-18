@@ -17,7 +17,9 @@ You can play with it through the following clients:
 
 ## About this website
 
-This website is currently a work in progress. Status (to do/in progress/done) for the different pages is managed through these projects:
+This website is currently a work in progress. To make it easier to know which pages are already complete, the uncomplete pages will have "(WIP)" on their names.
+
+Status (to do/in progress/done) for the different pages is managed through these projects:
 
 - [Complete docs](https://github.com/getpop/graphql-by-pop.com/projects/1)
 - [Complete tutorials](https://github.com/getpop/graphql-by-pop.com/projects/3)

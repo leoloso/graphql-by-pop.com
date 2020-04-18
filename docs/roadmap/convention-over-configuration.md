@@ -1,4 +1,3 @@
-# Convention over configuration
+# Convention over configuration (WIP)
 
 TODO
-

@@ -1,4 +1,3 @@
-# Directory structure
+# Directory structure (WIP)
 
 TODO
-

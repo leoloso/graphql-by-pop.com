@@ -1,4 +1,3 @@
-# Directives as elemental blocks
+# Directives as elemental blocks (WIP)
 
 TODO
-
