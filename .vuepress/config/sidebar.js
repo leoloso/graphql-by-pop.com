@@ -50,7 +50,7 @@ const docsSidebar = [
     {
         title: 'Caching',
         children: [
-            'caching/http-caching',
+            ['caching/http-caching', 'HTTP caching'],
             'caching/internal-caching',
             'caching/schema-caching',
         ]
