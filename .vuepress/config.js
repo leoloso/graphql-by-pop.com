@@ -49,7 +49,7 @@ module.exports = {
         ['@vuepress/search', {
             searchMaxSuggestions: 10,
         }],
-        require('./plugins/plausible/index.js')
+        'plausible-analytics',
         // Enable PWA after documentation is ready
         // ['@vuepress/pwa', {
         //     serviceWorker: true,
