@@ -127,7 +127,7 @@ The (formatted) response should be something like this:
 
 1. To accept external API queries, add the snippet below in file `.htaccess`:
 
-```apache
+```apacheconf
 <IfModule mod_rewrite.c>
 # Enable the server to accept external API queries
 Header set Access-Control-Allow-Methods "OPTIONS, GET, POST"
@@ -140,7 +140,7 @@ Header set Access-Control-Allow-Origin "*"
 
 Instead of defining the API endpoint by code through dependency `"getpop/api-endpoints-for-wp"`, it can also be set-up with a rewrite rule in the `.htaccess` file. For this, remove that dependency from composer, and add the code below before the WordPress rewrite section (which starts with `# BEGIN WordPress`):
 
-```apache
+```apacheconf
 <IfModule mod_rewrite.c>
 # Rewrite from api/graphql/ to /?scheme=api&datastructure=graphql
 RewriteEngine On
