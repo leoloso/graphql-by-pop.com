@@ -13,7 +13,7 @@ export default ({
         },
         {
             path: '/tutorials/',
-            redirect: `/tutorials/cms-agnostic-resolver.html`
+            redirect: `/tutorials/localized-newsletter.html`
         },
     ])
 }

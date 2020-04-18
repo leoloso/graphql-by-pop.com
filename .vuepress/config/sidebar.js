@@ -134,8 +134,8 @@ const docsSidebar = [
     },
 ];
 const tutorialsSidebar = [
-    'cms-agnostic-resolver',
     'localized-newsletter',
+    'cms-agnostic-resolver',
     'filling-void-with-directive',
     'creating-access-control-rule',
 ];
