@@ -16,7 +16,7 @@ Standard operations, such as `not`, `or`, `and`, `if`, `equals`, `isNull`, `spri
 7. ?query=sprintf(%s API is %s, [PoP, cool])
 ```
 
-View query results: <a href="https://nextapi.getpop.org/api/graphql?query=not(true)">query #1</a>, <a href="https://nextapi.getpop.org/api/graphql?query=or([1,0])">query #2</a>, <a href="https://nextapi.getpop.org/api/graphql?query=and([1,0])">query #3</a>, <a href="https://nextapi.getpop.org/api/graphql?query=if(true,Show this text,Hide this text)">query #4</a>, <a href="https://nextapi.getpop.org/api/graphql?query=equals(first text, second text)">query #5</a>, <a href="https://nextapi.getpop.org/api/graphql?query=isNull(),isNull(something)">query #6</a>, <a href="https://nextapi.getpop.org/api/graphql?query=sprintf(%s API is %s, [PoP, cool])">query #7</a>
+[View query results: <a href="https://nextapi.getpop.org/api/graphql?query=not(true)">query #1</a>, <a href="https://nextapi.getpop.org/api/graphql?query=or([1,0])">query #2</a>, <a href="https://nextapi.getpop.org/api/graphql?query=and([1,0])">query #3</a>, <a href="https://nextapi.getpop.org/api/graphql?query=if(true,Show this text,Hide this text)">query #4</a>, <a href="https://nextapi.getpop.org/api/graphql?query=equals(first text, second text)">query #5</a>, <a href="https://nextapi.getpop.org/api/graphql?query=isNull(),isNull(something)">query #6</a>, <a href="https://nextapi.getpop.org/api/graphql?query=sprintf(%s API is %s, [PoP, cool])">query #7</a>]
 
 ## Composable fields
 
@@ -63,7 +63,7 @@ The example below implements the standard GraphQL `skip` directive, however it i
       src
 ```
 
-<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7Cfeaturedimage<skip(if:isNull(featuredimage()))>.src" target="_blank">View query results</a>
+[<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7Cfeaturedimage<skip(if:isNull(featuredimage()))>.src" target="_blank">View query results</a>]
 
 ## Composable directives
 
@@ -127,7 +127,7 @@ In the example below, an array contains strings to translate and the language to
   >
 ```
 
-<a href="https://newapi.getpop.org/api/graphql/?query=echo(%5B%5Btext:%20Hello%20my%20friends,translateTo:%20fr%5D,%5Btext:%20How%20do%20you%20like%20this%20software%20so%20far?,translateTo:%20es%5D,%5D)@translated%3CforEach%3CadvancePointerInArray(path:%20text,appendExpressions:%20%5BtoLang:extract(%value%,translateTo)%5D)%3Ctranslate(from:%20en,to:%20%toLang%,oneLanguagePerField:%20true,override:%20true)%3E%3E%3E" target="_blank">View query results</a>
+[<a href="https://newapi.getpop.org/api/graphql/?query=echo(%5B%5Btext:%20Hello%20my%20friends,translateTo:%20fr%5D,%5Btext:%20How%20do%20you%20like%20this%20software%20so%20far?,translateTo:%20es%5D,%5D)@translated%3CforEach%3CadvancePointerInArray(path:%20text,appendExpressions:%20%5BtoLang:extract(%value%,translateTo)%5D)%3Ctranslate(from:%20en,to:%20%toLang%,oneLanguagePerField:%20true,override:%20true)%3E%3E%3E" target="_blank">View query results</a>]
 
 ## Skip output if null
 
@@ -141,7 +141,7 @@ Exactly the same result above (`<skip(if(isNull(...)))>`) can be accomplished us
       src
 ```
 
-<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7Cfeaturedimage?.src" target="_blank">View query results</a>
+[<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7Cfeaturedimage?.src" target="_blank">View query results</a>]
 
 ## Skip argument names
 
@@ -175,4 +175,4 @@ query=
     >
 ```
 
-View query results: <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(%24postId).date(d/m/Y)%7Ctitle%3Cskip(false)%3E" target="_blank">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(id:%24postId).date(format:d/m/Y)%7Ctitle<skip(if:false)>" target="_blank">query #2</a>
+[View query results: <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(%24postId).date(d/m/Y)%7Ctitle%3Cskip(false)%3E" target="_blank">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(id:%24postId).date(format:d/m/Y)%7Ctitle<skip(if:false)>" target="_blank">query #2</a>]
