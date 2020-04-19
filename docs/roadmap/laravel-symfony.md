@@ -1,3 +1,3 @@
-# Implement adapters for Laravel/Symfony (WIP)
+# Implement adapters for Laravel/Symfony (TBW)
 
 TODO

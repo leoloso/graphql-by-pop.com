@@ -1,3 +1,3 @@
-# Union types (WIP)
+# Union types (TBW)
 
 TODO

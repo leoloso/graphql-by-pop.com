@@ -1,3 +1,3 @@
-# Serverless WordPress (WIP)
+# Serverless WordPress (TBW)
 
 TODO

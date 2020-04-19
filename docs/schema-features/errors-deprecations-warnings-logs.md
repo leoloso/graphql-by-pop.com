@@ -1,3 +1,3 @@
-# Errors, deprecations, warnings and logs (WIP)
+# Errors, deprecations, warnings and logs (TBW)
 
 TODO

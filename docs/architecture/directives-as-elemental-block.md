@@ -1,3 +1,3 @@
-# Directives as elemental blocks (WIP)
+# Directives as elemental blocks (TBW)
 
 TODO

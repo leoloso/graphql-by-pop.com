@@ -1,3 +1,3 @@
-# Multiple endpoints (WIP)
+# Multiple endpoints (TBW)
 
 TODO

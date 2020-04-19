@@ -1,3 +1,3 @@
-# Federation (WIP)
+# Federation (TBW)
 
 TODO

@@ -1,3 +1,3 @@
-# Creating a custom Access Control rule (WIP)
+# Creating a custom Access Control rule (TBW)
 
 TODO

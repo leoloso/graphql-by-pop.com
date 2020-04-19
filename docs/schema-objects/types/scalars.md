@@ -1,3 +1,3 @@
-# Scalar types (WIP)
+# Scalar types (TBW)
 
 TODO

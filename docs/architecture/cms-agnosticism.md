@@ -1,4 +1,4 @@
-# CMS-agnosticism (WIP)
+# CMS-agnosticism (TBW)
 
 TODO
 

@@ -78,7 +78,7 @@ const docsSidebar = [
         children: [
             'going-further/multiple-endpoints',
             'going-further/rest-integration',
-            ['going-further/response-formats', 'Response formats (WIP)'],
+            ['going-further/response-formats', 'Response formats (TBW)'],
         ]
     },
     {
@@ -122,9 +122,9 @@ const docsSidebar = [
             'roadmap/mutations',
             'roadmap/federation',
             'roadmap/tracing',
-            ['roadmap/decoupling-requested-executed-queries', 'Decoupling queries (WIP)'],
+            ['roadmap/decoupling-requested-executed-queries', 'Decoupling queries (TBW)'],
             'roadmap/serverless-wordpress',
-            ['roadmap/laravel-symfony', 'Laravel/Symfony (WIP)'],
+            ['roadmap/laravel-symfony', 'Laravel/Symfony (TBW)'],
         ]
     },
 ];

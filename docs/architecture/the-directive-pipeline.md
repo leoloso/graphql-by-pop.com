@@ -1,3 +1,3 @@
-# The directive pipeline (WIP)
+# The directive pipeline (TBW)
 
 TODO

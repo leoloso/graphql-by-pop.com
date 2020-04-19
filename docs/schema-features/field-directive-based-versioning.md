@@ -1,3 +1,3 @@
-# Field/directive-based versioning (WIP)
+# Field/directive-based versioning (TBW)
 
 TODO

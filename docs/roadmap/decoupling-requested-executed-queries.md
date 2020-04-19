@@ -1,3 +1,3 @@
-# Decoupling requested and executed queries (WIP)
+# Decoupling requested and executed queries (TBW)
 
 TODO

@@ -1,3 +1,3 @@
-# Interface types (WIP)
+# Interface types (TBW)
 
 TODO

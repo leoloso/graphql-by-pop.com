@@ -1,4 +1,4 @@
-# Integrating with REST (WIP)
+# Integrating with REST (TBW)
 
 TODO
 

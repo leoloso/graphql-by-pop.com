@@ -1,4 +1,4 @@
-# Extensibility (WIP)
+# Extensibility (TBW)
 
 TODO
 

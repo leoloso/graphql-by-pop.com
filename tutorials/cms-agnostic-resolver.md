@@ -1,3 +1,3 @@
-# Implementing a CMS-agnostic resolver (WIP)
+# Implementing a CMS-agnostic resolver (TBW)
 
 TODO

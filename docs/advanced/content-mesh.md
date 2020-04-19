@@ -1,3 +1,3 @@
-# Content mesh (WIP)
+# Content mesh (TBW)
 
 TODO

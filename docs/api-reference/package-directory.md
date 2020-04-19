@@ -1,3 +1,3 @@
-# Package directory (WIP)
+# Package directory (TBW)
 
 TODO

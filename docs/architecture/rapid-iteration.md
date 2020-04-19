@@ -1,4 +1,4 @@
-# Rapid Iteration on the Schema (WIP)
+# Rapid Iteration on the Schema (TBW)
 
 TODO
 

@@ -1,3 +1,3 @@
-# Internal caching (WIP)
+# Internal caching (TBW)
 
 TODO

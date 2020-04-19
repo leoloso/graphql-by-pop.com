@@ -1,3 +1,3 @@
-# Intro to Extended GraphQL (WIP)
+# Intro to Extended GraphQL (TBW)
 
 TODO

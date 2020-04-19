@@ -1,4 +1,4 @@
-# Directives (WIP)
+# Directives (TBW)
 
 TODO
 

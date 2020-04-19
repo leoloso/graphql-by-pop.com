@@ -17,7 +17,10 @@ You can play with it through the following clients:
 
 ## About this website
 
-This website is currently a work in progress. To make it easier to know which pages are already complete, the uncomplete pages will have "(WIP)" on their names.
+This website is currently a work in progress. To make it easier to know which pages have already been completed, all other pages have a temporary label on their names:
+
+- Empty pages have "(TBW)" (To Be Written)
+- Uncomplete pages have "(WIP)" (Work In Progress)
 
 Status (to do/in progress/done) for the different pages is managed through these projects:
 

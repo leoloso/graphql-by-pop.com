@@ -1,3 +1,3 @@
-# The GraphQL superset (WIP)
+# The GraphQL superset (TBW)
 
 TODO

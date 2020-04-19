@@ -1,3 +1,3 @@
-# Public/private schema mode (WIP)
+# Public/private schema mode (TBW)
 
 TODO
