@@ -10,17 +10,15 @@ const docsSidebar = [
         ]
     },
     {
-        title: 'Schema Features',
+        title: 'Dynamic Schema',
         children: [
-            'schema-features/dynamic-schema',
-            'schema-features/multiple-resolvers',
-            'schema-features/field-directive-based-versioning',
-            'schema-features/access-control',
-            'schema-features/public-private-schema-mode',
-            'schema-features/backend-for-frontends',
-            'schema-features/automatic-namespacing',
-            'schema-features/errors-deprecations-warnings-logs',
-            'schema-features/persisted-fragments-and-queries',
+            'dynamic-schema/intro',
+            'dynamic-schema/multiple-resolvers',
+            'dynamic-schema/field-directive-based-versioning',
+            'dynamic-schema/access-control',
+            'dynamic-schema/public-private-schema-mode',
+            'dynamic-schema/backend-for-frontends',
+            'dynamic-schema/automatic-namespacing',
         ]
     },
     {
@@ -52,6 +50,13 @@ const docsSidebar = [
             ['caching/http-caching', 'HTTP caching'],
             'caching/internal-caching',
             'caching/schema-caching',
+        ]
+    },
+    {
+        title: 'Operational',
+        children: [
+            'operational/errors-deprecations-warnings-logs',
+            'operational/persisted-fragments-and-queries',
         ]
     },
     {
