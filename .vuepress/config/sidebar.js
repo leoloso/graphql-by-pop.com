@@ -12,7 +12,7 @@ const docsSidebar = [
     {
         title: 'Dynamic Schema',
         children: [
-            'dynamic-schema/intro',
+            ['dynamic-schema/intro', 'Intro'],
             'dynamic-schema/multiple-resolvers',
             'dynamic-schema/field-directive-based-versioning',
             'dynamic-schema/access-control',
@@ -24,6 +24,7 @@ const docsSidebar = [
     {
         title: 'Schema Objects',
         children: [
+            // ['schema-objects/intro', 'Intro to Schema Objects (TBW)'],
             'schema-objects/schema',
             'schema-objects/types/intro',
             'schema-objects/types/objects',
@@ -38,6 +39,7 @@ const docsSidebar = [
     {
         title: 'Security',
         children: [
+            // 'security/intro',
             'security/authentication',
             'security/authorization',
             'security/validation',
@@ -47,6 +49,7 @@ const docsSidebar = [
     {
         title: 'Caching',
         children: [
+            // 'caching/intro',
             ['caching/http-caching', 'HTTP Caching'],
             'caching/internal-caching',
             'caching/schema-caching',
@@ -55,23 +58,25 @@ const docsSidebar = [
     {
         title: 'Operational',
         children: [
+            // ['operational/intro', 'Intro to Operational (TBW)'],
             'operational/errors-deprecations-warnings-logs',
             'operational/persisted-fragments-and-queries',
         ]
     },
     {
-        title: 'Advanced',
+        title: 'External Services',
         children: [
-            'advanced/interact-apis',
-            'advanced/gateway',
-            'advanced/content-mesh',
-            'advanced/normalized-data',
+            // 'external-services/intro',
+            'external-services/interact-apis',
+            'external-services/gateway',
+            'external-services/content-mesh',
         ]
     },
     {
         title: 'Extended GraphQL',
         children: [
-            'extended/intro',
+            // ['extended/intro', 'Intro to Extended GraphQL (TBW)'],
+            ['extended/intro', 'Intro (TBW)'],
             'extended/full-schema',
             'extended/pql',
             'extended/pql-language-features',
@@ -81,14 +86,18 @@ const docsSidebar = [
     {
         title: 'Going Further',
         children: [
+            // ['going-further/intro', 'Intro to Going Further (TBW)'],
+            ['going-further/intro', 'Intro (TBW)'],
             'going-further/multiple-endpoints',
             'going-further/rest-integration',
             ['going-further/response-formats', 'Response Formats (TBW)'],
+            'going-further/normalized-data',
         ]
     },
     {
         title: 'Architecture',
         children: [
+            ['architecture/intro', 'Intro (TBW)'],
             'architecture/symfony-components',
             'architecture/server-side-components',
             'architecture/graphql-superset',
@@ -122,6 +131,7 @@ const docsSidebar = [
     {
         title: 'Roadmap',
         children: [
+            ['roadmap/intro', 'Intro (TBW)'],
             'roadmap/convention-over-configuration',
             'roadmap/scaffolding-commands',
             'roadmap/mutations',
