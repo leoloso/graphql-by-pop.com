@@ -109,7 +109,7 @@ const docsSidebar = [
             'architecture/code-first',
             'architecture/rapid-iteration',
             'architecture/cms-agnosticism',
-            'architecture/converting-from-pql-to-gql',
+            'architecture/converting-from-gql-to-pql',
         ]
     },
     {
