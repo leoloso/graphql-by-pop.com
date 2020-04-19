@@ -142,6 +142,7 @@ const docsSidebar = [
     },
 ];
 const guidesSidebar = [
+    ['intro', 'Intro'],
     'localized-newsletter',
     'building-cms-agnostic-api',
     'filling-void-with-directive',

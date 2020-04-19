@@ -13,7 +13,7 @@ export default ({
         },
         {
             path: '/guides/',
-            redirect: `/guides/localized-newsletter.html`
+            redirect: `/guides/intro.html`
         },
     ])
 }
