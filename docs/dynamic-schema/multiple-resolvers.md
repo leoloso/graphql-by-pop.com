@@ -1,4 +1,4 @@
-# Multiple Resolvers (WIP)
+# (*) Multiple Resolvers
 
 Fields and directives can be satisfied by many resolvers, and on runtime it is decided which resolver will handle the field or directive.
 

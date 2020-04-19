@@ -1,3 +1,3 @@
-# Enum Types (TBW)
+# (x) Enum Types
 
 TODO

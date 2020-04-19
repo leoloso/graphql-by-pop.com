@@ -1,4 +1,4 @@
-# Automatic Namespacing (WIP)
+# (*) Automatic Namespacing
 
 Namespaces ([proposed to be added to the GraphQL spec](https://github.com/graphql/graphql-spec/issues/163)) help manage the complexity of the schema. This can avoid different types having the same name, which can happen when embedding components from a 3rd party.
 

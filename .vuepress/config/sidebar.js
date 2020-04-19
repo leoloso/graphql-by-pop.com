@@ -24,7 +24,7 @@ const docsSidebar = [
     {
         title: 'Schema Objects',
         children: [
-            // ['schema-objects/intro', 'Intro to Schema Objects (TBW)'],
+            // ['schema-objects/intro', '(x) Intro to Schema Objects'],
             'schema-objects/schema',
             'schema-objects/types/intro',
             'schema-objects/types/objects',
@@ -58,7 +58,7 @@ const docsSidebar = [
     {
         title: 'Operational',
         children: [
-            // ['operational/intro', 'Intro to Operational (TBW)'],
+            // ['operational/intro', '(x) Intro to Operational'],
             'operational/errors-deprecations-warnings-logs',
             'operational/persisted-fragments-and-queries',
         ]
@@ -75,8 +75,8 @@ const docsSidebar = [
     {
         title: 'Extended GraphQL',
         children: [
-            // ['extended/intro', 'Intro to Extended GraphQL (TBW)'],
-            ['extended/intro', 'Intro (TBW)'],
+            // ['extended/intro', '(x) Intro to Extended GraphQL'],
+            ['extended/intro', '(x) Intro'],
             'extended/full-schema',
             'extended/pql',
             'extended/pql-language-features',
@@ -86,18 +86,18 @@ const docsSidebar = [
     {
         title: 'Going Further',
         children: [
-            // ['going-further/intro', 'Intro to Going Further (TBW)'],
-            ['going-further/intro', 'Intro (TBW)'],
+            // ['going-further/intro', '(x) Intro to Going Further'],
+            ['going-further/intro', '(x) Intro'],
             'going-further/multiple-endpoints',
             'going-further/rest-integration',
-            ['going-further/response-formats', 'Response Formats (TBW)'],
+            ['going-further/response-formats', '(x) Response Formats'],
             'going-further/normalized-data',
         ]
     },
     {
         title: 'Architecture',
         children: [
-            ['architecture/intro', 'Intro (TBW)'],
+            ['architecture/intro', '(x) Intro'],
             'architecture/symfony-components',
             'architecture/server-side-components',
             'architecture/graphql-superset',
@@ -130,15 +130,15 @@ const docsSidebar = [
     {
         title: 'Roadmap',
         children: [
-            ['roadmap/intro', 'Intro (TBW)'],
+            ['roadmap/intro', '(x) Intro'],
             'roadmap/convention-over-configuration',
             'roadmap/scaffolding-commands',
             'roadmap/mutations',
             'roadmap/federation',
             'roadmap/tracing',
-            ['roadmap/decoupling-requested-executed-queries', 'Decoupling Queries (TBW)'],
+            ['roadmap/decoupling-requested-executed-queries', '(x) Decoupling Queries'],
             'roadmap/serverless-wordpress',
-            ['roadmap/laravel-symfony', 'Laravel/Symfony (TBW)'],
+            ['roadmap/laravel-symfony', '(x) Laravel/Symfony'],
         ]
     },
 ];

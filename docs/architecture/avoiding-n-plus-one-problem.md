@@ -1,4 +1,4 @@
-# Avoiding the N+1 Problem (WIP)
+# (*) Avoiding the N+1 Problem
 
 The “N+1 problem” is completely avoided already by architectural design. It doesn't matter how many levels deep the graph is, it will resolve fast.
 

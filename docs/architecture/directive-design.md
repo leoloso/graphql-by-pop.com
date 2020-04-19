@@ -1,4 +1,4 @@
-# Directive Design (WIP)
+# (*) Directive Design
 
 TODO
 

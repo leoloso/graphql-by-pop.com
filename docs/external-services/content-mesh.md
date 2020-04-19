@@ -1,4 +1,4 @@
-# Content Mesh (WIP)
+# (*) Content Mesh
 
 The example below defines and accesses a list of all services required by the application:
 

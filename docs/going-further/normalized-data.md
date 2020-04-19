@@ -1,4 +1,4 @@
-# Normalized Data (WIP)
+# (*) Normalized Data
 
 Just by removing the `"/graphql"` bit from the URL, the response is normalized, making its output size greatly reduced when a same field is fetched multiple times.
 

@@ -1,4 +1,4 @@
-# Integrating with REST (WIP)
+# (*) Integrating with REST
 
 Get the best from both GraphQL and REST: query resources based on endpoint, with no under/overfetching.
 

@@ -1,4 +1,4 @@
-# Mutations (WIP)
+# (*) Mutations
 
 The query will be able to place mutations anywhere (not only on the root) and these will be integrated to the graph: The mutation result can, itself, be input to another field, be added to a nested subquery, and so on.
 

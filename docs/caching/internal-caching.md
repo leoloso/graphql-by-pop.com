@@ -1,3 +1,3 @@
-# Internal Caching (TBW)
+# (x) Internal Caching
 
 TODO

@@ -1,3 +1,3 @@
-# Convention over Configuration (TBW)
+# (x) Convention over Configuration
 
 TODO

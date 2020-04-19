@@ -1,4 +1,4 @@
-# Field/Directive-based Versioning (WIP)
+# (*) Field/Directive-based Versioning
 
 Fields and directives can be independently versioned, and the version to use can be specified in the query through the field/directive argument `versionConstraint`. 
 

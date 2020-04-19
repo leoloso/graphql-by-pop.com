@@ -1,4 +1,4 @@
-# Types (WIP)
+# (*) Types
 
 TODO
 

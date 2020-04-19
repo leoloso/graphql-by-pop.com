@@ -1,3 +1,3 @@
-# Public/Private Schema Mode (TBW)
+# (x) Public/Private Schema Mode
 
 TODO

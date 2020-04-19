@@ -1,3 +1,3 @@
-# Intro to the Operational Use of GraphQL by PoP (TBW)
+# (x) Intro to the Operational Use of GraphQL by PoP
 
 TODO

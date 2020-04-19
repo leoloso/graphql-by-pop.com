@@ -1,3 +1,3 @@
-# Converting from PQL to GQL (TBW)
+# (x) Converting from PQL to GQL
 
 TODO

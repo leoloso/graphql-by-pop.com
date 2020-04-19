@@ -1,4 +1,4 @@
-# Printing the Response in Other Formats (WIP)
+# (*) Printing the Response in Other Formats
 
 Replace `"/graphql"` from the URL to output the data in a different format: XML or as properties, or any custom one (implementation takes very few lines of code).
 

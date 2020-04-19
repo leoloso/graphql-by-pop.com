@@ -1,3 +1,3 @@
-# Directory Structure (TBW)
+# (x) Directory Structure
 
 TODO

@@ -1,4 +1,4 @@
-# Errors, Deprecations, Warnings and Logs (WIP)
+# (*) Errors, Deprecations, Warnings and Logs
 
 Issues are handled differently depending on their severity:
 

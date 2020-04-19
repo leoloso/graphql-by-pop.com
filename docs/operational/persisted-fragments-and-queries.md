@@ -1,4 +1,4 @@
-# Persisted Fragments and Persisted Queries (WIP)
+# (*) Persisted Fragments and Persisted Queries
 
 TODO
 
