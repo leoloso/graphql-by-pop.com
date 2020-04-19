@@ -1,4 +1,4 @@
-# Printing the response in other formats (TBW)
+# Printing the Response in Other Formats (TBW)
 
 TODO
 

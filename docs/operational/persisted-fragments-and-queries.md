@@ -1,4 +1,4 @@
-# Persisted fragments and queries (TBW)
+# Persisted Fragments and Persisted Queries (TBW)
 
 TODO
 

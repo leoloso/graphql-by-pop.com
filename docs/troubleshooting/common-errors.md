@@ -1,3 +1,3 @@
-# Common errors (TBW)
+# Common Errors (TBW)
 
 TODO

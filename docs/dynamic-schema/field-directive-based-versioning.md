@@ -1,3 +1,3 @@
-# Field/directive-based versioning (TBW)
+# Field/Directive-based Versioning (TBW)
 
 TODO

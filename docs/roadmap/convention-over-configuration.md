@@ -1,3 +1,3 @@
-# Convention over configuration (TBW)
+# Convention over Configuration (TBW)
 
 TODO

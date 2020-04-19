@@ -1,3 +1,3 @@
-# Schema caching (TBW)
+# Schema Caching (TBW)
 
 TODO

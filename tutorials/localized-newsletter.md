@@ -1,4 +1,4 @@
-# Sending a localized newsletter, user by user
+# Sending a Localized Newsletter, User by User
 
 This tutorial will make use of the [PQL](../docs/extended/pql) to satisfy an extensive functionality in a single query.
 

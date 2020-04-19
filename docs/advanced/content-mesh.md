@@ -1,3 +1,3 @@
-# Content mesh (TBW)
+# Content Mesh (TBW)
 
 TODO

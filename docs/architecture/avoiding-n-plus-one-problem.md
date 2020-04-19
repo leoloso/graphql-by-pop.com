@@ -1,3 +1,3 @@
-# Avoiding the N+1 problem (TBW)
+# Avoiding the N+1 Problem (TBW)
 
 TODO

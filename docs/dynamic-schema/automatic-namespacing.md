@@ -1,4 +1,4 @@
-# Automatic namespacing (TBW)
+# Automatic Namespacing (TBW)
 
 TODO
 

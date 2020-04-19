@@ -47,7 +47,7 @@ const docsSidebar = [
     {
         title: 'Caching',
         children: [
-            ['caching/http-caching', 'HTTP caching'],
+            ['caching/http-caching', 'HTTP Caching'],
             'caching/internal-caching',
             'caching/schema-caching',
         ]
@@ -83,7 +83,7 @@ const docsSidebar = [
         children: [
             'going-further/multiple-endpoints',
             'going-further/rest-integration',
-            ['going-further/response-formats', 'Response formats (TBW)'],
+            ['going-further/response-formats', 'Response Formats (TBW)'],
         ]
     },
     {
@@ -95,7 +95,7 @@ const docsSidebar = [
             'architecture/package-hierarchy',
             'architecture/dataloading-engine',
             'architecture/avoiding-n-plus-one-problem',
-            'architecture/the-directive-pipeline',
+            'architecture/directive-pipeline',
             'architecture/directives-as-elemental-block',
             'architecture/extensibility',
             'architecture/code-first',
@@ -127,7 +127,7 @@ const docsSidebar = [
             'roadmap/mutations',
             'roadmap/federation',
             'roadmap/tracing',
-            ['roadmap/decoupling-requested-executed-queries', 'Decoupling queries (TBW)'],
+            ['roadmap/decoupling-requested-executed-queries', 'Decoupling Queries (TBW)'],
             'roadmap/serverless-wordpress',
             ['roadmap/laravel-symfony', 'Laravel/Symfony (TBW)'],
         ]

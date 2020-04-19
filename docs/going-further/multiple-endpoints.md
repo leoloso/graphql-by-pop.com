@@ -1,3 +1,3 @@
-# Multiple endpoints (TBW)
+# Multiple Endpoints (TBW)
 
 TODO

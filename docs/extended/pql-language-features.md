@@ -1,4 +1,4 @@
-# PQL language features
+# PQL Language Features
 
 PQL adds several language features over GQL. This is a summary of them.
 

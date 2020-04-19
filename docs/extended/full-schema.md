@@ -1,3 +1,3 @@
-# The full schema (TBW)
+# The Full Schema (TBW)
 
 TODO

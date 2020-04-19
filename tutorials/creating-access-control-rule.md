@@ -1,3 +1,3 @@
-# Creating a custom Access Control rule (TBW)
+# Creating a Custom Access Control Rule (TBW)
 
 TODO

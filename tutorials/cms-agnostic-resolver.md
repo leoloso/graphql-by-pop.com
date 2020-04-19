@@ -1,3 +1,3 @@
-# Implementing a CMS-agnostic resolver (TBW)
+# Implementing a CMS-agnostic Resolver (TBW)
 
 TODO

@@ -1,3 +1,3 @@
-# Interface types (TBW)
+# Interface Types (TBW)
 
 TODO

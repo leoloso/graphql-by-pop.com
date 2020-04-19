@@ -1,3 +1,3 @@
-# Package hierarchy (TBW)
+# Package Hierarchy (TBW)
 
 TODO

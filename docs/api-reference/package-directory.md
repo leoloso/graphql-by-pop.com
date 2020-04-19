@@ -1,3 +1,3 @@
-# Package directory (TBW)
+# Package Directory (TBW)
 
 TODO

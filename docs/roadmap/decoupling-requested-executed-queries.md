@@ -1,3 +1,3 @@
-# Decoupling requested and executed queries (TBW)
+# Decoupling Requested and Executed Queries (TBW)
 
 TODO

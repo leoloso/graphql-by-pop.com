@@ -1,3 +1,3 @@
-# Object types (TBW)
+# Object Types (TBW)
 
 TODO

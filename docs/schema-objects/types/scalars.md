@@ -1,3 +1,3 @@
-# Scalar types (TBW)
+# Scalar Types (TBW)
 
 TODO

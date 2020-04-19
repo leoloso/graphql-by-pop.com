@@ -1,3 +1,3 @@
-# Server-side components (TBW)
+# Server-side Components (TBW)
 
 TODO

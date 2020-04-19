@@ -1,4 +1,4 @@
-# PQL syntax
+# PQL Syntax
 
 [Similar to GraphQL](https://graphql.org/learn/queries/#fields), the query describes a set of “fields”, where each field can contain the following elements:
 

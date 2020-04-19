@@ -1,3 +1,3 @@
-# Union types (TBW)
+# Union Types (TBW)
 
 TODO
