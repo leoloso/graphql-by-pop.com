@@ -108,7 +108,6 @@ const docsSidebar = [
             'architecture/extensibility',
             'architecture/code-first',
             'architecture/rapid-iteration',
-            'architecture/cms-agnosticism',
             'architecture/converting-from-gql-to-pql',
         ]
     },
@@ -144,7 +143,7 @@ const docsSidebar = [
 ];
 const tutorialsSidebar = [
     'localized-newsletter',
-    'cms-agnostic-resolver',
+    'building-cms-agnostic-api',
     'filling-void-with-directive',
     'creating-access-control-rule',
 ];
