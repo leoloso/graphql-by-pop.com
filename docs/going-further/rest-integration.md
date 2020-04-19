@@ -1,6 +1,11 @@
 # (*) Integrating with REST
 
-Get the best from both GraphQL and REST: query resources based on endpoint, with no under/overfetching.
+By installing the [REST package](https://github.com/getpop/api-rest), the GraphQL server can also satisfy REST endpoints, from a single source of truth. Check out these example links:
+
+- [List of posts](https://newapi.getpop.org/posts/api/rest/)
+- [Single post](https://newapi.getpop.org/posts/cope-with-wordpress-post-demo-containing-plenty-of-blocks/api/rest/)
+
+This package deliver the best from both GraphQL and REST, allowing to query resources based on endpoint, with no under/overfetching.
 
 ```less
 // Query data for a single resource
