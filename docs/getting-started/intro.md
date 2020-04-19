@@ -22,7 +22,7 @@ This website is currently a work in progress. To make it easier to know which pa
 - Pages with some content, but not yet finished, have `"(*)"`
 - Pages with no content have `"(x)"`
 
-Status (to do/in progress/done) for the different pages is managed through these projects:
+<!-- Status (to do/in progress/done) for the different pages is managed through these projects:
 
 - [Complete docs](https://github.com/getpop/graphql-by-pop.com/projects/1)
-- [Complete guides](https://github.com/getpop/graphql-by-pop.com/projects/3)
+- [Complete guides](https://github.com/getpop/graphql-by-pop.com/projects/3) -->
