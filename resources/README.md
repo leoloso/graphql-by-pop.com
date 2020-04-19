@@ -16,9 +16,9 @@ Ongoing series of articles on conceptualizing, designing and implementing a Grap
 4. [Speeding-up changes to the GraphQL schema](https://blog.logrocket.com/speeding-up-changes-to-the-graphql-schema/)
 5. [Versioning fields in GraphQL](https://blog.logrocket.com/versioning-fields-graphql/)
 
-### CMS-agnosticism design
+<!-- ### CMS-agnosticism design
 
 Strategy used to make GraphQL by PoP be CMS-agnostic (the article is based on abstracting WordPress code):
 
 1. [Abstracting WordPress Code To Reuse With Other CMSs: Concepts (Part 1)](https://www.smashingmagazine.com/2019/11/abstracting-wordpress-code-cms-concepts/)
-2. [Abstracting WordPress Code To Reuse With Other CMSs: Implementation (Part 2)](https://www.smashingmagazine.com/2019/11/abstracting-wordpress-code-reuse-with-other-cms-implementation/)
+2. [Abstracting WordPress Code To Reuse With Other CMSs: Implementation (Part 2)](https://www.smashingmagazine.com/2019/11/abstracting-wordpress-code-reuse-with-other-cms-implementation/) -->
