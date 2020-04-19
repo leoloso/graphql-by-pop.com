@@ -25,4 +25,4 @@ This website is currently a work in progress. To make it easier to know which pa
 Status (to do/in progress/done) for the different pages is managed through these projects:
 
 - [Complete docs](https://github.com/getpop/graphql-by-pop.com/projects/1)
-- [Complete tutorials](https://github.com/getpop/graphql-by-pop.com/projects/3)
+- [Complete guides](https://github.com/getpop/graphql-by-pop.com/projects/3)

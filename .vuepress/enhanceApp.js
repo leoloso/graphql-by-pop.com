@@ -12,8 +12,8 @@ export default ({
             redirect: `/docs/getting-started/intro.html`
         },
         {
-            path: '/tutorials/',
-            redirect: `/tutorials/localized-newsletter.html`
+            path: '/guides/',
+            redirect: `/guides/localized-newsletter.html`
         },
     ])
 }

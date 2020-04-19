@@ -1,6 +1,6 @@
 # Sending a Localized Newsletter, User by User
 
-This tutorial will make use of the [PQL](../docs/extended/pql) to satisfy an extensive functionality in a single query.
+This guide will make use of the [PQL](../docs/extended/pql) to satisfy an extensive functionality in a single query.
 
 Let's create an automated email-sending service to distribute blog posts. All the data comes from 3 separate sources:
 
@@ -141,7 +141,7 @@ getJSON("https://newapi.getpop.org/wp-json/newsletter/v1/subscriptions")@userLis
 [<a href="https://newapi.getpop.org/api/graphql/?postId=1&query=post($postId)@post.content|date(d/m/Y)@date,getJSON(%22https://newapi.getpop.org/wp-json/newsletter/v1/subscriptions%22)@userList">View query results</a>]
 
 ::: tip
-At any time, you can review the documentation for the fields/directives employed in this tutorial, by querying the [fullSchema](https://newapi.getpop.org/api/graphql/?query=fullSchema).
+At any time, you can review the documentation for the fields/directives employed in this guide, by querying the [fullSchema](https://newapi.getpop.org/api/graphql/?query=fullSchema).
 :::
 
 ## Calculating the list of unique languages
@@ -220,7 +220,7 @@ The string can't have character `"&"` in it, or it will create trouble when appe
 :::
 
 ::: tip
-The PoP API (over which GraphQL by PoP is based) can also satisfy REST, through the [REST API package](https://github.com/getpop/api-rest). That's the case with the [REST endpoint used in this tutorial](https://newapi.getpop.org/users/api/rest/).
+The PoP API (over which GraphQL by PoP is based) can also satisfy REST, through the [REST API package](https://github.com/getpop/api-rest). That's the case with the [REST endpoint used in this guide](https://newapi.getpop.org/users/api/rest/).
 :::
 
 Having generated the URL, we execute `getJSON` on it:
@@ -616,7 +616,7 @@ self.
 
 ## Generating and sending the email
 
-We are almost there! All that there is left to do is to generate the content for all the emails to send: arrays containing properties `content`, `to` and `subject`, and then this array is passed to directive `<sendByEmail>` which, voilà, does what it must do! (Or actually not: Since we don't want spam, the email sending is actually disabled... We just print the email data instead for this tutorial)
+We are almost there! All that there is left to do is to generate the content for all the emails to send: arrays containing properties `content`, `to` and `subject`, and then this array is passed to directive `<sendByEmail>` which, voilà, does what it must do! (Or actually not: Since we don't want spam, the email sending is actually disabled... We just print the email data instead for this guide)
 
 ```less
 self.

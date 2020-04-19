@@ -4,8 +4,8 @@ module.exports = [
         link: '/docs/'
     },
     {
-        text: 'Tutorials',
-        link: '/tutorials/'
+        text: 'Guides',
+        link: '/guides/'
     },
     {
         text: 'Resources',

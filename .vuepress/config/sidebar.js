@@ -141,7 +141,7 @@ const docsSidebar = [
         ]
     },
 ];
-const tutorialsSidebar = [
+const guidesSidebar = [
     'localized-newsletter',
     'building-cms-agnostic-api',
     'filling-void-with-directive',
@@ -149,5 +149,5 @@ const tutorialsSidebar = [
 ];
 module.exports = {
     '/docs/': docsSidebar,
-    '/tutorials/': tutorialsSidebar,
+    '/guides/': guidesSidebar,
 }

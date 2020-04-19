@@ -2,4 +2,4 @@
 https://graphql-by-pop.netlify.com/* https://graphql-by-pop.com/:splat 301!
 # Redirects defined in enhanceApp.js
 https://graphql-by-pop.com/docs/ https://graphql-by-pop.com/docs/getting-started/intro.html
-https://graphql-by-pop.com/tutorials/ https://graphql-by-pop.com/tutorials/localized-newsletter.html
+https://graphql-by-pop.com/guides/ https://graphql-by-pop.com/guides/localized-newsletter.html
