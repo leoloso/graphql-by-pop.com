@@ -125,7 +125,7 @@ These are the advantages and disadvantages of making the API be CMS-agnostic:
 - Code becomes more verbose
 - Longer execution time from added layers of code
 
-## Code Examples
+## Code implementations
 
 Let's proceed to code an API using the strategies to make it CMS-agnostic. The initial CMS will be WordPress, and the produced code must deal with WordPress only through CMS-specific packages.
 
