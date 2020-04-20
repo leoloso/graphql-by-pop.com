@@ -1,6 +1,8 @@
 # (*) Directive Design
 
-TODO
+Directives play an important role: they allow to implement those features which are not natively-supported by the [GraphQL spec](https://spec.graphql.org/) or by the GraphQL server itself. Directives can then help fill the void in terms of functionality, so that the API can satisfy its requirements, either known or unknown ones.
+
+For this reason, directives are an extremely important element within the foundations of the GraphQL server. GraphQL by PoP relies on a sound and solid architectural design for directives, which enables it to become both extensible and powerful.
 
 ## Directive as Foundational Blocks
 
