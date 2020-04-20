@@ -81,6 +81,7 @@ const docsSidebar = [
             'extended/gateway',
             'extended/content-mesh',
             'extended/persisted-fragments-and-queries',
+            'extended/granular-feedback',
         ]
     },
     {
