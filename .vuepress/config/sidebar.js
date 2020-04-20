@@ -62,6 +62,7 @@ const docsSidebar = [
             // ['operational/intro', '(x) Intro to Operational'],
             'operational/errors-deprecations-warnings-logs',
             'operational/persisted-fragments-and-queries',
+            'operational/tracing',
         ]
     },
     {
@@ -135,7 +136,6 @@ const docsSidebar = [
             'roadmap/scaffolding-commands',
             'roadmap/mutations',
             'roadmap/federation',
-            'roadmap/tracing',
             ['roadmap/decoupling-requested-executed-queries', '(x) Decoupling Queries'],
             'roadmap/serverless-wordpress',
             ['roadmap/laravel-symfony', '(x) Laravel/Symfony'],
