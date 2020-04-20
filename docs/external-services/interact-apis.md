@@ -4,10 +4,10 @@ TODO
 
 ## Interact with APIs from the back-end
 
-Example calling the Google Translate API from the back-end, as coded within directive `<translate>`:
+Example calling the Google Translate API from the back-end, as coded within directive `@translate`:
 
 ```less
-//1. <translate> calls the Google Translate API
+//1. @translate calls the Google Translate API
 /?query=
   posts(limit:5).
     title|

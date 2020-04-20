@@ -12,7 +12,7 @@ The response will contain a `Cache-Control` header with the `max-age` value set 
 
 ## How it works
 
-A directive `<cacheControl>` is added to the [directive pipeline](../architecture/the-directive-pipeline.html) for all fields. This directive is configured a `max-age` value for each field, and adds a `Cache-Control` header to the response with the lowest `max-age` value from all the requested fields in the query, or `no-store` if any field has `max-age`: 0.
+A directive `@cacheControl` is added to the [directive pipeline](../architecture/the-directive-pipeline.html) for all fields. This directive is configured a `max-age` value for each field, and adds a `Cache-Control` header to the response with the lowest `max-age` value from all the requested fields in the query, or `no-store` if any field has `max-age`: 0.
 
 ## Examples
 
@@ -74,7 +74,7 @@ If the response is cacheable, but we need to fetch a fresh response, we can avoi
 
 [<a href="https://newapi.getpop.org/api/graphql/?query=time|echo(Hello+world!)|posts.title">View query results</a>]
 
-2. Override the default `maxAge` configuration for a field, by adding argument `maxAge: 0` to directive `<cacheControl>` on any field in the query:
+2. Override the default `maxAge` configuration for a field, by adding argument `maxAge: 0` to directive `@cacheControl` on any field in the query:
 
 ```less
 /?query=
