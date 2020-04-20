@@ -52,7 +52,7 @@ const docsSidebar = [
         children: [
             // 'caching/intro',
             ['caching/http-caching', 'HTTP Caching'],
-            'caching/internal-caching',
+            'caching/execution-caching',
             'caching/schema-caching',
         ]
     },

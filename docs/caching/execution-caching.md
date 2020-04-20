@@ -1,4 +1,4 @@
-# (*) Internal Caching
+# (*) Execution Caching
 
 The `@cache` directive enables to cache the result of a heavy-to-compute operation. The first time the field is resolved, the `@cache` directive will save the value in disk or memory (Redis, Memcached), either with an expiry date or not, and from then on whenever querying this field the cached value will be retrieved and the operation will not be performed.
 
