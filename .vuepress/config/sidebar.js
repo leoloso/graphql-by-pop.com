@@ -60,7 +60,7 @@ const docsSidebar = [
         title: 'Operational',
         children: [
             // ['operational/intro', '(x) Intro to Operational'],
-            'operational/errors-deprecations-warnings-logs',
+            'operational/proactive-feedback',
             'operational/persisted-fragments-and-queries',
             'operational/tracing',
             'operational/export',
