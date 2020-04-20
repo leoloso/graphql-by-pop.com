@@ -104,7 +104,7 @@ const docsSidebar = [
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
             'architecture/dataloading-engine',
-            'architecture/avoiding-n-plus-one-problem',
+            'architecture/suppressing-n-plus-one-problem',
             'architecture/directive-design',
             'architecture/extensibility',
             'architecture/code-first',

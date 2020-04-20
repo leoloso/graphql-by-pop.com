@@ -1,6 +1,6 @@
-# Avoiding the N+1 Problem
+# Suppressing the N+1 Problem
 
-Let's learn how GraphQL by PoP avoids the "N+1 problem" already by architectural design.
+Let's learn how GraphQL by PoP completely avoids the "N+1 problem" already by architectural design.
 
 ## What is the "N+1 problem"
 
@@ -55,9 +55,9 @@ After noticing this behaviour, the "N+1 problem" can easily be considered GraphQ
 
 ## General solution to the "N+1 problem"
 
-The solution to the "N+1 problem" was first provided by Facebook through its utility called [DataLoader](https://github.com/graphql/dataloader). Its strategy is very simple: defer resolving segments of the query until a later stage, in which all of the objects of the same kind can be resolved all together, in a single query. This strategy, called "batching", effectively solves the "N+1" problem.
+The standard solution to the "N+1 problem" was first provided by the utility [DataLoader](https://github.com/graphql/dataloader). Its strategy is very simple: defer resolving segments of the query until a later stage, in which all of the objects of the same kind can be resolved all together, in a single query. This strategy, called "batching", effectively solves the "N+1" problem.
 
-In addition, DataLoader caches objects after retrieving them, so that if a subsequent query needs to load an already-loaded object, it can skip execution and retrieve the object from the cache instead. This strategy, which is called "caching" (not surprisingly!), is mostly an optimization on top of "batching".
+In addition, DataLoader caches objects after retrieving them, so that if a subsequent query needs to load an already-loaded object, it can skip execution and retrieve the object from the cache instead. This strategy, which is called "caching", is mostly an optimization on top of "batching".
 
 ## Problems with the "batching/deferred" solution
 
@@ -67,21 +67,21 @@ Technically speaking, there is no problem whatsoever with the "batching" or "def
 
 The problem, though, is that this strategy is an afterthought: the developer may first implement the server and then, noticing how slow it is to resolve the queries, will decide to introduce the deferring mechanism. Hence, implementing the resolvers may involve some faux steps, adding friction to the development process. In addition, since the developer must understand how the "deferred" mechanism works, it makes its implementation more complex than it could otherwise be.
 
-This problem doesn't lie in the strategy itself, but in having the GraphQL server offering this functionality as an add-on, even though, without it, querying may be so slow as to render GraphQL pretty much useless (as mentioned earlier on).
+This problem doesn't lie in the strategy itself, but in having the GraphQL server offering this functionality as an add-on, even though, without it, querying may be so slow as to render GraphQL pretty much useless.
 
 The solution to this problem is, then, straightforward: the "deferred" strategy should not be an add-on but baked-in the GraphQL server itself. Instead of having 2 query execution strategies, "normal" and "deferred", there should only be only 1, "deferred". And the GraphQL server must execute the "deferred" mechanism even though the developer implements the resolver the "normal" way (in other words, the GraphQL server takes care of the extra complexity, not the developer).
 
-That is exactly what GraphQL by PoP does. How does it work?
+And that is exactly what GraphQL by PoP does.
 
 ## Making "deferred" the only strategy executed by the GraphQL server
 
-The problem is that resolving the object types (`object`, `union` and `interface`) as objects is done by the resolver itself when processing the parent node (eg: `films` => `directors`).
+The problem with most GraphQL servers is that the responsibility of resolving the object types (`object`, `union` and `interface`) as objects is done by the resolvers themselves when processing the parent node (eg: `films` => `directors`), instead of delegating this task to the dataloading engine.
 
-The solution is to transfer this responsibility from the resolver to the server's data-loading engine, like this:
+GraphQL by PoP transfers this responsibility away from the resolver and into the server's data-loading engine, like this:
 
-1. Have the resolvers return IDs, and not objects, when resolving a relationship between the parent and child nodes
-2. Have a `DataLoader` entity that, given a list of IDs of a certain type, obtains the corresponding objects from that type
-3. Have the GraphQL server's data-loading engine be the glue between these 2 parts: it first obtains the object IDs from the resolvers and, just before executing the nested query for the relationship (by which time it will have accumulated all the IDs to be resolved for the specific type), it retrieves the objects for those IDs through the `DataLoader` (which can efficiently include all the IDs into a single query).
+1. The resolvers return IDs, and not objects, when resolving a relationship between the parent and child nodes
+2. Given a list of IDs of a certain type, a `DataLoader` entity obtains the corresponding objects from that type
+3. The server's data-loading engine is the glue between these 2 parts: it first obtains the object IDs from the resolvers and, just before executing the nested query for the relationship (by which time it will have accumulated all the IDs to be resolved for the specific type), it retrieves the objects for those IDs through the `DataLoader` (which can efficiently include all the IDs into a single query).
 
 This approach can be summarized as: "Deal with IDs, not with objects".
 
@@ -152,11 +152,7 @@ However, if this behaviour must be removed (for instance, to have the returned t
 
 ## Implementing the adapted approach in code
 
-Let's see how this adapted strategy looks in (PHP) code, as implemented in GraphQL by PoP. The code below demonstrates the different resolvers.
-
-As mentioned earlier on, we will need to split the resolvers into 2 different entities, `FieldResolvers` and `TypeDataLoaders`. In addition, we will be dealing with `TypeResolvers`. Let's see these entities one by one.
-
-(For the purpose of clarity, all code below has been edited)
+Let's see how GraphQL by PoP implements this approach in PHP code. The code below demonstrates the different resolvers (for the purpose of clarity, all code below has been edited).
 
 ### `FieldResolvers`
 
@@ -206,7 +202,7 @@ Please notice how, by removing the logic dealing with promises/deferred objects,
 
 `TypeResolvers` are objects which deal a specific type: they know the type's name and which `TypeDataLoader` loads objects of its type, among others.
 
-The GraphQL server's data-loading engine, when resolving fields, will be given IDs from a certain `TypeResolver` class. Then, when retrieving the objects for those IDs, the data-loading engine will ask the `TypeResolver` which `TypeDataLoader` object to use to load those objects.
+The data-loading engine, when resolving fields, will be given IDs from a certain `TypeResolver` class. Then, when retrieving the objects for those IDs, the data-loading engine will ask the `TypeResolver` which `TypeDataLoader` object to use to load those objects.
 
 Their contract is defined like this:
 
@@ -253,16 +249,15 @@ class UserTypeDataLoader implements TypeDataLoaderInterface
 {
   public function getObjects(array $ids): array
   {
-    return get_users([
-      'include' => $ids,
-    ]);
+    $userAPI = UserAPIFacade::getInstance();
+    return $userAPI->getUsers($ids);
   }
 }
 ```
 
-## Testing that this strategy works
+## Executing a (really) big query
 
-Let's execute a query of great complexity, involving a graph 10-levels deep (`posts` => `author` => `posts` => `tags` => `posts` => `comments` => `author` => `posts` => `comments` => `author`), which could not be resolved if the "N+1 problem" were taking place.
+Let's test that this strategy works, by executing a query of great complexity, involving a graph 10-levels deep (`posts` => `author` => `posts` => `tags` => `posts` => `comments` => `author` => `posts` => `comments` => `author`), which could not be resolved if the "N+1 problem" were taking place.
 
 Running [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(limit%3A10)%20%7B%0A%20%20%20%20excerpt%0A%20%20%20%20title%0A%20%20%20%20url%0A%20%20%20%20author%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20url%0A%20%20%20%20%20%20posts(limit%3A10)%20%7B%0A%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20tags(limit%3A10)%20%7B%0A%20%20%20%20%20%20%20%20%20%20slug%0A%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20posts(limit%3A10)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20%20%20%20%20comments(limit%3A10)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20date%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20author%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20posts(limit%3A10)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20comments(limit%3A10)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20date%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20author%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20username%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A):
 
