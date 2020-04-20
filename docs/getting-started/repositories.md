@@ -27,8 +27,8 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [api-graphql-request](https://github.com/getpop/api-graphql-request) | Enables GraphQL for PoP to process the GraphQL query using the standard syntax |
 | [api-mirrorquery](https://github.com/getpop/api-mirrorquery) | Mirror the query in the API response |
 | [api-rest](https://github.com/getpop/api-rest) | Create REST endpoints in the PoP API |
-| [application](https://github.com/getpop/application) | Create a component-based application |
-| [application-wp](https://github.com/getpop/application-wp) | Implementation for WordPress of contracts from package "Application" |
+<!-- | [application](https://github.com/getpop/application) | Create a component-based application | -->
+<!-- | [application-wp](https://github.com/getpop/application-wp) | Implementation for WordPress of contracts from package "Application" | -->
 | [basic-directives](https://github.com/getpop/basic-directives) | Set of basic directives |
 | [block-metadata-for-wp](https://github.com/getpop/block-metadata-for-wp) | Integration with WordPress plugin "Block Metadata" |
 | [cache-control](https://github.com/getpop/cache-control) | Add HTTP caching to the response |
@@ -38,49 +38,49 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [comments](https://github.com/getpop/comments) | Adds support for comments |
 | [comments-wp](https://github.com/getpop/comments-wp) | Implementation for WordPress of contracts from package "Comments" |
 | [component-model](https://github.com/getpop/component-model) | Component model for PoP, over which the component-based architecture is based |
-| [component-model-configuration](https://github.com/getpop/component-model-configuration) | Adds the configuration layer to the component model |
+<!-- | [component-model-configuration](https://github.com/getpop/component-model-configuration) | Adds the configuration layer to the component model | -->
 | [content](https://github.com/getpop/content) | Interfaces and helpers for content-related entities (eg: posts, articles, etc) |
 | [content-wp](https://github.com/getpop/content-wp) | Implementation for WordPress of contracts from package "Content" |
-| [definitionpersistence](https://github.com/getpop/definitionpersistence) | Store definitions across sessions |
+<!-- | [definitionpersistence](https://github.com/getpop/definitionpersistence) | Store definitions across sessions | -->
 | [definitions](https://github.com/getpop/definitions) | Enables to define a name for an element (such as modules, resources, etc) through different strategies |
-| [definitions-base36](https://github.com/getpop/definitions-base36) | Provides definitions using a base 36 counter |
-| [definitions-emoji](https://github.com/getpop/definitions-emoji) | Provides definitions using emojis |
+<!-- | [definitions-base36](https://github.com/getpop/definitions-base36) | Provides definitions using a base 36 counter | -->
+<!-- | [definitions-emoji](https://github.com/getpop/definitions-emoji) | Provides definitions using emojis | -->
 | [engine](https://github.com/getpop/engine) | Engine for PoP |
 | [engine-wp](https://github.com/getpop/engine-wp) | Implementation of PoP Engine for WordPress |
 | [engine-wp-bootloader](https://github.com/getpop/engine-wp-bootloader) | PoP Engine Bootloader for WordPress |
-| [event-mutations](https://github.com/getpop/event-mutations) | Adds support for event mutations |
-| [event-mutations-wp-em](https://github.com/getpop/event-mutations-wp-em) | Implementation for WordPress of contracts from package "Event Mutations", through plugin "Events Manager" |
-| [events](https://github.com/getpop/events) | Adds support for events |
-| [events-wp-em](https://github.com/getpop/events-wp-em) | Implementation for WordPress of contracts from package "Events", through plugin "Events Manager" |
+<!-- | [event-mutations](https://github.com/getpop/event-mutations) | Adds support for event mutations | -->
+<!-- | [event-mutations-wp-em](https://github.com/getpop/event-mutations-wp-em) | Implementation for WordPress of contracts from package "Event Mutations", through plugin "Events Manager" | -->
+<!-- | [events](https://github.com/getpop/events) | Adds support for events | -->
+<!-- | [events-wp-em](https://github.com/getpop/events-wp-em) | Implementation for WordPress of contracts from package "Events", through plugin "Events Manager" | -->
 | [field-query](https://github.com/getpop/field-query) | Component model for PoP, over which the component-based architecture is based |
 | [filestore](https://github.com/getpop/filestore) | Base classes to save files to disk, read them and reference them through an URL |
 | [function-fields](https://github.com/getpop/function-fields) | Set of function global fields |
 | [google-translate-directive](https://github.com/getpop/google-translate-directive) | Use Google Translate as a provider for the `@translate` directive |
-| [google-translate-directive-for-posts](https://github.com/getpop/google-translate-directive-for-posts) | Use the `@translate(provider:google)` directive with posts |
+<!-- | [google-translate-directive-for-posts](https://github.com/getpop/google-translate-directive-for-posts) | Use the `@translate(provider:google)` directive with posts | -->
 | [graphql](https://github.com/getpop/graphql) | GraphQL server in PHP, implemented through the PoP API |
 | [graphql-parser](https://github.com/getpop/graphql-parser) | Pure PHP GraphQL |
 | [guzzle-helpers](https://github.com/getpop/guzzle-helpers) | Helper functions for Guzzle |
-| [highlights](https://github.com/getpop/highlights) | Adds support for highlights |
-| [highlights-wp](https://github.com/getpop/highlights-wp) | Implementation for WordPress of contracts from package "Highlights" |
+<!-- | [highlights](https://github.com/getpop/highlights) | Adds support for highlights | -->
+<!-- | [highlights-wp](https://github.com/getpop/highlights-wp) | Implementation for WordPress of contracts from package "Highlights" | -->
 | [hooks](https://github.com/getpop/hooks) | Contracts to implement hooks (filters and actions) for PoP |
 | [hooks-wp](https://github.com/getpop/hooks-wp) | WordPress implementation of the contracts to implement hooks (filters and actions) for PoP |
-| [locationposts](https://github.com/getpop/locationposts) | Adds support for locationposts |
-| [locationposts-wp](https://github.com/getpop/locationposts-wp) | Implementation for WordPress of contracts from package "LocationPosts" |
-| [locations](https://github.com/getpop/locations) | Adds support for locations |
-| [locations-wp](https://github.com/getpop/locations-wp) | Implementation for WordPress of contracts from package "Locations" |
+<!-- | [locationposts](https://github.com/getpop/locationposts) | Adds support for locationposts | -->
+<!-- | [locationposts-wp](https://github.com/getpop/locationposts-wp) | Implementation for WordPress of contracts from package "LocationPosts" | -->
+<!-- | [locations](https://github.com/getpop/locations) | Adds support for locations | -->
+<!-- | [locations-wp](https://github.com/getpop/locations-wp) | Implementation for WordPress of contracts from package "Locations" | -->
 | [loosecontracts](https://github.com/getpop/loosecontracts) | Loose Contracts: a method to "code against interfaces, not implementations" for strings such as option names, hook names, etc |
 | [mandatory-directives-by-configuration](https://github.com/getpop/mandatory-directives-by-configuration) | Set configurable mandatory directives for fields and directives |
 | [media](https://github.com/getpop/media) | Adds support for media |
 | [media-wp](https://github.com/getpop/media-wp) | Implementation for WordPress of contracts from package "Media" |
-| [menus](https://github.com/getpop/menus) | Adds support for menus |
-| [menus-wp](https://github.com/getpop/menus-wp) | Implementation for WordPress of contracts from package "Menus" |
+<!-- | [menus](https://github.com/getpop/menus) | Adds support for menus | -->
+<!-- | [menus-wp](https://github.com/getpop/menus-wp) | Implementation for WordPress of contracts from package "Menus" | -->
 | [meta](https://github.com/getpop/meta) | Adds support for meta |
 | [metaquery](https://github.com/getpop/metaquery) | Adds support for meta queries |
 | [metaquery-wp](https://github.com/getpop/metaquery-wp) | Implementation for WordPress of contracts from package "Meta Query" |
 | [modulerouting](https://github.com/getpop/modulerouting) | Configure and obtain what module will be added to the component hierarchy at each level, based on the attributes from the request |
-| [multisite](https://github.com/getpop/multisite) | Multisite |
-| [notifications](https://github.com/getpop/notifications) | Adds support for notifications |
-| [notifications-wp](https://github.com/getpop/notifications-wp) | Implementation for WordPress of contracts from package "Notifications" |
+<!-- | [multisite](https://github.com/getpop/multisite) | Multisite | -->
+<!-- | [notifications](https://github.com/getpop/notifications) | Adds support for notifications | -->
+<!-- | [notifications-wp](https://github.com/getpop/notifications-wp) | Implementation for WordPress of contracts from package "Notifications" | -->
 | [pages](https://github.com/getpop/pages) | Adds support for pages |
 | [pages-wp](https://github.com/getpop/pages-wp) | Implementation for WordPress of contracts from package "Pages" |
 | [postmedia](https://github.com/getpop/postmedia) | Deals with media elements added to posts |
@@ -92,17 +92,17 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [queriedobject](https://github.com/getpop/queriedobject) | Adds support to query single objects (users, posts, etc) in the request |
 | [queriedobject-wp](https://github.com/getpop/queriedobject-wp) | Implementation for WordPress of contracts from package "Queried Object" |
 | [query-parsing](https://github.com/getpop/query-parsing) | Utilities to parse the query |
-| [resourceloader](https://github.com/getpop/resourceloader) | Load resources for the website |
-| [resources](https://github.com/getpop/resources) | Resources for the website (CSS, JS files) |
+<!-- | [resourceloader](https://github.com/getpop/resourceloader) | Load resources for the website | -->
+<!-- | [resources](https://github.com/getpop/resources) | Resources for the website (CSS, JS files) | -->
 | [root](https://github.com/getpop/root) | Declaration of dependencies shared by all PoP components |
 | [routing](https://github.com/getpop/routing) | Routing system |
 | [routing-wp](https://github.com/getpop/routing-wp) | Implementation for WordPress of contracts from package "Routing" |
-| [site](https://github.com/getpop/site) | Create a component-based website |
-| [site-wp](https://github.com/getpop/site-wp) | Implementation for WordPress of package Site |
-| [spa](https://github.com/getpop/spa) | Single-Page Application for PoP |
-| [stances](https://github.com/getpop/stances) | Adds support for stances |
-| [stances-wp](https://github.com/getpop/stances-wp) | Implementation for WordPress of contracts from package "Stances" |
-| [static-site-generator](https://github.com/getpop/static-site-generator) | Create a static version of the site |
+<!-- | [site](https://github.com/getpop/site) | Create a component-based website | -->
+<!-- | [site-wp](https://github.com/getpop/site-wp) | Implementation for WordPress of package Site | -->
+<!-- | [spa](https://github.com/getpop/spa) | Single-Page Application for PoP | -->
+<!-- | [stances](https://github.com/getpop/stances) | Adds support for stances | -->
+<!-- | [stances-wp](https://github.com/getpop/stances-wp) | Implementation for WordPress of contracts from package "Stances" | -->
+<!-- | [static-site-generator](https://github.com/getpop/static-site-generator) | Create a static version of the site | -->
 | [taxonomies](https://github.com/getpop/taxonomies) | Adds support for taxonomies |
 | [taxonomies-wp](https://github.com/getpop/taxonomies-wp) | Implementation for WordPress of contracts from package "Taxonomies" |
 | [taxonomymeta](https://github.com/getpop/taxonomymeta) | Adds support for taxonomy (category and tag) meta |
