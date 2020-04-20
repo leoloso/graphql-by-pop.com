@@ -41,8 +41,8 @@ The 2nd time, executing the same query within 10 seconds, we obtain the same res
 
 ![2nd execution of query with @cache directive](/images/cache-directive-2nd-run.png "2nd execution of query with @cache directive")
 
-::: tip
-Showing logs in the response is enabled by passing parameter `show_logs=true` to the GraphiQL client, which sets parameter `actions[]=show-logs` to the GraphQL endpoint `/api/graphql/`
+::: details Tip: How to show logs in the response
+Logs are retrieved by passing parameter `show_logs=true` to the GraphiQL client, which sets parameter `actions[]=show-logs` to the GraphQL endpoint `/api/graphql/`
 :::
 
 Please notice how the log indicates which are the items that have been cached. If we increase field `post`'s `limit` to 6, and run again within 10 seconds, the already-cached 3 items will be retrieved from the cache, and the other 3, which had not been cached yet, will be retrieved fresh through Google Translate:
