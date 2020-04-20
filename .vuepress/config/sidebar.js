@@ -13,6 +13,7 @@ const docsSidebar = [
         title: 'Dynamic Schema',
         children: [
             ['dynamic-schema/intro', 'Intro'],
+            'dynamic-schema/ifttt-through-directives',
             'dynamic-schema/multiple-resolvers',
             'dynamic-schema/field-directive-based-versioning',
             'dynamic-schema/access-control',
