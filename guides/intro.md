@@ -4,6 +4,7 @@ This section explains how certain functionalities have been implemented by Graph
 
 | Guide | Description |
 | ------------- | ------------- |
+| [Rapid Iteration on the Schema](./rapid-iteration-on-the-schema) | Exemplifies the best strategy to follow to allow autonomous teams work on the same schema, without conflicts or tooling |
 | [Sending a Localized Newsletter, User by User](./localized-newsletter) | Step-by-step description of sending newsletters translated to the recipient's language, using a single PQL query |
 | [Building a CMS-agnostic API](./building-cms-agnostic-api) | Concepts and code which make GraphQL by PoP core code, and a custom API, be CMS-agnostic |
 | [(x) Filling a Void with a Directive](./filling-void-with-directive) | How directives enable to implement novel functionalities, not yet supported by the server |

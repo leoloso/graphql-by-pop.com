@@ -108,7 +108,6 @@ const docsSidebar = [
             'architecture/directive-design',
             'architecture/extensibility',
             'architecture/code-first',
-            'architecture/rapid-iteration',
             'architecture/converting-from-gql-to-pql',
         ]
     },
@@ -142,6 +141,7 @@ const docsSidebar = [
 ];
 const guidesSidebar = [
     ['intro', 'Intro'],
+    'rapid-iteration-on-the-schema',
     'localized-newsletter',
     'building-cms-agnostic-api',
     'filling-void-with-directive',
