@@ -102,12 +102,12 @@ const docsSidebar = [
             'architecture/suppressing-n-plus-one-problem',
             'architecture/using-components-instead-of-graphs',
             'architecture/dataloading-engine',
+            'architecture/code-first',
             'architecture/symfony-components',
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
             'architecture/directive-design',
             'architecture/extensibility',
-            'architecture/code-first',
             'architecture/converting-from-gql-to-pql',
         ]
     },
