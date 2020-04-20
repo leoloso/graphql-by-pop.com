@@ -1,4 +1,4 @@
-# Intro to the Dynamic Schema
+# (*) Intro to the Dynamic Schema
 
 The schema used for a specific request ca be shaped based on the context. The exposed schema is, then, a subset of the grand schema. We can think of the grand schema as a schema multiverse, and the request accessing a tailored schema from the multiverse.
 
@@ -24,3 +24,7 @@ The advantages of the dynamic schema over a static schema are several:
 - Quick bug fixing, such as fixing a bug specifically for a client, without worrying about breaking changes for other clients
 - Versioned fields and directives can provide legacy functionality without polluting the schema
 - All the data for all multiple applications is managed as a single source of truth
+
+## Dealing with schema-type directives
+
+TODO
