@@ -62,7 +62,6 @@ const docsSidebar = [
             // ['operational/intro', '(x) Intro to Operational'],
             'operational/access-control',
             'operational/proactive-feedback',
-            'operational/persisted-fragments-and-queries',
             'operational/tracing',
             'operational/export',
             'operational/remove-if-null',
@@ -82,6 +81,7 @@ const docsSidebar = [
             'extended/external-services/interact-apis-within-query',
             'extended/external-services/gateway',
             'extended/external-services/content-mesh',
+            'extended/persisted-fragments-and-queries',
         ]
     },
     {
