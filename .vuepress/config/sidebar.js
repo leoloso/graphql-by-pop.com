@@ -65,15 +65,7 @@ const docsSidebar = [
             'operational/tracing',
             'operational/export',
             'operational/remove-if-null',
-        ]
-    },
-    {
-        title: 'External Services',
-        children: [
-            // 'external-services/intro',
-            'external-services/interact-apis',
-            'external-services/gateway',
-            'external-services/content-mesh',
+            'operational/translate',
         ]
     },
     {
@@ -82,9 +74,13 @@ const docsSidebar = [
             // ['extended/intro', '(x) Intro to Extended GraphQL'],
             ['extended/intro', '(x) Intro'],
             'extended/full-schema',
-            'extended/pql',
-            'extended/pql-language-features',
-            'extended/pql-syntax',
+            'extended/pql/intro',
+            'extended/pql/language-features',
+            'extended/pql/syntax',
+            'extended/external-services/intro',
+            'extended/external-services/interact-apis-within-query',
+            'extended/external-services/gateway',
+            'extended/external-services/content-mesh',
         ]
     },
     {
