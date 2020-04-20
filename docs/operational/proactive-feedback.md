@@ -1,6 +1,84 @@
-# (*) Proactive Feedback
+# Proactive Feedback
 
-TODO
+GraphQL servers usually do not offer good contextual information when running queries, because the GraphQL spec does not force them (or even suggest) to do so. This is evident concerning deprecations, where deprecation data is shown only [through introspection](http://spec.graphql.org/June2018/#sec-Deprecation), by querying fields `isDeprecated` and `deprecationReason` on the `Field` and `Enum` types:
+
+```graphql
+{
+  __type(name: "Account") {
+    name
+    fields {
+      name
+      isDeprecated
+      deprecationReason
+    }
+  }
+}
+```
+
+The response will be:
+
+```json
+{
+  "data": {
+    "__type": {
+      "name": "Account",
+      "fields": [
+        {
+          "name": "id",
+          "isDeprecated": false,
+          "deprecationReason": null
+        },
+        {
+          "name": "surname",
+          "isDeprecated": true,
+          "deprecationReason": "Use `personSurname`"
+        },
+        {
+          "name": "personSurname",
+          "isDeprecated": false,
+          "deprecationReason": null
+        }
+      ]
+    }
+  }
+}
+```
+
+However, when running a query involving a deprecated field, like this one:
+
+```graphql
+query GetSurname {
+  account(id: 1) {
+    surname
+  }
+}
+```
+
+...the deprecation information will not appear in the response:
+
+```json
+{
+  "data": {
+    "account": {
+      "surname": "Owens"
+    }
+  }
+}
+```
+
+This means that the developer executing the query must actively execute introspection queries to find out if the schema was upgraded and any field deprecated. That may happen maybe once in a long while? Quite possibly never?
+
+## Providing proactive feedback
+
+GraphQL by PoP addresses this deficiency by making usie of the wildcard top-level entry `extensions`, which allows to extend the protocol as needed. Under this entry, when running any query, GraphQL by PoP may send data through the following feedback entries:
+
+- `deprecations`
+- `warnings`
+- `logs`
+
+Because they are sent on the response to the query itself, and not just during introspection, this data is valuable to developers of the API-consuming application to understand how to better interact with the API.
+
+Let's explore these entries.
 
 ## Deprecations
 
