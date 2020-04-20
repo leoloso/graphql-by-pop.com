@@ -129,7 +129,7 @@ This query calls the GraphiQL client with parameter `show_logs=true`, and then G
 ```less
 /?
 actions[]=show-logs&
-$postId=1&
+postId=1&
 query=
   post(id:$postId).
     title<traceExecutionTime>
