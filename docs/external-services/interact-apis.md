@@ -49,21 +49,21 @@ Example accessing an external API from the query itself:
 echo([
   usd: [
     bitcoin: extract(
-      getJSON("https://api.cryptonator.com/api/ticker/btc-usd"), 
+      getJSON("https://api.cryptonator.com/api/ticker/btc-usd"),
       ticker.price
     ),
     ethereum: extract(
-      getJSON("https://api.cryptonator.com/api/ticker/eth-usd"), 
+      getJSON("https://api.cryptonator.com/api/ticker/eth-usd"),
       ticker.price
     )
   ],
   euro: [
     bitcoin: extract(
-      getJSON("https://api.cryptonator.com/api/ticker/btc-eur"), 
+      getJSON("https://api.cryptonator.com/api/ticker/btc-eur"),
       ticker.price
     ),
     ethereum: extract(
-      getJSON("https://api.cryptonator.com/api/ticker/eth-eur"), 
+      getJSON("https://api.cryptonator.com/api/ticker/eth-eur"),
       ticker.price
     )
   ]
