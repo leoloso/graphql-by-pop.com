@@ -1,10 +1,6 @@
-# (*) Intro to the Dynamic Schema
+# Intro to the Dynamic Schema
 
 The schema used for a specific request ca be shaped based on the context. The exposed schema is, then, a subset of the grand schema. We can think of the grand schema as a schema multiverse, and the request accessing a tailored schema from the multiverse.
-
-## Code-First Schema Definition
-
-TODO
 
 ## Features
 
