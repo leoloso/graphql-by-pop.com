@@ -1,4 +1,4 @@
-# (*) Execution Caching
+# Execution Caching
 
 The `@cache` directive enables to cache the result of a heavy-to-compute operation. The first time the field is resolved, the `@cache` directive will save the value in disk or memory (Redis, Memcached), either with an expiry date or not, and from then on whenever querying this field the cached value will be retrieved and the operation will not be performed.
 
@@ -52,3 +52,22 @@ Please notice how the log indicates which are the items that have been cached. I
 If we run it again, now all 6 items will be cached:
 
 ![4th execution of query with @cache directive](/images/cache-directive-4th-run.png "4th execution of query with @cache directive")
+
+## Configuration
+
+### Caching adapter
+
+GraphQL by PoP uses Symfony's [Cache Component](https://symfony.com/doc/current/components/cache.html) for caching.
+
+By default it stores the cache in the file system, through the [Filesystem Cache Adapter](https://symfony.com/doc/current/components/cache/adapters/filesystem_adapter.html), as configured in file `services.yaml` from package [Component Model](https://github.com/getpop/component-model):
+
+```yml
+services:
+    persistent_cache_item_pool:
+        class: \Symfony\Component\Cache\Adapter\FilesystemAdapter
+        public: true
+```
+
+Defining service `persistent_cache_item_pool` on another package will override the default adapter. For instance, for improving performance, we can store the cache in memory using Redis (through [this adapter](https://symfony.com/doc/current/components/cache/adapters/redis_adapter.html)) or Memcached (through [this adapter](https://symfony.com/doc/current/components/cache/adapters/memcached_adapter.html)).
+
+The full list of adapters is [here](https://symfony.com/doc/current/components/cache.html#available-cache-adapters).
