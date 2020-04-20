@@ -53,3 +53,5 @@ if ($roles = Environment::anyRoleLoggedInUserMustHaveToAccessRolesFields()) {
   );
 }
 ```
+
+When [executing the query in GraphiQL](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20user(id%3A1)%20%7B%0A%20%20%20%20name%0A%20%20%20%20capabilities%0A%20%20%20%20roles%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D), non-logged-in users and users without the required roles will not be allowed access those fields.
