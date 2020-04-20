@@ -37,16 +37,16 @@ const docsSidebar = [
             'schema-objects/directives',
         ]
     },
-    {
-        title: 'Security',
-        children: [
-            // 'security/intro',
-            'security/authentication',
-            'security/authorization',
-            'security/validation',
-            'security/sanitization',
-        ]
-    },
+    // {
+    //     title: 'Security',
+    //     children: [
+    //         // 'security/intro',
+    //         'security/authentication',
+    //         'security/authorization',
+    //         'security/validation',
+    //         'security/sanitization',
+    //     ]
+    // },
     {
         title: 'Caching',
         children: [
@@ -60,6 +60,7 @@ const docsSidebar = [
         title: 'Operational',
         children: [
             // ['operational/intro', '(x) Intro to Operational'],
+            'operational/access-control',
             'operational/proactive-feedback',
             'operational/persisted-fragments-and-queries',
             'operational/tracing',
@@ -118,13 +119,13 @@ const docsSidebar = [
             'troubleshooting/known-issues',
         ]
     },
-    {
-        title: 'API Reference',
-        children: [
-            'api-reference/package-directory',
-            'api-reference/types',
-        ]
-    },
+    // {
+    //     title: 'API Reference',
+    //     children: [
+    //         'api-reference/package-directory',
+    //         'api-reference/types',
+    //     ]
+    // },
     {
         title: 'Roadmap',
         children: [
