@@ -142,6 +142,7 @@ const docsSidebar = [
 const guidesSidebar = [
     ['intro', 'Intro'],
     'rapid-iteration-on-the-schema',
+    'versioning-fields-and-directives',
     'localized-newsletter',
     'building-cms-agnostic-api',
     'filling-void-with-directive',
