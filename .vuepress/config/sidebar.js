@@ -53,7 +53,7 @@ const docsSidebar = [
             // 'caching/intro',
             ['caching/http-caching', 'HTTP Caching'],
             'caching/execution-caching',
-            'caching/schema-caching',
+            'caching/configuration-caching',
         ]
     },
     {

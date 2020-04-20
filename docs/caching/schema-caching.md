@@ -1,3 +1,0 @@
-# (x) Schema Caching
-
-TODO
