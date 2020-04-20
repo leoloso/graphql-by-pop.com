@@ -63,6 +63,8 @@ const docsSidebar = [
             'operational/errors-deprecations-warnings-logs',
             'operational/persisted-fragments-and-queries',
             'operational/tracing',
+            'operational/export',
+            'operational/remove-if-null',
         ]
     },
     {
@@ -125,7 +127,6 @@ const docsSidebar = [
         children: [
             'api-reference/package-directory',
             'api-reference/types',
-            'api-reference/directives',
         ]
     },
     {
