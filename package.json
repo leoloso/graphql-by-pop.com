@@ -12,6 +12,6 @@
         "build": "vuepress build ."
     },
     "devDependencies": {
-        "vuepress-plugin-plausible-analytics": "^0.2.0"
+        "vuepress-plugin-plausible-analytics": "^0.2.1"
     }
 }
