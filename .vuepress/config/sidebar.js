@@ -18,7 +18,6 @@ const docsSidebar = [
             'dynamic-schema/field-directive-based-versioning',
             'dynamic-schema/access-control',
             'dynamic-schema/public-private-schema-mode',
-            'dynamic-schema/backend-for-frontends',
             'dynamic-schema/automatic-namespacing',
         ]
     },
@@ -146,6 +145,7 @@ const guidesSidebar = [
     'building-cms-agnostic-api',
     'filling-void-with-directive',
     'creating-access-control-rule',
+    'executing-the-backend-for-frontends-pattern',
 ];
 module.exports = {
     '/docs/': docsSidebar,

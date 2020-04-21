@@ -11,7 +11,6 @@ These are the features powering the dynamic schema:
 - Fields and directives can be [independently versioned](./field-directive-based-versioning)
 - Access to fields or directives can be granted to users [based on different rules](./access-control): being logged-in, having a certain role or capability, and others
 - Users denied access to a field or directive can either be shown the reason why, or told that the item does not exists. This is called the [public/private schema mode](./public-private-schema-mode)
-- The grand schema can contain all the data for multiple applications (website, app, etc), and [expose only the needed data](./backend-for-frontends) to each application
 - Types and Interfaces can be [automatically namespaced](./automatic-namespacing), to avoid conflicts among 3rd party components
 
 ## Advantages

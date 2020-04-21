@@ -10,3 +10,4 @@ This section explains how certain functionalities have been implemented by Graph
 | [Building a CMS-agnostic API](./building-cms-agnostic-api) | Concepts and code which make GraphQL by PoP core code, and a custom API, be CMS-agnostic |
 | [(x) Filling a Void with a Directive](./filling-void-with-directive) | How directives enable to implement novel functionalities, not yet supported by the server |
 | [(x) Creating a Custom Access Control Rule](./creating-access-control-rule) | How we can define custom rules for an Access Control List, to manage who can access a certain field or directive |
+| [(x) Executing the Backend for Frontends Pattern](./executing-the-backend-for-frontends-pattern) | Learn how to implement the [BFF](https://samnewman.io/patterns/architectural/bff/) pattern, where a single source of truth contains all the data for multiple applications (website, app, etc), and exposes to each application only the data it needs |
