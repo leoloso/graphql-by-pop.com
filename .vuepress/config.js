@@ -49,7 +49,9 @@ module.exports = {
         ['@vuepress/search', {
             searchMaxSuggestions: 10,
         }],
-        'plausible-analytics',
+        ['plausible-analytics', {
+            domain: 'stats.leoloso.com',
+        }],
         // Enable PWA after documentation is ready
         // ['@vuepress/pwa', {
         //     serviceWorker: true,
