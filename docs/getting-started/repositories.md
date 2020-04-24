@@ -42,6 +42,7 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [engine](https://github.com/getpop/engine) | Engine for PoP |
 | [engine-wp](https://github.com/getpop/engine-wp) | Implementation of PoP Engine for WordPress |
 | [engine-wp-bootloader](https://github.com/getpop/engine-wp-bootloader) | PoP Engine Bootloader for WordPress |
+| [field-deprecation-by-directive](https://github.com/getpop/field-deprecation-by-directive) | Deprecate fields by directive |
 | [field-query](https://github.com/getpop/field-query) | Component model for PoP, over which the component-based architecture is based |
 | [filestore](https://github.com/getpop/filestore) | Base classes to save files to disk, read them and reference them through an URL |
 | [function-fields](https://github.com/getpop/function-fields) | Set of function global fields |
