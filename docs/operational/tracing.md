@@ -1,4 +1,19 @@
-# Tracing
+# (*) Tracing
+
+TODO
+
+<!-- ```php
+HooksAPIFacade::getInstance()->doAction(
+    '\PoP\ComponentModel\Engine:traces:schema',
+    $schemaTraces
+);
+HooksAPIFacade::getInstance()->doAction(
+    '\PoP\ComponentModel\Engine:traces:db',
+    $dbTraces
+);
+``` -->
+
+## Tracing Execution Time
 
 The `@traceExecutionTime` directive tracks how much time it takes to resolve a field (including all the involved directives), and adds the result under entry `extensions.traces` in the response.
 
@@ -30,3 +45,4 @@ The `@traceExecutionTime` directive then shows that caching results improve the 
 | Environment variable | Description | Default |
 | --- | --- | --- |
 | `SHOW_TRACES_IN_RESPONSE` | Print the traces under entry `extensions.traces` | `false` |
+| `SEND_TRACES_TO_LOG` | Print a human-readable summary of the traces under entry `extensions.logs` | `false` |
