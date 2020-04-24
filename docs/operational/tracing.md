@@ -17,7 +17,7 @@ HooksAPIFacade::getInstance()->doAction(
 
 The `@traceExecutionTime` directive tracks how much time it takes to resolve a field (including all the involved directives), and adds the result under entry `extensions.traces` in the response.
 
-As an example, we can use it to measure how fast is the `@translate` directive (which connects to the Google Translation API), and how fast it is after applying `@cache` to the translation (so that it doesn't connect to the external API anymore). For that, we execute [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(limit%3A3)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%20%40translate(from%3A%22en%22%2C%20to%3A%22es%22)%20%40cache(time%3A10)%20%40traceExecutionTime%0A%20%20%7D%0A%7D) with `@traceExecutionTime` first, and within 10 seconds again:
+As an example, we can use it to measure how fast is the `@translate` directive (which connects to the Google Translation API), and how fast it is after applying `@cache` to the translation (so that it doesn't connect to the external API anymore). For that, we execute [this query](https://newapi.getpop.org/graphiql/?show_logs=1&query=query%20%7B%0A%20%20posts(limit%3A3)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%20%40translate(from%3A%22en%22%2C%20to%3A%22es%22)%20%40cache(time%3A10)%20%40traceExecutionTime%0A%20%20%7D%0A%7D) with `@traceExecutionTime` first, and within 10 seconds again:
 
 ```graphql
 query {
