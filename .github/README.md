@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://graphql-by-pop.com/" target="_blank" rel="noopener noreferrer">
-    <img width="180" src="https://raw.githubusercontent.com/getpop/graphql-by-pop.com/master/.vuepress/public/assets/graphql-by-pop-logo.jpg" alt="logo">
+    <img width="180" src="https://raw.githubusercontent.com/GraphQLByPoP/graphql-by-pop.com/master/.vuepress/public/assets/graphql-by-pop-logo.jpg" alt="logo">
   </a>
 </p>
 
@@ -18,7 +18,7 @@ Make sure you have VuePress' requirements:
 Clone this repo and install all the dependencies by running:
 
 ```bash
-$ git clone https://github.com/getpop/graphql-by-pop.com.git
+$ git clone https://github.com/GraphQLByPoP/graphql-by-pop.com.git
 $ cd graphql-by-pop.com
 $ yarn install
 ```

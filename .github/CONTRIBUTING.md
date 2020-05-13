@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/getpop/graphql-by-pop.com).
+We accept contributions via Pull Requests on [Github](https://github.com/GraphQLByPoP/graphql-by-pop.com).
 
 
 ## Pull Requests

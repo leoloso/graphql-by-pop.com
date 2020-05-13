@@ -49,9 +49,9 @@ Package `"composer/installers"` is required to set-up some required must-use plu
 :::
 
 ::: details Can install from tagged releases?
-We are currently creating a release for all the required components from the [PoP repo](https://github.com/getpop), and this task will take several days. Until then, components must be installed using the `"dev-master"` version.
+We are currently creating a release for all the required components from the [PoP repo](https://github.com/getpop), and this task will take several weeks. Until then, components must be installed using the `"dev-master"` version.
 
-You can follow progress on this project: [Release components](https://github.com/getpop/graphql-by-pop.com/projects/4).
+You can follow progress on this project: [Release components](https://github.com/GraphQLByPoP/graphql-by-pop.com/projects/4).
 
 Please notice that the README file from unreleased components may temporarily have the `build` badge showing `error`, and the `code quality` badge showing `project not found`. Their code is, however, working well; the problem comes from PSR-2 and static analysis rules executed by [Travis](https://travis-ci.com) not yet satisfied, and the component's project not yet set-up in [Scrutinizer](https://scrutinizer-ci.com). We are fixing these issues component by component, as we release them.
 :::
