@@ -10,5 +10,9 @@ module.exports = [
     {
         text: 'Resources',
         link: '/resources/'
+    },
+    {
+        text: 'GitHub',
+        link: 'https://github.com/GraphQLByPoP/graphql'
     }
 ];

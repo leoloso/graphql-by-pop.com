@@ -37,9 +37,9 @@ module.exports = {
     themeConfig: {
         defaultTheme: 'light',
         logo: '/graphql-by-pop-logo.svg',
-        editLinks: true,
+        // repo: 'GraphQLByPoP/graphql-by-pop.com',
+        // editLinks: true,
         lastUpdated: 'Last Updated',
-        repo: 'getpop/graphql-by-pop.com',
         nav: nav,
         sidebar: sidebar
     },

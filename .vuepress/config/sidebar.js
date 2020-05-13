@@ -4,7 +4,6 @@ const docsSidebar = [
         children: [
             'getting-started/intro',
             'getting-started/installation/wordpress',
-            'getting-started/repositories',
             'getting-started/configuration',
             'getting-started/directory-structure',
         ]
@@ -97,6 +96,7 @@ const docsSidebar = [
         title: 'Architecture',
         children: [
             ['architecture/intro', '(x) Intro'],
+            'architecture/repositories',
             'architecture/suppressing-n-plus-one-problem',
             'architecture/using-components-instead-of-graphs',
             'architecture/dataloading-engine',
