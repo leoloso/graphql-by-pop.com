@@ -28,7 +28,6 @@ Then complete the following steps.
 ```json
 {
     "require": {
-        "getpop/engine-wp": "dev-master",
         "getpop/postmeta-wp": "dev-master",
         "getpop/pages-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
@@ -37,13 +36,14 @@ Then complete the following steps.
         "getpop/postmedia-wp": "dev-master",
         "getpop/graphql": "dev-master",
         "getpop/api-endpoints-for-wp": "dev-master",
+        "getpop/engine-wp-bootloader": "dev-master",
         "composer/installers": "~1.0"
     }
 }
 ```
 
 ::: details What are these packages?
-From owner `"getpop"`, only packages `"getpop/engine-wp"` and `"getpop/graphql"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink.
+From owner `"getpop"`, only packages `"getpop/graphql"` and `"getpop/engine-wp-bootloader"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink.
 
 Package `"composer/installers"` is required to set-up some required must-use plugins.
 :::
@@ -89,6 +89,22 @@ After this step, there should be file a `mu-require.php` under the `wp-content/m
 ```php
 // Load Composer’s autoloader
 require_once (__DIR__.'/vendor/autoload.php');
+
+// Initialize all PoP components
+$componentClasses = [
+    \PoP\CommentMetaWP\Component::class,
+    \PoP\PagesWP\Component::class,
+    \PoP\PostMetaWP\Component::class,
+    \PoP\PostMediaWP\Component::class,
+    \PoP\TaxonomyQueryWP\Component::class,
+    \PoP\UserMetaWP\Component::class,
+    \PoP\GraphQL\Component::class,
+    \PoP\RESTAPI\Component::class,
+    \PoP\APIEndpointsForWP\Component::class,
+];
+foreach ($componentClasses as $componentClass) {
+    $componentClass::initialize();
+}
 ```
 
 6. Flush the re-write rules to enable the API endpoint:
@@ -138,7 +154,7 @@ Header set Access-Control-Allow-Origin "*"
 
 2. Set-up the API endpoint through the `.htaccess` file
 
-Instead of defining the API endpoint by code through dependency `"getpop/api-endpoints-for-wp"`, it can also be set-up with a rewrite rule in the `.htaccess` file. For this, remove that dependency from composer, and add the code below before the WordPress rewrite section (which starts with `# BEGIN WordPress`):
+Instead of defining the API endpoint by code through dependency `"getpop/api-endpoints-for-wp"` (and having to flush the rewrite rules), it can also be set-up with a rewrite rule in the `.htaccess` file. For this, remove that dependency from composer, and add the code below before the WordPress rewrite section (which starts with `# BEGIN WordPress`):
 
 ```apacheconf
 <IfModule mod_rewrite.c>
