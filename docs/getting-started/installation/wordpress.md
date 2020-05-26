@@ -91,20 +91,19 @@ After this step, there should be file a `mu-require.php` under the `wp-content/m
 require_once (__DIR__.'/vendor/autoload.php');
 
 // Initialize all PoP components
-$componentClasses = [
-    \PoP\CommentMetaWP\Component::class,
-    \PoP\PagesWP\Component::class,
-    \PoP\PostMetaWP\Component::class,
-    \PoP\PostMediaWP\Component::class,
-    \PoP\TaxonomyQueryWP\Component::class,
-    \PoP\UserMetaWP\Component::class,
-    \PoP\GraphQL\Component::class,
-    \PoP\RESTAPI\Component::class,
-    \PoP\APIEndpointsForWP\Component::class,
-];
-foreach ($componentClasses as $componentClass) {
-    $componentClass::initialize();
-}
+\PoP\Engine\ComponentLoader::initializeComponents(
+    [
+        \PoP\CommentMetaWP\Component::class,
+        \PoP\PagesWP\Component::class,
+        \PoP\PostMetaWP\Component::class,
+        \PoP\PostMediaWP\Component::class,
+        \PoP\TaxonomyQueryWP\Component::class,
+        \PoP\UserMetaWP\Component::class,
+        \PoP\GraphQL\Component::class,
+        \PoP\RESTAPI\Component::class,
+        \PoP\APIEndpointsForWP\Component::class,
+    ]
+);
 ```
 
 6. Flush the re-write rules to enable the API endpoint:
