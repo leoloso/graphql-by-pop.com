@@ -70,6 +70,7 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | --- | --- |
 | [access-control](https://github.com/getpop/access-control) | Access Control for fields and directives |
 | [api](https://github.com/getpop/api) | Component-based API |
+| [api-endpoints](https://github.com/getpop/api-endpoints) | Utilities for implementing API endpoints |
 | [api-endpoints-for-wp](https://github.com/getpop/api-endpoints-for-wp) | Add pretty permalinks for the PoP API endpoints, for WordPress |
 | [api-graphql](https://github.com/getpop/api-graphql) | Extended/Upgraded implementation of GraphQL, implemented on PHP, based on the PoP API |
 | [api-mirrorquery](https://github.com/getpop/api-mirrorquery) | Mirror the query in the API response |
