@@ -37,6 +37,8 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [commentmeta-wp](https://github.com/PoPSchema/commentmeta-wp) | Implementation for WordPress of contracts from package "Comment Meta" |
 | [comments](https://github.com/PoPSchema/comments) | Adds support for comments |
 | [comments-wp](https://github.com/PoPSchema/comments-wp) | Implementation for WordPress of contracts from package "Comments" |
+| [custompostmedia](https://github.com/PoPSchema/custompostmedia) | Deals with media elements added to posts |
+| [custompostmedia-wp](https://github.com/PoPSchema/custompostmedia-wp) | Implementation for WordPress of contracts from package "Custom Post Media" |
 | [custompostmeta](https://github.com/PoPSchema/custompostmeta) | Adds support for post meta |
 | [custompostmeta-wp](https://github.com/PoPSchema/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
 | [customposts](https://github.com/PoPSchema/customposts) | Interfaces and helpers for custom posts (eg: posts, articles, etc) |
@@ -50,8 +52,6 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [media-wp](https://github.com/PoPSchema/media-wp) | Implementation for WordPress of contracts from package "Media" |
 | [pages](https://github.com/PoPSchema/pages) | Adds support for pages |
 | [pages-wp](https://github.com/PoPSchema/pages-wp) | Implementation for WordPress of contracts from package "Pages" |
-| [postmedia](https://github.com/PoPSchema/postmedia) | Deals with media elements added to posts |
-| [postmedia-wp](https://github.com/PoPSchema/postmedia-wp) | Implementation for WordPress of contracts from package "Post Media" |
 | [posts](https://github.com/PoPSchema/posts) | Adds support for posts |
 | [posts-wp](https://github.com/PoPSchema/posts-wp) | Implementation for WordPress of contracts from package "Posts" |
 | [taxonomies](https://github.com/PoPSchema/taxonomies) | Adds support for taxonomies |
@@ -182,8 +182,8 @@ These are ALL the repositories, including the ones not used for the API
 | [notifications-wp](https://github.com/getpop/notifications-wp) | Implementation for WordPress of contracts from package "Notifications" |
 | [pages](https://github.com/getpop/pages) | Adds support for pages |
 | [pages-wp](https://github.com/getpop/pages-wp) | Implementation for WordPress of contracts from package "Pages" |
-| [postmedia](https://github.com/getpop/postmedia) | Deals with media elements added to posts |
-| [postmedia-wp](https://github.com/getpop/postmedia-wp) | Implementation for WordPress of contracts from package "Post Media" |
+| [custompostmedia](https://github.com/getpop/custompostmedia) | Deals with media elements added to posts |
+| [custompostmedia-wp](https://github.com/getpop/custompostmedia-wp) | Implementation for WordPress of contracts from package "Custom Post Media" |
 | [custompostmeta](https://github.com/getpop/custompostmeta) | Adds support for post meta |
 | [custompostmeta-wp](https://github.com/getpop/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
 | [posts](https://github.com/getpop/posts) | Adds support for posts |
