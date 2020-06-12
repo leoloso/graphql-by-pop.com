@@ -37,17 +37,21 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [commentmeta-wp](https://github.com/PoPSchema/commentmeta-wp) | Implementation for WordPress of contracts from package "Comment Meta" |
 | [comments](https://github.com/PoPSchema/comments) | Adds support for comments |
 | [comments-wp](https://github.com/PoPSchema/comments-wp) | Implementation for WordPress of contracts from package "Comments" |
+| [custompostmeta](https://github.com/PoPSchema/custompostmeta) | Adds support for post meta |
+| [custompostmeta-wp](https://github.com/PoPSchema/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
 | [content](https://github.com/PoPSchema/content) | Interfaces and helpers for content-related entities (eg: posts, articles, etc) |
 | [content-wp](https://github.com/PoPSchema/content-wp) | Implementation for WordPress of contracts from package "Content" |
+| [events](https://github.com/PoPSchema/events) | Adds support for events |
+| [events-wp-em](https://github.com/PoPSchema/events-wp-em) | Implementation for WordPress of contracts from package "Events", through plugin "Events Manager" |
 | [google-translate-directive](https://github.com/PoPSchema/google-translate-directive) | Use Google Translate as a provider for the `@translate` directive |
+| [locations](https://github.com/PoPSchema/locations) | Adds support for locations |
+| [locations-wp-em](https://github.com/PoPSchema/locations-wp-em) | Implementation for WordPress of contracts from package "Locations", through plugin "Events Manager" |
 | [media](https://github.com/PoPSchema/media) | Adds support for media |
 | [media-wp](https://github.com/PoPSchema/media-wp) | Implementation for WordPress of contracts from package "Media" |
 | [pages](https://github.com/PoPSchema/pages) | Adds support for pages |
 | [pages-wp](https://github.com/PoPSchema/pages-wp) | Implementation for WordPress of contracts from package "Pages" |
 | [postmedia](https://github.com/PoPSchema/postmedia) | Deals with media elements added to posts |
 | [postmedia-wp](https://github.com/PoPSchema/postmedia-wp) | Implementation for WordPress of contracts from package "Post Media" |
-| [custompostmeta](https://github.com/PoPSchema/custompostmeta) | Adds support for post meta |
-| [custompostmeta-wp](https://github.com/PoPSchema/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
 | [posts](https://github.com/PoPSchema/posts) | Adds support for posts |
 | [posts-wp](https://github.com/PoPSchema/posts-wp) | Implementation for WordPress of contracts from package "Posts" |
 | [taxonomies](https://github.com/PoPSchema/taxonomies) | Adds support for taxonomies |
@@ -149,8 +153,6 @@ These are ALL the repositories, including the ones not used for the API
 | [engine-wp-bootloader](https://github.com/getpop/engine-wp-bootloader) | PoP Engine Bootloader for WordPress |
 | [event-mutations](https://github.com/getpop/event-mutations) | Adds support for event mutations |
 | [event-mutations-wp-em](https://github.com/getpop/event-mutations-wp-em) | Implementation for WordPress of contracts from package "Event Mutations", through plugin "Events Manager" |
-| [events](https://github.com/getpop/events) | Adds support for events |
-| [events-wp-em](https://github.com/getpop/events-wp-em) | Implementation for WordPress of contracts from package "Events", through plugin "Events Manager" |
 | [field-query](https://github.com/getpop/field-query) | Component model for PoP, over which the component-based architecture is based |
 | [filestore](https://github.com/getpop/filestore) | Base classes to save files to disk, read them and reference them through an URL |
 | [function-fields](https://github.com/getpop/function-fields) | Set of function global fields |
@@ -165,8 +167,6 @@ These are ALL the repositories, including the ones not used for the API
 | [hooks-wp](https://github.com/getpop/hooks-wp) | WordPress implementation of the contracts to implement hooks (filters and actions) for PoP |
 | [locationposts](https://github.com/getpop/locationposts) | Adds support for locationposts |
 | [locationposts-wp](https://github.com/getpop/locationposts-wp) | Implementation for WordPress of contracts from package "LocationPosts" |
-| [locations](https://github.com/getpop/locations) | Adds support for locations |
-| [locations-wp](https://github.com/getpop/locations-wp) | Implementation for WordPress of contracts from package "Locations" |
 | [loosecontracts](https://github.com/getpop/loosecontracts) | Loose Contracts: a method to "code against interfaces, not implementations" for strings such as option names, hook names, etc |
 | [mandatory-directives-by-configuration](https://github.com/getpop/mandatory-directives-by-configuration) | Set configurable mandatory directives for fields and directives |
 | [media](https://github.com/getpop/media) | Adds support for media |
