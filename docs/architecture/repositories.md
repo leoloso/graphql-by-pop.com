@@ -37,9 +37,9 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [commentmeta-wp](https://github.com/PoPSchema/commentmeta-wp) | Implementation for WordPress of contracts from package "Comment Meta" |
 | [comments](https://github.com/PoPSchema/comments) | Adds support for comments |
 | [comments-wp](https://github.com/PoPSchema/comments-wp) | Implementation for WordPress of contracts from package "Comments" |
-| [custompostmedia](https://github.com/PoPSchema/custompostmedia) | Deals with media elements added to posts |
+| [custompostmedia](https://github.com/PoPSchema/custompostmedia) | Deals with media elements added to custom posts |
 | [custompostmedia-wp](https://github.com/PoPSchema/custompostmedia-wp) | Implementation for WordPress of contracts from package "Custom Post Media" |
-| [custompostmeta](https://github.com/PoPSchema/custompostmeta) | Adds support for post meta |
+| [custompostmeta](https://github.com/PoPSchema/custompostmeta) | Adds support for custom post meta |
 | [custompostmeta-wp](https://github.com/PoPSchema/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
 | [customposts](https://github.com/PoPSchema/customposts) | Interfaces and helpers for custom posts (eg: posts, articles, etc) |
 | [customposts-wp](https://github.com/PoPSchema/customposts-wp) | Implementation for WordPress of contracts from package "Custom Posts" |
