@@ -46,8 +46,8 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [pages-wp](https://github.com/PoPSchema/pages-wp) | Implementation for WordPress of contracts from package "Pages" |
 | [postmedia](https://github.com/PoPSchema/postmedia) | Deals with media elements added to posts |
 | [postmedia-wp](https://github.com/PoPSchema/postmedia-wp) | Implementation for WordPress of contracts from package "Post Media" |
-| [postmeta](https://github.com/PoPSchema/postmeta) | Adds support for post meta |
-| [postmeta-wp](https://github.com/PoPSchema/postmeta-wp) | Implementation for WordPress of contracts from package "Post Meta" |
+| [custompostmeta](https://github.com/PoPSchema/custompostmeta) | Adds support for post meta |
+| [custompostmeta-wp](https://github.com/PoPSchema/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
 | [posts](https://github.com/PoPSchema/posts) | Adds support for posts |
 | [posts-wp](https://github.com/PoPSchema/posts-wp) | Implementation for WordPress of contracts from package "Posts" |
 | [taxonomies](https://github.com/PoPSchema/taxonomies) | Adds support for taxonomies |
@@ -184,8 +184,8 @@ These are ALL the repositories, including the ones not used for the API
 | [pages-wp](https://github.com/getpop/pages-wp) | Implementation for WordPress of contracts from package "Pages" |
 | [postmedia](https://github.com/getpop/postmedia) | Deals with media elements added to posts |
 | [postmedia-wp](https://github.com/getpop/postmedia-wp) | Implementation for WordPress of contracts from package "Post Media" |
-| [postmeta](https://github.com/getpop/postmeta) | Adds support for post meta |
-| [postmeta-wp](https://github.com/getpop/postmeta-wp) | Implementation for WordPress of contracts from package "Post Meta" |
+| [custompostmeta](https://github.com/getpop/custompostmeta) | Adds support for post meta |
+| [custompostmeta-wp](https://github.com/getpop/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
 | [posts](https://github.com/getpop/posts) | Adds support for posts |
 | [posts-wp](https://github.com/getpop/posts-wp) | Implementation for WordPress of contracts from package "Posts" |
 | [queriedobject](https://github.com/getpop/queriedobject) | Adds support to query single objects (users, posts, etc) in the request |

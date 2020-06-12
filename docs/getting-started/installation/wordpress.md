@@ -28,7 +28,7 @@ Then complete the following steps.
 ```json
 {
     "require": {
-        "getpop/postmeta-wp": "dev-master",
+        "getpop/custompostmeta-wp": "dev-master",
         "getpop/pages-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
@@ -94,7 +94,7 @@ require_once (__DIR__.'/vendor/autoload.php');
 \PoP\Engine\ComponentLoader::initializeComponents([
     \PoP\CommentMetaWP\Component::class,
     \PoP\PagesWP\Component::class,
-    \PoP\PostMetaWP\Component::class,
+    \PoP\CustomPostMetaWP\Component::class,
     \PoP\PostMediaWP\Component::class,
     \PoP\TaxonomyQueryWP\Component::class,
     \PoP\UserMetaWP\Component::class,
