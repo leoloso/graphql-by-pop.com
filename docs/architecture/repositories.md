@@ -39,8 +39,8 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [comments-wp](https://github.com/PoPSchema/comments-wp) | Implementation for WordPress of contracts from package "Comments" |
 | [custompostmeta](https://github.com/PoPSchema/custompostmeta) | Adds support for post meta |
 | [custompostmeta-wp](https://github.com/PoPSchema/custompostmeta-wp) | Implementation for WordPress of contracts from package "Custom Post Meta" |
-| [content](https://github.com/PoPSchema/content) | Interfaces and helpers for content-related entities (eg: posts, articles, etc) |
-| [content-wp](https://github.com/PoPSchema/content-wp) | Implementation for WordPress of contracts from package "Content" |
+| [customposts](https://github.com/PoPSchema/customposts) | Interfaces and helpers for custom posts (eg: posts, articles, etc) |
+| [customposts-wp](https://github.com/PoPSchema/customposts-wp) | Implementation for WordPress of contracts from package "Custom Posts" |
 | [events](https://github.com/PoPSchema/events) | Adds support for events |
 | [events-wp-em](https://github.com/PoPSchema/events-wp-em) | Implementation for WordPress of contracts from package "Events", through plugin "Events Manager" |
 | [google-translate-directive](https://github.com/PoPSchema/google-translate-directive) | Use Google Translate as a provider for the `@translate` directive |
