@@ -15,6 +15,7 @@ Ongoing series of articles on conceptualizing, designing and implementing a Grap
 3. [Schema-first vs code-first development in GraphQL](https://blog.logrocket.com/code-first-vs-schema-first-development-graphql/)
 4. [Speeding-up changes to the GraphQL schema](https://blog.logrocket.com/speeding-up-changes-to-the-graphql-schema/)
 5. [Versioning fields in GraphQL](https://blog.logrocket.com/versioning-fields-graphql/)
+6. [GraphQL directives are underrated](https://blog.logrocket.com/graphql-directives-are-underrated/)
 
 <!-- ### CMS-agnosticism design
 
