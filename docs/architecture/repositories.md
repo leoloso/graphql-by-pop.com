@@ -25,6 +25,7 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 | [api-graphql-request](https://github.com/GraphQLByPoP/api-graphql-request) | Enables GraphQL for PoP to process the GraphQL query using the standard syntax |
 | [graphql](https://github.com/GraphQLByPoP/graphql) | GraphQL server in PHP, implemented through the PoP API |
 | [graphql-clients-for-wp](https://github.com/GraphQLByPoP/graphql-clients-for-wp) | GraphiQL and Voyager GraphQL Clients for WordPress |
+| [graphql-endpoint-for-wp](https://github.com/GraphQLByPoP/graphql-endpoint-for-wp) | Add pretty permalinks for the single GraphQL endpoint, for WordPress |
 | [graphql-parser](https://github.com/GraphQLByPoP/graphql-parser) | Pure PHP GraphQL |
 
 ### PoPSchema
