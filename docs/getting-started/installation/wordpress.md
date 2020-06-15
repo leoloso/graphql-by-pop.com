@@ -35,7 +35,7 @@ Then complete the following steps.
         "getpop/taxonomyquery-wp": "dev-master",
         "getpop/custompostmedia-wp": "dev-master",
         "getpop/graphql": "dev-master",
-        "getpop/api-endpoints-for-wp": "dev-master",
+        "getpop/graphql-endpoint-for-wp": "dev-master",
         "getpop/engine-wp-bootloader": "dev-master",
         "composer/installers": "~1.0"
     }
@@ -100,7 +100,7 @@ require_once (__DIR__.'/vendor/autoload.php');
     \PoP\UserMetaWP\Component::class,
     \PoP\GraphQL\Component::class,
     \PoP\RESTAPI\Component::class,
-    \PoP\APIEndpointsForWP\Component::class,
+    \PoP\GraphQLEndpointForWP\Component::class,
 ]);
 ```
 
@@ -151,7 +151,7 @@ Header set Access-Control-Allow-Origin "*"
 
 2. Set-up the API endpoint through the `.htaccess` file
 
-Instead of defining the API endpoint by code through dependency `"getpop/api-endpoints-for-wp"` (and having to flush the rewrite rules), it can also be set-up with a rewrite rule in the `.htaccess` file. For this, remove that dependency from composer, and add the code below before the WordPress rewrite section (which starts with `# BEGIN WordPress`):
+Instead of defining the API endpoint by code through dependency `"getpop/graphql-endpoint-for-wp"` (and having to flush the rewrite rules), it can also be set-up with a rewrite rule in the `.htaccess` file. For this, remove that dependency from composer, and add the code below before the WordPress rewrite section (which starts with `# BEGIN WordPress`):
 
 ```apacheconf
 <IfModule mod_rewrite.c>
