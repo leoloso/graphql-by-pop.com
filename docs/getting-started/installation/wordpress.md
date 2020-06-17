@@ -29,6 +29,7 @@ Then complete the following steps.
 {
     "require": {
         "getpop/custompostmeta-wp": "dev-master",
+        "getpop/postmeta-wp": "dev-master",
         "getpop/pages-wp": "dev-master",
         "getpop/usermeta-wp": "dev-master",
         "getpop/commentmeta-wp": "dev-master",
@@ -93,6 +94,7 @@ require_once (__DIR__.'/vendor/autoload.php');
 // Initialize all PoP components
 \PoP\Engine\ComponentLoader::initializeComponents([
     \PoP\CommentMetaWP\Component::class,
+    \PoP\PostMetaWP\Component::class,
     \PoP\PagesWP\Component::class,
     \PoP\CustomPostMetaWP\Component::class,
     \PoP\CustomPostMediaWP\Component::class,
