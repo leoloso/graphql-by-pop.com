@@ -16,6 +16,7 @@ Ongoing series of articles on conceptualizing, designing and implementing a Grap
 4. [Speeding-up changes to the GraphQL schema](https://blog.logrocket.com/speeding-up-changes-to-the-graphql-schema/)
 5. [Versioning fields in GraphQL](https://blog.logrocket.com/versioning-fields-graphql/)
 6. [GraphQL directives are underrated](https://blog.logrocket.com/graphql-directives-are-underrated/)
+7. [Treating GraphQL directives as middleware](https://blog.logrocket.com/treating-graphql-directives-as-middleware/) 
 
 <!-- ### CMS-agnosticism design
 
