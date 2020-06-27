@@ -101,7 +101,6 @@ require_once (__DIR__.'/vendor/autoload.php');
     \PoP\TaxonomyQueryWP\Component::class,
     \PoP\UserMetaWP\Component::class,
     \PoP\GraphQL\Component::class,
-    \PoP\RESTAPI\Component::class,
     \PoP\GraphQLEndpointForWP\Component::class,
 ]);
 ```
