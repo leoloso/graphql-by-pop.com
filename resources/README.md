@@ -17,6 +17,7 @@ Ongoing series of articles on conceptualizing, designing and implementing a Grap
 5. [Versioning fields in GraphQL](https://blog.logrocket.com/versioning-fields-graphql/)
 6. [GraphQL directives are underrated](https://blog.logrocket.com/graphql-directives-are-underrated/)
 7. [Treating GraphQL directives as middleware](https://blog.logrocket.com/treating-graphql-directives-as-middleware/) 
+8. [Creating an @export GraphQL directive](https://blog.logrocket.com/creating-an-export-graphql-directive/)
 
 <!-- ### CMS-agnosticism design
 
