@@ -1,4 +1,4 @@
-# The directive pipeline
+# Directive pipeline
 
 Directives are placed in a pipeline, and executed in order. Their initial design is simple, like this:
 
