@@ -1,12 +1,34 @@
 # Installing on WordPress
 
-## By WordPress plugin
+## Via the "GraphQL API for WordPress" plugin
 
-_Coming soon..._
+[GraphQL API for WordPress](https://github.com/GraphQLAPI/graphql-api) is the implementation for WordPress of GraphQL by PoP.
 
-## Manual process, via Composer
+### Requirements
 
-Please make sure to have [Composer](https://getcomposer.org) installed, and file `composer.json` in the root of your project. If you do not have this file, run this command to create it:
+WordPress 5.4 or above, PHP 7.1 or above.
+
+### Install
+
+[Download the latest version](https://github.com/GraphQLAPI/graphql-api/releases/download/0.1.0/graphql-api.zip) of the plugin. 
+
+Then, in the WordPress admin:
+
+- Go to `Plugins => Add New`
+- Click on `Upload Plugin`
+- Select the .zip file
+- Click on `Install Now` (it may take a few minutes)
+- Once installed, click on `Activate`
+
+After installed, there will be a new "GraphQL API" section on the menu:
+
+![The interactive schema visualizer](/images/interactive-schema.png)
+
+## Via Composer
+
+Installing via [Composer](https://getcomposer.org) enables to select exactly the required packages.
+
+Please make sure to have Composer installed, and file `composer.json` in the root of your project. If you do not have this file, run this command to create it:
 
 ```bash
 composer init -n
@@ -23,7 +45,7 @@ Then complete the following steps.
 }
 ```
 
-2. Add the following packages to the `require` section of your `composer.json` file:
+2. Add the required packages entry the `require` section of your `composer.json` file:
 
 ```json
 {
@@ -85,7 +107,7 @@ composer update
 After this step, there should be file a `mu-require.php` under the `wp-content/mu-plugins` folder. If for some reason it is not there, run `composer update` again.
 :::
 
-5. Add this code to the beginning of file `wp-config.php`:
+5. Load Composer and initialize the `Component` class for all the required packages, by adding code like this one at the beginning of file `wp-config.php`:
 
 ```php
 // Load Composer’s autoloader
@@ -105,9 +127,8 @@ require_once (__DIR__.'/vendor/autoload.php');
 ]);
 ```
 
-6. Flush the re-write rules to enable the API endpoint:
+6. In the WordPress admin, flush the re-write rules to enable the API endpoint:
 
-- Log-in to the WordPress admin
 - Go to `Settings => Permalinks`
 - Click on the "Save Changes" button (no need to modify any input)
 
