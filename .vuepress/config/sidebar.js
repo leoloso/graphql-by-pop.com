@@ -101,10 +101,11 @@ const docsSidebar = [
             'architecture/using-components-instead-of-graphs',
             'architecture/dataloading-engine',
             'architecture/code-first',
+            'architecture/directive-design',
+            'architecture/directive-pipeline',
             'architecture/symfony-components',
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
-            'architecture/directive-design',
             'architecture/extensibility',
             'architecture/converting-from-gql-to-pql',
         ]

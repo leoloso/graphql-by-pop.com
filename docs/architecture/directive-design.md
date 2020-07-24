@@ -1,16 +1,16 @@
-# (*) Directive Design
+# Directive Design
 
 Directives play an important role: they allow to implement those features which are not natively-supported by the [GraphQL spec](https://spec.graphql.org/) or by the GraphQL server itself. Directives can then help fill the void in terms of functionality, so that the API can satisfy its requirements, either known or unknown ones.
 
 For this reason, directives are an extremely important element within the foundations of the GraphQL server. GraphQL by PoP relies on a sound and solid architectural design for directives, which enables it to become both extensible and powerful.
 
-## Directive as Foundational Blocks
+## Low-level functionality
 
-TODO
+As a design decision, the engine depends directly on the directive pipeline for resolving the query. For this reason, directives are treated as low-level components, with access to the object where the response is stored.
 
-## The Directive Pipeline
+As a result, any custom directive has the power to modify the GraphQL response.
 
-TODO
+An evident use case for this is directive [@removeIfNull](/docs/operational/remove-if-null) (implemented [here](https://github.com/GraphQLByPoP/graphql/blob/3c1ae32f641b5540a7538e3df5d7d6ffeb93d53f/src/DirectiveResolvers/RemoveIfNullDirectiveResolver.php)), which allows to indicate in the query if we'd rather omit the response from a field than to receive a `null` value (there is an [issue in the spec](https://github.com/graphql/graphql-spec/issues/476) concerning this feature).
 
 ## Efficient directive calls
 
@@ -83,3 +83,40 @@ props=
 [View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).--props%7C--props@spanish<translate(en,es)>&amp;props=title%7Cexcerpt">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).--props%7C--props@spanish%3Ctranslate(en,es)%3E%7C--props@french%3Ctranslate(en,fr)%3E%7C--props@german%3Ctranslate(en,de)%3E&amp;props=title%7Cexcerpt">query #2</a>]
 
 :::
+
+## Function signature
+
+This is the [directive interface](https://github.com/getpop/component-model/blob/b2ef9fe693c69a6d4c4b549519eb236f527b841d/src/DirectiveResolvers/DirectiveResolverInterface.php#L113). Please notice the parameters that function `resolveDirective` receives:
+
+```php
+public function resolveDirective(
+  TypeResolverInterface $typeResolver,
+  array &$idsDataFields,
+  array &$succeedingPipelineIDsDataFields,
+  array &$succeedingPipelineDirectiveResolverInstances,
+  array &$resultIDItems,
+  array &$unionDBKeyIDs,
+  array &$dbItems,
+  array &$previousDBItems,
+  array &$variables,
+  array &$messages,
+  array &$dbErrors,
+  array &$dbWarnings,
+  array &$dbDeprecations,
+  array &$dbNotices,
+  array &$dbTraces,
+  array &$schemaErrors,
+  array &$schemaWarnings,
+  array &$schemaDeprecations,
+  array &$schemaNotices,
+  array &$schemaTraces
+): void;
+```
+
+These parameters evidence the low-level nature of the directive:
+
+- `$idsDataFields`: the list of IDs per field to be processed by the directive
+- `$succeedingPipelineIDsDataFields`: the list of IDs per field to be processed by directives at a later stage in the pipeline
+- `$resultIDItems`: the response object
+
+The other parameters make it possible to: access the query variables and define dynamic variables (as done by the [`@export`](https://github.com/GraphQLByPoP/graphql/blob/3c1ae32f641b5540a7538e3df5d7d6ffeb93d53f/src/DirectiveResolvers/ExportDirectiveResolver.php) directive), pass messages with custom data across directives, raise errors and warnings, identify and display deprecations, [pass notices to the user](/docs/operational/proactive-feedback), and store metrics.
