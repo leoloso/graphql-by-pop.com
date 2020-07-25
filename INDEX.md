@@ -38,43 +38,43 @@
   "architectureItems": [
     {
       "icon": "👨🏻‍💻",
-      "title": "→ Code-first approach",
+      "title": "⧐ Code-first approach ⧏",
       "details": "The schema is generated from code. Work with your teammates concurrently on the schema without conflicts, without tooling, and without bureaucracy.",
       "class": "degrade degrade-inverse"
     },
     {
       "iconAfter": "🧞‍♂️",
-      "title": "→ Dynamic schema",
+      "title": "⧐ Dynamic schema ⧏",
       "details": "The resolvers attach themselves to the types. Each field can be handled by different resolvers, and the chosen one is selected on runtime, depending on the context.",
       "class": "degrade"
     },
     {
       "icon": "🌗",
-      "title": "→ Public/private schema managed through ACLs",
+      "title": "⧐ Public/private schema managed through ACLs ⧏",
       "details": "From a single source of truth, expose different schemas for different users, managing it through Access Control Lists based on the user being logged-in or not, roles, capabilities, or custom rules.",
       "class": "degrade degrade-inverse"
     },
     {
       "iconAfter": "⏳",
-      "title": "→ Field/directive-based versioning",
+      "title": "⧐ Field/directive-based versioning ⧏",
       "details": "In addition to evolving the GraphQL schema, every field and directive can be independently versioned, and the specific version to use is chosen through field/directive arguments in the query.",
       "class": "degrade"
     },
     {
       "icon": "📦",
-      "title": "→ Robust caching",
+      "title": "⧐ Robust caching ⧏",
       "details": "Cache the response from the query in several layers (server, CDN, etc) using standard HTTP caching, defining the max age field by field. Cache the results from expensive operations in disk or memory, defining the expiry time field by field.",
       "class": "degrade degrade-inverse"
     },
     {
       "iconAfter": "🤖",
-      "title": "→ Automatic namespacing",
+      "title": "⧐ Automatic namespacing ⧏",
       "details": "No need to worry if different teams or 3rd party providers using the same names for their types and interfaces. Create neater schemas by removing the 'MyCompanyName' prefix from your types, you won't need it.",
       "class": "degrade"
     },
     {
       "icon": "👩🏻‍🔧",
-      "title": "→ Proactive warnings/deprecations",
+      "title": "⧐ Proactive warnings/deprecations ⧏",
       "details": "Issues with the query are shown in the response to the query, and not just when doing introspection. Avoid your users from never finding out that your schema has been upgraded!",
       "class": "degrade degrade-inverse"
     }
