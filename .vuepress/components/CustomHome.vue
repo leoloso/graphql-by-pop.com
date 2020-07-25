@@ -90,7 +90,7 @@
 
     <Features
       v-if="data.wordpressItems && data.wordpressItems.length"
-      class="flex-list bleed compact degrade"
+      class="flex-list bleed compact degrade degrade-ang-145"
       :items="data.wordpressItems"
       :title="data.wordpressTitle"
     />

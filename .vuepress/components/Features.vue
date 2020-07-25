@@ -13,7 +13,7 @@
       <div
         v-for="(feature, index) in items"
         :key="index"
-        class="feature"
+        :class="feature.class + ' feature'"
       >
         <div
           v-if="feature.icon"
@@ -49,6 +49,20 @@
               :link="action.link"
             />
           </div>
+        </div>
+        <div
+          v-if="feature.iconAfter"
+          class="[ feature__img emoji--8 ]"
+          aria-hidden="true"
+        >
+          {{ feature.iconAfter }}
+        </div>
+        <div
+          v-if="feature.imageAfter"
+          class="[ feature__img ]"
+          aria-hidden="true"
+        >
+          <img :src="feature.imageAfter">
         </div>
       </div>
     </div>
