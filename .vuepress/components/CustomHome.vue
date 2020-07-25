@@ -88,6 +88,13 @@
       />
     </div>
 
+    <Features
+      v-if="data.wordpressItems && data.wordpressItems.length"
+      class="flex-list bleed compact degrade"
+      :items="data.wordpressItems"
+      :title="data.wordpressTitle"
+    />
+
     <Content 
       class="theme-default-content custom superpowers " 
       slot-key="superpowers"

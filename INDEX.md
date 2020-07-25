@@ -72,6 +72,24 @@
       "details": "Issues with the query are shown in the response to the query, and not just when doing introspection. Avoid your users from never finding out that your schema has been upgraded!"
     }
   ],
+  "wordpressTitle": "",
+  "wordpressItems": [
+    {
+      "image": "/assets/wordpress-logo.png",
+      "title": "WordPress-ready!",
+      "details": "The \"GraphQL API for WordPress\" plugin brings all the power of GraphQL by PoP into your WordPress site",
+      "actions": [
+        {
+          "text": "Download plugin for WordPress  →",
+          "link": "https://github.com/GraphQLAPI/graphql-api/releases/download/0.1.0/graphql-api.zip"
+        },
+        {
+          "text": "Visit GitHub repo  →",
+          "link": "https://github.com/GraphQLAPI/graphql-api",
+        }
+      ]
+    }
+  ],
   "footer": "Made with ❤️ by Leonardo Losoviz"
 }
 ---

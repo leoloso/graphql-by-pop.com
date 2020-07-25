@@ -15,10 +15,40 @@
         :key="index"
         class="feature"
       >
-        <div class="[ feature__img emoji--8 ]" aria-hidden="true">{{ feature.icon }}</div>
+        <div
+          v-if="feature.icon"
+          class="[ feature__img emoji--8 ]"
+          aria-hidden="true"
+        >
+          {{ feature.icon }}
+        </div>
+        <div
+          v-if="feature.image"
+          class="[ feature__img ]"
+          aria-hidden="true"
+        >
+          <img :src=feature.image>
+        </div>
         <div class="[ feature__text ]">
-          <h2>{{ feature.title }}</h2>
+          <h2
+            v-if="title"
+          >
+            {{ feature.title }}
+          </h2>
+          <h1 v-else>{{ feature.title }}</h1>
           <p>{{ feature.details }}</p>
+
+          <div class=""
+              v-if="feature.actions"          
+          >
+            <ActionButton
+              v-for="(action, actionIndex) in feature.actions"
+              :key="actionIndex"
+              class="action"
+              :title="action.text"
+              :link="action.link"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -26,8 +56,12 @@
 </template>
 
 <script>
+import ActionButton from './ActionButton.vue'
+
 export default {
   name: 'Features',
+
+  components: { ActionButton },
 
   props: {
     title: {
