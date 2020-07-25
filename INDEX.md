@@ -84,7 +84,7 @@
     {
       "image": "/assets/wordpress-logo.png",
       "title": "WordPress-ready!",
-      "details": "The \"GraphQL API for WordPress\" plugin brings all the power of GraphQL by PoP into your WordPress site",
+      "details": "The GraphQL API for WordPress plugin brings all the power of GraphQL by PoP into your WordPress site",
       "actions": [
         {
           "text": "Download plugin for WordPress  →",
