@@ -588,7 +588,7 @@ The real benefit from having operators comes when they can receive the output fr
 
 In order to distinguish if the input to the field is a string or the name of a field, the field must have field arguments brackets `(...)` (if no arguments, then simply `()`). For instance, `"id"` means the string "id", and `"id()"` means to execute and pass the result from field "id".
 
-_**In PQL** (View results: <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|not(hasComments())">query 1</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|hasFeaturedImage|or([hasComments(),hasFeaturedImage()])">query 2</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=var(fetching-site),posts.hasFeaturedImage|and([hasFeaturedImage(), var(fetching-site)])">query 3</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with title '%s' has %s comments,[title(), commentsCount()]),sprintf(Post with ID %s was created on %s, [id(),date(d/m/Y)]))@postDesc">query 4</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=users.name|equals(name(), leo)">query 5</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.featuredImage|isNull(featuredImage())">query 6</a>):_
+_**In PQL** (View results: <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|not(hasComments())">query 1</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|hasFeaturedImage|or([hasComments(),hasFeaturedImage()])">query 2</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=var(fetching-site),posts.hasFeaturedImage|and([hasFeaturedImage(), var(fetching-site)])">query 3</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with title '%s' has %s comments,[title(), commentCount()]),sprintf(Post with ID %s was created on %s, [id(),date(d/m/Y)]))@postDesc">query 4</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=users.name|equals(name(), leo)">query 5</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.featuredImage|isNull(featuredImage())">query 6</a>):_
 
 ```less
 1. /?query=
@@ -621,7 +621,7 @@ _**In PQL** (View results: <a href="https://nextapi.getpop.org/api/graphql/?quer
     sprintf(
       Post with title '%s' has %s comments, [
       title(),
-      commentsCount()
+      commentCount()
     ]),
     sprintf(
       Post with ID %s was created on %s, [
@@ -645,14 +645,14 @@ _**In PQL** (View results: <a href="https://nextapi.getpop.org/api/graphql/?quer
 
 In order to include characters `(` and `)` as part of the query string, and avoid treating the string as a field to be executed, we must enclose it using quotes: `"..."`.
 
-_**In PQL** (<a href='https://nextapi.getpop.org/api/graphql/?query=posts.sprintf("This post has %s comment(s)",[commentsCount()])@postDesc'>View query results</a>):_
+_**In PQL** (<a href='https://nextapi.getpop.org/api/graphql/?query=posts.sprintf("This post has %s comment(s)",[commentCount()])@postDesc'>View query results</a>):_
 
 ```less
 /?query=
   posts.
     sprintf(
       "This post has %s comment(s)", [
-      commentsCount()
+      commentCount()
     ])@postDesc
 ```
 

@@ -9,7 +9,7 @@
   "graphiQLLink": "https://newapi.getpop.org/graphiql/?operationName=PostsWithComments&query=query%20PostsWithComments%20%7B%0A%20%20posts%20%7B%0A%20%20%20%20title%0A%20%20%20%20comments%20%7B%0A%20%20%20%20%20%20date%0A%20%20%20%20%20%20content%0A%20%20%20%20%20%20author%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A",
   "pqlText": "Run query in new tab  →",
   "pqlLink": "https://newapi.getpop.org/api/graphql/?query=posts.title|comments.date|content|author.name",
-  "pql2Link": "https://newapi.getpop.org/api/graphql/?format=Y-m-d&query=posts.if%20(hasComments(),sprintf(%22This%20post%20has%20%s%20comment(s)%20and%20title%20%27%s%27%22,%20[commentsCount(),title()]),sprintf(%22This%20post%20was%20created%20on%20%s%20and%20has%20no%20comments%22,%20[date(format:%20if(not(empty($format)),%20$format,%20d/m/Y))]))@postDesc",
+  "pql2Link": "https://newapi.getpop.org/api/graphql/?format=Y-m-d&query=posts.if%20(hasComments(),sprintf(%22This%20post%20has%20%s%20comment(s)%20and%20title%20%27%s%27%22,%20[commentCount(),title()]),sprintf(%22This%20post%20was%20created%20on%20%s%20and%20has%20no%20comments%22,%20[date(format:%20if(not(empty($format)),%20$format,%20d/m/Y))]))@postDesc",
   "superpowerText": "Get me started  →",
   "featuresTitle": "Designed for optimal experience",
   "features": [
@@ -254,7 +254,7 @@ query=
       hasComments(),
       sprintf(
         "This post has %s comment(s) and title '%s'", [
-          commentsCount(),
+          commentCount(),
           title()
         ]
       ),

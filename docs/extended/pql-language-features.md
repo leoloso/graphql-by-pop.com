@@ -31,7 +31,7 @@ Arguments passed to a field can receive other fields or operators as input.
         "Post with ID %s has %s comment(s) and title '%s'",
         [
           id(),
-          commentsCount(),
+          commentCount(),
           title()
         ]
       ),
@@ -45,7 +45,7 @@ Arguments passed to a field can receive other fields or operators as input.
     )@postDesc
 ```
 
-[<a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with ID %s has %s comment(s) and title '%s',[id(),commentsCount(),title()]),sprintf(%22Post with ID %s, created on %s, has no comments%22,[id(),date(d/m/Y)]))@postDesc">View query results</a>]
+[<a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with ID %s has %s comment(s) and title '%s',[id(),commentCount(),title()]),sprintf(%22Post with ID %s, created on %s, has no comments%22,[id(),date(d/m/Y)]))@postDesc">View query results</a>]
 
 ## Composable fields in directive arguments
 
