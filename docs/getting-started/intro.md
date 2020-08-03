@@ -4,7 +4,7 @@ GraphQL by PoP is a CMS-agnostic GraphQL server in PHP, currently available for 
 
 ## Requirements
 
-PHP 7.1 or higher.
+PHP 7.2 or higher.
 
 ## Demo API
 

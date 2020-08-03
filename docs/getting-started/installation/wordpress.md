@@ -6,7 +6,7 @@
 
 ### Requirements
 
-WordPress 5.4 or above, PHP 7.1 or above.
+WordPress 5.4 or above, PHP 7.2 or above.
 
 ### Install
 
