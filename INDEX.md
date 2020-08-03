@@ -88,11 +88,11 @@
       "actions": [
         {
           "text": "Download plugin for WordPress  →",
-          "link": "https://github.com/GraphQLAPI/graphql-api/releases/download/v0.1.20/graphql-api.zip"
+          "link": "https://github.com/GraphQLAPI/graphql-api-for-wp/releases/download/v0.1.20/graphql-api.zip"
         },
         {
           "text": "Visit GitHub repo  →",
-          "link": "https://github.com/GraphQLAPI/graphql-api",
+          "link": "https://github.com/GraphQLAPI/graphql-api-for-wp",
         }
       ]
     }
