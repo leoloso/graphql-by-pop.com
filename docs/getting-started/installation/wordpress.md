@@ -50,15 +50,15 @@ Then complete the following steps.
 ```json
 {
     "require": {
-        "getpop/custompostmeta-wp": "dev-master",
-        "getpop/posts-wp": "dev-master",
-        "getpop/pages-wp": "dev-master",
-        "getpop/usermeta-wp": "dev-master",
-        "getpop/commentmeta-wp": "dev-master",
-        "getpop/taxonomyquery-wp": "dev-master",
-        "getpop/custompostmedia-wp": "dev-master",
-        "getpop/graphql": "dev-master",
-        "getpop/graphql-endpoint-for-wp": "dev-master",
+        "pop-schema/custompostmeta-wp": "dev-master",
+        "pop-schema/posts-wp": "dev-master",
+        "pop-schema/pages-wp": "dev-master",
+        "pop-schema/usermeta-wp": "dev-master",
+        "pop-schema/commentmeta-wp": "dev-master",
+        "pop-schema/taxonomyquery-wp": "dev-master",
+        "pop-schema/custompostmedia-wp": "dev-master",
+        "graphql-by-pop/graphql-server": "dev-master",
+        "graphql-by-pop/graphql-endpoint-for-wp": "dev-master",
         "getpop/engine-wp-bootloader": "dev-master",
         "composer/installers": "~1.0"
     }
@@ -115,15 +115,15 @@ require_once (__DIR__.'/vendor/autoload.php');
 
 // Initialize all PoP components
 \PoP\Engine\ComponentLoader::initializeComponents([
-    \PoP\CommentMetaWP\Component::class,
-    \PoP\PostsWP\Component::class,
-    \PoP\PagesWP\Component::class,
-    \PoP\CustomPostMetaWP\Component::class,
-    \PoP\CustomPostMediaWP\Component::class,
-    \PoP\TaxonomyQueryWP\Component::class,
-    \PoP\UserMetaWP\Component::class,
-    \PoP\GraphQL\Component::class,
-    \PoP\GraphQLEndpointForWP\Component::class,
+    \PoPSchema\CommentMetaWP\Component::class,
+    \PoPSchema\PostsWP\Component::class,
+    \PoPSchema\PagesWP\Component::class,
+    \PoPSchema\CustomPostMetaWP\Component::class,
+    \PoPSchema\CustomPostMediaWP\Component::class,
+    \PoPSchema\TaxonomyQueryWP\Component::class,
+    \PoPSchema\UserMetaWP\Component::class,
+    \GraphQLByPoP\GraphQLServer\Component::class,
+    \GraphQLByPoP\GraphQLEndpointForWP\Component::class,
 ]);
 ```
 
