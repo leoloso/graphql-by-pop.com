@@ -1,4 +1,4 @@
-# Code-first
+# Code-first Server
 
 The GraphQL schema defines the contracts for a GraphQL service, by exporting the set of types, fields and mutations that can be executed against the service. When creating a GraphQL service, we may decide to either:
 
