@@ -21,9 +21,9 @@ Minimizing the amount of code that must be re-implemented, and avoiding duplicat
 
 | Repository | Description |
 | --- | --- |
-| [api-graphql-query](https://github.com/GraphQLByPoP/api-graphql-query) | Utilities to transform the query from the GraphQL syntax to the Field query syntax |
-| [api-graphql-request](https://github.com/GraphQLByPoP/api-graphql-request) | Enables GraphQL for PoP to process the GraphQL query using the standard syntax |
-| [graphql](https://github.com/GraphQLByPoP/graphql) | GraphQL server in PHP, implemented through the PoP API |
+| [graphql-query](https://github.com/GraphQLByPoP/graphql-query) | Utilities to transform the query from the GraphQL syntax to the Field query syntax |
+| [graphql-request](https://github.com/GraphQLByPoP/graphql-request) | Enables GraphQL for PoP to process the GraphQL query using the standard syntax |
+| [graphql-server](https://github.com/GraphQLByPoP/graphql-server) | GraphQL server in PHP, implemented through the PoP API |
 | [graphql-clients-for-wp](https://github.com/GraphQLByPoP/graphql-clients-for-wp) | GraphiQL and Voyager GraphQL Clients for WordPress |
 | [graphql-endpoint-for-wp](https://github.com/GraphQLByPoP/graphql-endpoint-for-wp) | Add pretty permalinks for the single GraphQL endpoint, for WordPress |
 | [graphql-parser](https://github.com/GraphQLByPoP/graphql-parser) | Pure PHP GraphQL |
@@ -127,8 +127,8 @@ These are ALL the repositories, including the ones not used for the API
 | [api](https://github.com/getpop/api) | Component-based API |
 | [api-endpoints-for-wp](https://github.com/getpop/api-endpoints-for-wp) | Add pretty permalinks for the PoP API endpoints, for WordPress |
 | [api-graphql](https://github.com/getpop/api-graphql) | Extended/Upgraded implementation of GraphQL, implemented on PHP, based on the PoP API |
-| [api-graphql-query](https://github.com/getpop/api-graphql-query) | Utilities to transform the query from the GraphQL syntax to the Field query syntax |
-| [api-graphql-request](https://github.com/getpop/api-graphql-request) | Enables GraphQL for PoP to process the GraphQL query using the standard syntax |
+| [graphql-query](https://github.com/getpop/graphql-query) | Utilities to transform the query from the GraphQL syntax to the Field query syntax |
+| [graphql-request](https://github.com/getpop/graphql-request) | Enables GraphQL for PoP to process the GraphQL query using the standard syntax |
 | [api-mirrorquery](https://github.com/getpop/api-mirrorquery) | Mirror the query in the API response |
 | [api-rest](https://github.com/getpop/api-rest) | Create REST endpoints in the PoP API |
 | [application](https://github.com/getpop/application) | Create a component-based application |
