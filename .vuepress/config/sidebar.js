@@ -61,6 +61,7 @@ const docsSidebar = [
             'operational/proactive-feedback',
             'operational/tracing',
             'operational/export',
+            'operational/making-skip-include-dynamic',
             'operational/remove-if-null',
             'operational/translate',
         ]
