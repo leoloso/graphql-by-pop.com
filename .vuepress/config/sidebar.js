@@ -103,6 +103,7 @@ const docsSidebar = [
             'architecture/code-first',
             'architecture/directive-design',
             'architecture/directive-pipeline',
+            ['architecture/decoupling-requested-executed-queries', '(x) Decoupling Queries'],
             'architecture/symfony-components',
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
@@ -132,7 +133,6 @@ const docsSidebar = [
             'roadmap/scaffolding-commands',
             'roadmap/mutations',
             'roadmap/federation',
-            ['roadmap/decoupling-requested-executed-queries', '(x) Decoupling Queries'],
             'roadmap/serverless-wordpress',
             ['roadmap/laravel-symfony', '(x) Laravel/Symfony'],
         ]
