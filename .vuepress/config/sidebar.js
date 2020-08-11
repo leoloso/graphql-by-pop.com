@@ -11,7 +11,7 @@ const docsSidebar = [
     {
         title: 'Dynamic Schema',
         children: [
-            ['dynamic-schema/intro', '(*) Intro'],
+            ['dynamic-schema/intro', 'Intro'],
             'dynamic-schema/ifttt-through-directives',
             'dynamic-schema/multiple-resolvers',
             'dynamic-schema/field-directive-based-versioning',
@@ -106,7 +106,8 @@ const docsSidebar = [
             'architecture/directive-design',
             'architecture/directive-pipeline',
             'architecture/manipulating-field-resolution-order',
-            ['architecture/decoupling-requested-executed-queries', '(x) Decoupling Queries'],
+            'architecture/schema-type-directives',
+            ['architecture/decoupling-queries', '(x) Decoupling Queries'],
             'architecture/symfony-components',
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
