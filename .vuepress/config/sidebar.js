@@ -33,6 +33,7 @@ const docsSidebar = [
             'schema-objects/types/scalars',
             'schema-objects/fields',
             'schema-objects/directives',
+            'schema-objects/field-directive-aliases',
         ]
     },
     // {
