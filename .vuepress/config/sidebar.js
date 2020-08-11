@@ -103,6 +103,7 @@ const docsSidebar = [
             'architecture/code-first',
             'architecture/directive-design',
             'architecture/directive-pipeline',
+            'architecture/manipulating-field-resolution-order',
             ['architecture/decoupling-requested-executed-queries', '(x) Decoupling Queries'],
             'architecture/symfony-components',
             'architecture/graphql-superset',
