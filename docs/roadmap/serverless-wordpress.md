@@ -1,4 +1,4 @@
-# Serverless WordPress
+# Serverless API for WordPress
 
 The application can be composed of 2 parts:
 
