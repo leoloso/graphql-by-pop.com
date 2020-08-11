@@ -59,11 +59,12 @@ const docsSidebar = [
         children: [
             // ['operational/intro', '(x) Intro to Operational'],
             'operational/proactive-feedback',
-            'operational/tracing',
+            'operational/multiple-query-execution',
             'operational/export',
             'operational/making-skip-include-dynamic',
             'operational/remove-if-null',
             'operational/translate',
+            'operational/tracing',
         ]
     },
     {

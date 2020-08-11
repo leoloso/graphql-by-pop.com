@@ -25,7 +25,7 @@ query GetPostsContainingString($_search: String = "") {
 }
 ```
 
-The `@export` directive allows to export the value from a field, and inject this value into a second field through a dynamic variable (whose name is defined under argument `as`), thus combining the 2 queries into 1:
+The `@export` directive relies on the [multiple-query execution](multiple-query-execution) feature, to export the value from a field, and inject this value into a second field through a dynamic variable (whose name is defined under argument `as`), thus combining the 2 queries into 1:
 
 ```graphql
 query GetLoggedInUserName {
@@ -127,6 +127,12 @@ In order for `@export` to work, the query must be coded with the following 2 pec
 1. The name of the dynamic variable must start with `"_"`
 2. The dynamic variable must be declared as a static (i.e. "normal") variable in the operation name, and always receive a default value
 
+::: details Implementation source
+
+Directive `@export` is implemented [here](https://github.com/GraphQLByPoP/graphql-server/blob/109d194c11dd2510d0ea5ce42b88fb556397400c/src/DirectiveResolvers/ExportDirectiveResolver.php).
+
+:::
+
 ### 1. The name of the dynamic variable must start with `"_"`
 
 For the solution, it was decided that `@export` will export the value into a normal variable, accessible as `$variable`. As a consequence, the query needs to declare the exported variables in the operation name.
@@ -141,11 +147,7 @@ The GraphQL parser still treats a dynamic variable as a variable, hence it valid
 
 To avoid this error (which halts execution of the query), we must always define the variable in the operation name, and provide a default value for that argument, even if this value won't be used.
 
-## Implementation
-
-The implementation for `@export`, handling all 4 cases detailed above, is [this one](https://github.com/getpop/graphql/blob/109d194c11dd2510d0ea5ce42b88fb556397400c/src/DirectiveResolvers/ExportDirectiveResolver.php). 
-
-The reasons why the variable name starts with `_`, and why the input has a default value even though it is never used, will be explained later on.
+## Demonstration
 
 ::: tip
 
