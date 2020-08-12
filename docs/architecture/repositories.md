@@ -6,7 +6,7 @@ GraphQL by PoP does not live on a monorepo, but has been spread on a great numbe
 - [PoPSchema](https://github.com/PoPSchema): components to add entities to the schema (types, field resolvers, directives)
 - [PoP](https://github.com/getpop): the core server-side component architecture, used by the server to load the graph data
 
-Each repository deals with a specific domain, and it must be as granular as common sense dictates. This distribution is due to GraphQL by PoP being [CMS-agnostic](cms-agnosticism), attempting to work on as many different CMSs/frameworks as possible with the least required effort.
+Each repository deals with a specific domain, and it must be as granular as common sense dictates. This distribution is due to GraphQL by PoP being [CMS-agnostic](cms-agnosticism.html), attempting to work on as many different CMSs/frameworks as possible with the least required effort.
 
 ## List of repositories
 
