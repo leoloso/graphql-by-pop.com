@@ -99,6 +99,7 @@ const docsSidebar = [
         title: 'Architecture',
         children: [
             ['architecture/intro', '(x) Intro'],
+            'architecture/cms-agnosticism',
             'architecture/repositories',
             'architecture/suppressing-n-plus-one-problem',
             'architecture/using-components-instead-of-graphs',
