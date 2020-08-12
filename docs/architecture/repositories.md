@@ -25,6 +25,7 @@ Each repository deals with a specific domain, and it must be as granular as comm
 
 | Repository | Description |
 | --- | --- |
+| [basic-directives](https://github.com/getpop/basic-directives) | Set of basic directives |
 | [block-metadata-for-wp](https://github.com/PoPSchema/block-metadata-for-wp) | Integration with WordPress plugin "Block Metadata" |
 | [cdn-directive](https://github.com/PoPSchema/cdn-directive) | CDN directive |
 | [commentmeta](https://github.com/PoPSchema/commentmeta) | Adds support for comment meta |
@@ -44,10 +45,14 @@ Each repository deals with a specific domain, and it must be as granular as comm
 | [locations-wp-em](https://github.com/PoPSchema/locations-wp-em) | Implementation for WordPress of contracts from package "Locations", through plugin "Events Manager" |
 | [media](https://github.com/PoPSchema/media) | Adds support for media |
 | [media-wp](https://github.com/PoPSchema/media-wp) | Implementation for WordPress of contracts from package "Media" |
-| [pages](https://github.com/PoPSchema/pages) | Adds support for pages |
+| [meta](https://github.com/getpop/meta) | Adds support for meta |
+| [metaquery](https://github.com/getpop/metaquery) | Adds support for meta queries |
+| [metaquery-wp](https://github.com/getpop/metaquery-wp) | Implementation for | [pages](https://github.com/PoPSchema/pages) | Adds support for pages |
 | [pages-wp](https://github.com/PoPSchema/pages-wp) | Implementation for WordPress of contracts from package "Pages" |
 | [posts](https://github.com/PoPSchema/posts) | Adds support for posts |
 | [posts-wp](https://github.com/PoPSchema/posts-wp) | Implementation for WordPress of contracts from package "Posts" |
+| [queriedobject](https://github.com/getpop/queriedobject) | Adds support to query single objects (users, posts, etc) in the request |
+| [queriedobject-wp](https://github.com/getpop/queriedobject-wp) | Implementation for WordPress of contracts from package "Queried Object" |
 | [taxonomies](https://github.com/PoPSchema/taxonomies) | Adds support for taxonomies |
 | [taxonomies-wp](https://github.com/PoPSchema/taxonomies-wp) | Implementation for WordPress of contracts from package "Taxonomies" |
 | [taxonomymeta](https://github.com/PoPSchema/taxonomymeta) | Adds support for taxonomy (category and tag) meta |
@@ -62,6 +67,13 @@ Each repository deals with a specific domain, and it must be as granular as comm
 | [usermeta-wp](https://github.com/PoPSchema/usermeta-wp) | Implementation for WordPress of contracts from package "User Meta" |
 | [users](https://github.com/PoPSchema/users) | Adds support for users |
 | [users-wp](https://github.com/PoPSchema/users-wp) | Implementation for WordPress of contracts from package "Users" |
+| [user-roles](https://github.com/getpop/user-roles) | Adds support for user roles |
+| [user-roles-access-control](https://github.com/getpop/user-roles-access-control) | Access Control based on the user having a given role/capability |
+| [user-roles-acl](https://github.com/getpop/user-roles-acl) | Access Control List for User Roles |
+| [user-roles-wp](https://github.com/getpop/user-roles-wp) | Implementation for WordPress of contracts from package "User Roles" |
+| [user-state](https://github.com/getpop/user-state) | Enables users to log in and have user state |
+| [user-state-access-control](https://github.com/getpop/user-state-access-control) | Access Control based on the user being logged-in or not |
+| [user-state-wp](https://github.com/getpop/user-state-wp) | Implementation for WordPress of contracts from package "User State" |
 
 ### PoP
 
@@ -75,14 +87,13 @@ Each repository deals with a specific domain, and it must be as granular as comm
 | [api-graphql](https://github.com/getpop/api-graphql) | Extended/Upgraded implementation of GraphQL, implemented on PHP, based on the PoP API |
 | [api-mirrorquery](https://github.com/getpop/api-mirrorquery) | Mirror the query in the API response |
 | [api-rest](https://github.com/getpop/api-rest) | Create REST endpoints in the PoP API |
-| [basic-directives](https://github.com/getpop/basic-directives) | Set of basic directives |
 | [cache-control](https://github.com/getpop/cache-control) | Add HTTP caching to the response |
 | [component-model](https://github.com/getpop/component-model) | Component model for PoP, over which the component-based architecture is based |
+| [configurable-schema-feedback](https://github.com/getpop/configurable-schema-feedback) | Define schema feedback by configuration |
 | [definitions](https://github.com/getpop/definitions) | Enables to define a name for an element (such as modules, resources, etc) through different strategies |
 | [engine](https://github.com/getpop/engine) | Engine for PoP |
 | [engine-wp](https://github.com/getpop/engine-wp) | Implementation of PoP Engine for WordPress |
 | [engine-wp-bootloader](https://github.com/getpop/engine-wp-bootloader) | PoP Engine Bootloader for WordPress |
-| [field-deprecation-by-directive](https://github.com/getpop/field-deprecation-by-directive) | Deprecate fields by directive |
 | [field-query](https://github.com/getpop/field-query) | Component model for PoP, over which the component-based architecture is based |
 | [filestore](https://github.com/getpop/filestore) | Base classes to save files to disk, read them and reference them through an URL |
 | [function-fields](https://github.com/getpop/function-fields) | Set of function global fields |
@@ -91,22 +102,11 @@ Each repository deals with a specific domain, and it must be as granular as comm
 | [hooks-wp](https://github.com/getpop/hooks-wp) | WordPress implementation of the contracts to implement hooks (filters and actions) for PoP |
 | [loosecontracts](https://github.com/getpop/loosecontracts) | Loose Contracts: a method to "code against interfaces, not implementations" for strings such as option names, hook names, etc |
 | [mandatory-directives-by-configuration](https://github.com/getpop/mandatory-directives-by-configuration) | Set configurable mandatory directives for fields and directives |
-| [meta](https://github.com/getpop/meta) | Adds support for meta |
-| [metaquery](https://github.com/getpop/metaquery) | Adds support for meta queries |
-| [metaquery-wp](https://github.com/getpop/metaquery-wp) | Implementation for WordPress of contracts from package "Meta Query" |
+WordPress of contracts from package "Meta Query" |
 | [modulerouting](https://github.com/getpop/modulerouting) | Configure and obtain what module will be added to the component hierarchy at each level, based on the attributes from the request |
-| [queriedobject](https://github.com/getpop/queriedobject) | Adds support to query single objects (users, posts, etc) in the request |
-| [queriedobject-wp](https://github.com/getpop/queriedobject-wp) | Implementation for WordPress of contracts from package "Queried Object" |
 | [query-parsing](https://github.com/getpop/query-parsing) | Utilities to parse the query |
 | [root](https://github.com/getpop/root) | Declaration of dependencies shared by all PoP components |
 | [routing](https://github.com/getpop/routing) | Routing system |
 | [routing-wp](https://github.com/getpop/routing-wp) | Implementation for WordPress of contracts from package "Routing" |
 | [translation](https://github.com/getpop/translation) | Translation API for PoP components |
 | [translation-wp](https://github.com/getpop/translation-wp) | Implementation of the Translation API for WordPress |
-| [user-roles](https://github.com/getpop/user-roles) | Adds support for user roles |
-| [user-roles-access-control](https://github.com/getpop/user-roles-access-control) | Access Control based on the user having a given role/capability |
-| [user-roles-acl](https://github.com/getpop/user-roles-acl) | Access Control List for User Roles |
-| [user-roles-wp](https://github.com/getpop/user-roles-wp) | Implementation for WordPress of contracts from package "User Roles" |
-| [user-state](https://github.com/getpop/user-state) | Enables users to log in and have user state |
-| [user-state-access-control](https://github.com/getpop/user-state-access-control) | Access Control based on the user being logged-in or not |
-| [user-state-wp](https://github.com/getpop/user-state-wp) | Implementation for WordPress of contracts from package "User State" |
