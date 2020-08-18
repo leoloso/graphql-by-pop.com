@@ -53,6 +53,9 @@ Each repository deals with a specific domain, and it must be as granular as comm
 | [posts-wp](https://github.com/PoPSchema/posts-wp) | Implementation for WordPress of contracts from package "Posts" |
 | [queriedobject](https://github.com/getpop/queriedobject) | Adds support to query single objects (users, posts, etc) in the request |
 | [queriedobject-wp](https://github.com/getpop/queriedobject-wp) | Implementation for WordPress of contracts from package "Queried Object" |
+| [schema-commons](https://github.com/PoPSchema/schema-commons) | Code shared by the schema packages |
+| [tags](https://github.com/PoPSchema/tags) | Adds support for tags |
+| [tags-wp](https://github.com/PoPSchema/tags-wp) | Implementation for WordPress of contracts from package "Tags" |
 | [taxonomies](https://github.com/PoPSchema/taxonomies) | Adds support for taxonomies |
 | [taxonomies-wp](https://github.com/PoPSchema/taxonomies-wp) | Implementation for WordPress of contracts from package "Taxonomies" |
 | [taxonomymeta](https://github.com/PoPSchema/taxonomymeta) | Adds support for taxonomy (category and tag) meta |
