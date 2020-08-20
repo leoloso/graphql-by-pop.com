@@ -1,4 +1,4 @@
-# Proactive Feedback
+# (*) Proactive Feedback
 
 GraphQL servers usually do not offer good contextual information when running queries, because the GraphQL spec does not force them (or even suggest) to do so. This is evident concerning deprecations, where deprecation data is shown only [through introspection](http://spec.graphql.org/June2018/#sec-Deprecation), by querying fields `isDeprecated` and `deprecationReason` on the `Field` and `Enum` types:
 
@@ -70,11 +70,13 @@ This means that the developer executing the query must actively execute introspe
 
 ## Providing proactive feedback
 
-GraphQL by PoP addresses this deficiency by making usie of the wildcard top-level entry `extensions`, which allows to extend the protocol as needed. Under this entry, when running any query, GraphQL by PoP may send data through the following feedback entries:
+GraphQL by PoP addresses this deficiency by making use of the wildcard top-level entry `extensions`, which allows to extend the protocol as needed. Under this entry, when running any query, GraphQL by PoP may send data through the following feedback entries:
 
 - `deprecations`
 - `warnings`
 - `logs`
+- `notices`
+- `traces`
 
 Because they are sent on the response to the query itself, and not just during introspection, this data is valuable to developers of the API-consuming application to understand how to better interact with the API.
 
@@ -216,3 +218,11 @@ query=
 [<a href="https://newapi.getpop.org/api/graphql/?actions[]=show-logs&postId=1&query=post(id:$postId).title<traceExecutionTime>">View query results</a>]
 
 :::
+
+## Notices
+
+TODO
+
+## Traces
+
+TODO
