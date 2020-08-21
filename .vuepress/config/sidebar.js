@@ -64,6 +64,7 @@ const docsSidebar = [
             'operational/export',
             'operational/making-skip-include-dynamic',
             'operational/remove-if-null',
+            'operational/default',
             'operational/translate',
             'operational/tracing',
         ]
