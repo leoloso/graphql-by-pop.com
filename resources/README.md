@@ -18,6 +18,7 @@ Ongoing series of articles on conceptualizing, designing and implementing a Grap
 6. [GraphQL directives are underrated](https://blog.logrocket.com/graphql-directives-are-underrated/)
 7. [Treating GraphQL directives as middleware](https://blog.logrocket.com/treating-graphql-directives-as-middleware/) 
 8. [Creating an @export GraphQL directive](https://blog.logrocket.com/creating-an-export-graphql-directive/)
+9. [Adding directives to the schema in code-first GraphQL servers](https://blog.logrocket.com/adding-directives-schema-code-first-graphql-servers/)
 
 <!-- ### CMS-agnosticism design
 
