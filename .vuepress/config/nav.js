@@ -14,5 +14,9 @@ module.exports = [
     {
         text: 'GitHub',
         link: 'https://github.com/GraphQLByPoP/graphql'
+    },
+    {
+        text: 'Sponsor',
+        link: 'https://github.com/sponsors/leoloso/'
     }
 ];
