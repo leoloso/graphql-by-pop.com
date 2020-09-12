@@ -13,7 +13,7 @@ module.exports = [
     },
     {
         text: 'GitHub',
-        link: 'https://github.com/GraphQLByPoP/graphql'
+        link: 'https://github.com/GraphQLByPoP/graphql-server'
     },
     {
         text: 'Sponsor',
