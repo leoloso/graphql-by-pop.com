@@ -2,7 +2,7 @@
 
 (This feature is not part of the GraphQL spec. It is based on the requested "[composable fields](https://github.com/graphql/graphql-spec/issues/682)" feature.)
 
-Resolve a field within an argument for another field from the same type, using syntax `{{ fieldName }}`.
+Resolve a field within an argument for another field from the same type, using syntax `{ { fieldName } }` (it is `{{` and `}}` instead of `{ {` and `} }`, but somehow this VuePress site doesn't compile).
 
 For instance, we can send a a newsletter defining the `to`, `subject` and `content` data through fields `newsletterTo`, `newsletterSubject` and `newsletterContent` from the `Root` type:
 
@@ -18,7 +18,7 @@ mutation {
 
 Using nested mutations, we can send an email to several users, personalizing the content for each.
 
-For instance, add the user's name in the `subject` as `{ { name } }`, producing `"Hey Joe!"` and `"Hey Rachel!"` (It is `{{` and `}}` instead of `{ {` and `} }`, but somehow this webpage doesn't compile):
+For instance, add the user's name in the `subject` as `{ { name } }`, producing `"Hey Joe!"` and `"Hey Rachel!"`:
 
 ```graphql
 mutation {
