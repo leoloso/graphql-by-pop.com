@@ -59,6 +59,7 @@ const docsSidebar = [
         title: 'Operational',
         children: [
             // ['operational/intro', '(x) Intro to Operational'],
+            'operational/embeddable-fields',
             'operational/proactive-feedback',
             'operational/multiple-query-execution',
             'operational/export',
@@ -78,7 +79,6 @@ const docsSidebar = [
             'extended/pql',
             'extended/pql-language-features',
             'extended/pql-syntax',
-            'extended/embeddable-fields',
             'extended/interact-apis-within-query',
             'extended/gateway',
             'extended/content-mesh',
