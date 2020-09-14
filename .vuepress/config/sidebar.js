@@ -78,6 +78,7 @@ const docsSidebar = [
             'extended/pql',
             'extended/pql-language-features',
             'extended/pql-syntax',
+            'extended/embeddable-fields',
             'extended/interact-apis-within-query',
             'extended/gateway',
             'extended/content-mesh',
