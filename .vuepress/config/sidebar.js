@@ -112,6 +112,7 @@ const docsSidebar = [
             'architecture/manipulating-field-resolution-order',
             'architecture/schema-type-directives',
             ['architecture/decoupling-queries', '(x) Decoupling Queries'],
+            'architecture/downgrading-code',
             'architecture/symfony-components',
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
