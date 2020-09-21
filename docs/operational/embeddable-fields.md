@@ -4,6 +4,8 @@
 
 Syntactic sugar for the PQL's [composable fields](../extended/pql-language-features.html#composable-fields): Resolve a field within an argument for another field from the same type, using syntax `{ { fieldName } }`, and also including arguments, using `{ { fieldName(fieldArgs) } }` (it is `{{` and `}}` instead of `{ {` and `} }`, but somehow this VuePress site doesn't compile).
 
+To make it convenient to use, field `echo(value: String): String` is also added on every type of the schema.
+
 For instance, running <a href="https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts%20%7B%0A%20%20%20%20title%3A%20echo(value%3A%20%22(%7B%7B%20commentCount%20%7D%7D)%20%7B%7B%20title%20%7D%7D%20-%20posted%20on%20%7B%7B%20date(format%3A%20%5C%22d%2Fm%2FY%5C%22)%7D%7D%22)%20%40include(if%3A%20%22%7B%7B%20hasComments%20%7D%7D%22)%0A%20%20%20%20title%20%40skip(if%3A%20%22%7B%7B%20hasComments%20%7D%7D%22)%0A%20%20%7D%0A%7D%0A" target="_blank">this query</a>:
 
 ```graphql
