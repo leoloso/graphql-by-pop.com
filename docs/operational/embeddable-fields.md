@@ -11,7 +11,7 @@ For instance, running <a href="https://newapi.getpop.org/graphiql/?query=query%2
 ```graphql
 query {
   posts {
-    description: echo(value: "'{{ title }}' was posted on {{ date(format: \"d/m/Y\")}}")
+    description: echo(value: "'{{ title }}' was posted on {{ date(format: \"d/m/Y\") }}")
   }
 }
 ```
