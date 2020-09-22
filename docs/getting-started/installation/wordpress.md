@@ -10,7 +10,7 @@ WordPress 5.4 or above, PHP 7.1 or above.
 
 ### Install
 
-Download [the latest version](https://github.com/GraphQLAPI/graphql-api-for-wp/releases/download/v0.5.0/graphql-api.zip) of the plugin. 
+Download [the latest version](https://github.com/GraphQLAPI/graphql-api-for-wp/releases/latest/download/graphql-api.zip) of the plugin. 
 
 Then, in the WordPress admin:
 
