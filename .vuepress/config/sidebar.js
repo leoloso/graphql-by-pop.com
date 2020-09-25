@@ -4,6 +4,7 @@ const docsSidebar = [
         children: [
             'getting-started/intro',
             'getting-started/installation/wordpress',
+            'getting-started/supported-php-features',
             'getting-started/configuration',
             'getting-started/directory-structure',
         ]
