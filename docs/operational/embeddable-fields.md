@@ -2,12 +2,15 @@
 
 (This feature is not part of the GraphQL spec. It is based on the requested "[composable fields](https://github.com/graphql/graphql-spec/issues/682)" feature.)
 
-Syntactic sugar for the PQL's [composable fields](../extended/pql-language-features.html#composable-fields): Resolve a field within an argument for another field from the same type, using syntax `{ { fieldName } }`, and also including arguments, using `{ { fieldName(fieldArgs) } }` (it is `{{` and `}}` instead of `{ {` and `} }`, but somehow this VuePress site doesn't compile).
+::: v-pre
+Syntactic sugar for the PQL's [composable fields](../extended/pql-language-features.html#composable-fields): Resolve a field within an argument for another field from the same type, using syntax `{{fieldName}}`, and also including arguments, using `{{fieldName(fieldArgs)}}`.
+:::
 
 To make it convenient to use, field `echo(value: String): String` is also added on every type of the schema.
 
 For instance, running <a href="https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts%20%7B%0A%20%20%20%20description%3A%20echo(value%3A%20%22%27%7B%7B%20title%20%7D%7D%27%20was%20posted%20on%20%7B%7B%20date(format%3A%20%5C%22d%2Fm%2FY%5C%22)%7D%7D%22)%0A%20%20%7D%0A%7D" target="_blank">this query</a>:
 
+::: v-pre
 ```graphql
 query {
   posts {
@@ -15,6 +18,7 @@ query {
   }
 }
 ```
+:::
 
 ...produces response:
 
@@ -46,7 +50,7 @@ query {
 ```
 
 ::: details View PQL query
-
+::: v-pre
 ```less
 query=
   posts.
@@ -63,6 +67,7 @@ Embedded fields also work within directive arguments.
 
 For instance, running <a href="https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts%20%7B%0A%20%20%20%20title%3A%20echo(value%3A%20%22(%7B%7B%20commentCount%20%7D%7D)%20%7B%7B%20title%20%7D%7D%20-%20posted%20on%20%7B%7B%20date(format%3A%20%5C%22d%2Fm%2FY%5C%22)%7D%7D%22)%20%40include(if%3A%20%22%7B%7B%20hasComments%20%7D%7D%22)%0A%20%20%20%20title%20%40skip(if%3A%20%22%7B%7B%20hasComments%20%7D%7D%22)%0A%20%20%7D%0A%7D%0A" target="_blank">this query</a>:
 
+::: v-pre
 ```graphql
 query {
   posts {
@@ -71,6 +76,7 @@ query {
   }
 }
 ```
+:::
 
 ...produces response:
 
@@ -102,7 +108,7 @@ query {
 ```
 
 ::: details View PQL query
-
+::: v-pre
 ```less
 query=
   posts.
@@ -118,6 +124,7 @@ query=
 
 We can send a a newsletter defining the `to`, `subject` and `content` data through fields `newsletterTo`, `newsletterSubject` and `newsletterContent` from the `Root` type:
 
+::: v-pre
 ```graphql
 mutation {
   sendEmail(
@@ -127,9 +134,11 @@ mutation {
   )
 }
 ```
+:::
 
 Using nested mutations, we can send an email to several users, personalizing the `subject` for each, producing `"Hey Joe!"` and `"Hey Rachel!"`:
 
+::: v-pre
 ```graphql
 mutation {
   users {
@@ -140,9 +149,13 @@ mutation {
   }
 }
 ```
+:::
 
-Adding arguments on the embedded field, we can add the service expiration date for each user in the `content` as `{ { serviceExpirationDate(format:\"d/m/Y\") } }` (the string quotes must be escaped: `\"`):
+::: v-pre
+Adding arguments on the embedded field, we can add the service expiration date for each user in the `content` as `{{ serviceExpirationDate(format:\"d/m/Y\") }}` (the string quotes must be escaped: `\"`):
+:::
 
+::: v-pre
 ```graphql
 mutation {
   users {
@@ -153,9 +166,11 @@ mutation {
   }
 }
 ```
+:::
 
 Using directive arguments, we can send a single email to many users, adding them all in the to field:
 
+::: v-pre
 ```graphql
 mutation {
   users {
@@ -163,6 +178,7 @@ mutation {
   }
 }
 ```
+:::
 
 ## Configuration
 
