@@ -1,9 +1,11 @@
-# (*) IFTTT through Directives
+# IFTTT through Directives
 
-GraphQL by PoP provides the ability to implement IFTTT (If This Then That) strategies through directives. These directives are dynamically added to the query whenever some specific field or directive is present in the query, so that:
+GraphQL by PoP provides the ability to implement IFTTT (If This Then That) strategies through directives. These directives are dynamically added to the query whenever some specific field or directive is present in the query.
 
-- If a specific field from some type is present in the query, execute a certain directive (or directives) on the field
-- If a specific directive is invoked, execute another directive (or directives) before or after it
+In general, IFTTT are rules that trigger actions whenever a specified event happens. In our situation, the pairs of event/action are:
+
+- If "field X found on the query" then "attach directive Y to field X"
+- If "directive Z found on the query" then "execute directive Y before/after directive Z"
 
 Dynamically adding IFTTT directives to the schema is a recursive process: such directive can, itself, be configured its own set of IFTTT directives which are also added to the directive chain up.
 
@@ -32,7 +34,42 @@ Attach a `@validateIsUserLoggedIn` directive to directive `@translate`, to avoid
 
 ## How it works
 
-TODO
+
+
+How do we add directives to the schema via IFTTT? Say, for instance, we want to create a custom directive `@authorize(role: String!)`, to validate the that user executing field `myPosts` has the expected role `author`, or show an error otherwise.
+
+If we created the schema using the SDL, it would look like this:
+
+```graphql
+directive @authorize(role: String!) on FIELD_DEFINITION
+
+type User {
+  myPosts: [Post] @authorize(role: "author")
+}
+```
+
+The IFTTT rule defines the same intent that the SDL above is declaring: whenever requesting field `myPosts`, execute directive `@authorize(role: "author")` on it.
+
+This rule for GraphQL by PoP looks like [this](https://github.com/PoPSchema/user-roles-acl/blob/2c179ff6d7c88be2e63542fbad619963755fc566/src/Config/ServiceConfiguration.php#L51):
+
+```php
+ContainerBuilderUtils::injectValuesIntoService(
+    'access_control_manager',
+    'addEntriesForFields',
+    UserRolesAccessControlGroups::ROLES,
+    [
+        [RootTypeResolver::class, 'myPosts', ['author']],
+    ]
+);
+```
+
+Now, whenever field `myPosts` is found on the query, the engine will automatically attach `@authorize(role: 'author')` to that field on the executable query.
+
+IFTTT rules can also be triggered when encountering a directive, not just a field. For instance, we can set-up rule "Whenever directive `@translate` is found on the query, execute directive `@cache(time: 3600)` on that field".
+
+Adding IFTTT directives to the query is a recursive process: it will trigger a new event to be processed by IFTTT rules, potentially attaching other directives to the query, and so on.
+
+For instance, rule "Whenever directive `@cache` is found, execute directive `@log`" would log an entry about the execution of the field, and then trigger a new event concerning this newly added directive.
 
 ## Example package
 

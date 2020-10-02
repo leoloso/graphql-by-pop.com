@@ -51,7 +51,7 @@ For instance, if we also query the `Actor`'s `preferredDirector` field (which re
 
 ![Repeated types in iterations](/images/dataloading-engine-repeated-type-iterations.png "Repeated types in iterations")
 
-Let's see how this plays out for executing `@export` in a single query (if splitting the operation into several queries, then `@export` already works out-of-the-box). For our first attempt, we create the query as we would normally do, without thinking about the execution order of the fields:
+Let's see how this plays out for executing `@export` in a single query. For our first attempt, we create the query as we would normally do, without thinking about the execution order of the fields:
 
 ```graphql
 query GetPostsAuthorNames($_authorName: String = "") {
