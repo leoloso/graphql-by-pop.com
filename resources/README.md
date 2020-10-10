@@ -6,6 +6,10 @@ sidebar: false
 
 ## Architectural Design Articles
 
+### PHP Architecture
+
+1. [Transpiling PHP code from 8.0 to 7.x via Rector](https://blog.logrocket.com/transpiling-php-code-from-8-0-to-7-x-via-rector/)
+
 ### GraphQL server design
 
 Ongoing series of articles on conceptualizing, designing and implementing a GraphQL server, based on GraphQL by PoP, published on the [LogRocket blog](https://blog.logrocket.com/):
