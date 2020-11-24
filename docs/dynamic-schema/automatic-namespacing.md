@@ -22,11 +22,11 @@ Hence, GraphQL by PoP uses `_` as the namespace separator symbol (until the Grap
 
 This is how the normal schema looks like [in the GraphQL Voyager](https://newapi.getpop.org/graphql-interactive/):
 
-![Interactive schema](/images/normal-interactive-schema.jpg)
+![Interactive schema](/images/normal-interactive-schema.png)
 
 This is how it looks in [its namespaced version](https://newapi.getpop.org/graphql-interactive/?use_namespace=1):
 
-![Namespaced interactive schema](/images/namespaced-interactive-schema.jpg)
+![Namespaced interactive schema](/images/namespaced-interactive-schema.png)
 
 ## Configuration
 
