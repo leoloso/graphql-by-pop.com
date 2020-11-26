@@ -67,16 +67,22 @@
       "class": "degrade degrade-inverse"
     },
     {
-      "iconAfter": "🤖",
-      "title": "⧐ Automatic namespacing ⧏",
-      "details": "No need to worry if different teams or 3rd party providers using the same names for their types and interfaces. Create neater schemas by removing the 'MyCompanyName' prefix from your types, you won't need it.",
+      "iconAfter": "🧑🏽‍🍳",
+      "title": "⧐ Nested mutations ⧏",
+      "details": "Perform mutations on every type, not just on the root type, and have a mutation be executed on the result from another mutation. The schema gets neater and slimmer!",
       "class": "degrade"
     },
     {
-      "icon": "👩🏻‍🔧",
+      "icon": "🤖",
+      "title": "⧐ Automatic namespacing ⧏",
+      "details": "No need to worry if different teams or 3rd party providers using the same names for their types and interfaces. Create neater schemas by removing the 'MyCompanyName' prefix from your types, you won't need it.",
+      "class": "degrade degrade-inverse"
+    },
+    {
+      "iconAfter": "👩🏻‍🔧",
       "title": "⧐ Proactive warnings/deprecations ⧏",
       "details": "Issues with the query are shown in the response to the query, and not just when doing introspection. Avoid your users from never finding out that your schema has been upgraded!",
-      "class": "degrade degrade-inverse"
+      "class": "degrade"
     }
   ],
   "wordpressTitle": "",
