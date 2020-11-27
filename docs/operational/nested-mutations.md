@@ -29,11 +29,11 @@ mutation {
 ```less
 /?query=
   post(id: 1459).
-    update(title:New title).
+    update(title: New title).
       title
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:%201459).update(title:New%20title).title">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:1459).update(title:New%20title).title">View query results</a>]
 
 :::
 
@@ -63,15 +63,15 @@ mutation {
 /?query=
   post(id: 1459).
     title|
-    addComment(comment:Nice tango!).
+    addComment(comment: Nice tango!).
       id|
       content|
-      reply(comment:Can you dance like that?).
+      reply(comment: Can you dance like that?).
         id|
         content
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:%201459).title|addComment(comment:Nice%20tango!).id|content|reply(comment:Can%20you%20dance%20like%20that?).id|content">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:1459).title|addComment(comment:Nice%20tango!).id|content|reply(comment:Can%20you%20dance%20like%20that?).id|content">View query results</a>]
 
 :::
 
@@ -119,7 +119,7 @@ For instance, these fields can be considered a "duplicate":
 - `Root.updatePost`
 - `Post.update`
 
-We can decide to keep both of them, or remove the ones from the `Root` type, which are redundant.
+We can decide to keep both of them, or remove the ones from the `Root` type, which are redundant. This is accomplished through environment settings (check section at the bottom).
 
 ## Validating mutations via the operation type
 
@@ -174,11 +174,9 @@ mutation {
 }
 ```
 
-Please notice that we are using operation type `mutation` even though there is no mutation anymore at the top level (only the `post` query field). That's OK, because since we've removed `MutationRoot` (replaced with `Root`), the expectations from the default behavior do not apply anymore.
-
 ## Executing a single mutation on multiple objects
 
-Using nested mutations, we can mutate several fields at once without modifying or duplicating any field from the schema (eg: to accept `ids` as param instead of `id`).
+Using nested mutations, we can mutate several fields at once without modifying or duplicating any field from the schema, as is usually required for the standard behavior (eg: to accept a param `ids: [ID]!` for the multiple objects, instead of `id: ID!`).
 
 For instance, [this query](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=%23mutation%20%7B%0A%23%20%20loginUser(%0A%23%20%20%20%20usernameOrEmail%3A%22test%22%2C%0A%23%20%20%20%20password%3A%22pass%22%0A%23%20%20)%20%7B%0A%23%20%20%20%20id%0A%23%20%20%20%20name%0A%23%20%20%7D%0A%23%7D%0Amutation%20%7B%0A%20%20posts(limit%3A%203)%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22First%20comment%20on%20several%20posts%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%20%20reply(comment%3A%20%22Response%20to%20my%20own%20parent%20comment%22)%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) adds the same comment to several posts:
 
@@ -202,12 +200,17 @@ mutation {
 
 ```less
 /?query=
-  post(id: 1459).
-    update(title:New title).
-      title
+  posts(limit: 3).
+    title|
+    addComment(comment: First comment on several posts).
+      id|
+      content|
+      reply(comment: Response to my own parent comment).
+        id|
+        content
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7CisPublished">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:3).title|addComment(comment:First%20comment%20on%20several%20posts).id|content|reply(comment:Response%20to%20my%20own%20parent%20comment).id|content">View query results</a>]
 
 :::
 
@@ -261,9 +264,9 @@ Since a type now contains query and mutation fields, we may want to clearly visu
 
 Unfortunately, because there is no `isMutation` flag available on type `__Field` when doing introspection, then the solution employed is a bit hacky, and not completely satisfying: prepending label `"[Mutation] "` on the field's description:
 
-![Description for type `Root` in GraphiQL docs](images/mutation-desc-in-graphiql-docs.png)
+![Description for type `Root` in GraphiQL docs](/images/mutation-desc-in-graphiql-docs.png)
 
-To make it a bit better, and work with this data as if it were metadata (which it is), GraphQL by PoP has added an additional field `extensions` to type `__Field` (hidden from the schema), as to retrieve the custom extension data, as done in [this introspection query](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=query%20%7B%0A%20%20__schema%20%7B%0A%20%20%20%20queryType%20%7B%0A%20%20%20%20%20%20fields%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20extensions%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D):
+In addition, GraphQL by PoP has added field `extensions` to type `__Field` (hidden from the schema, since it is not currently supported by the spec), as to retrieve the custom extension data, as done in [this introspection query](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=query%20%7B%0A%20%20__schema%20%7B%0A%20%20%20%20queryType%20%7B%0A%20%20%20%20%20%20fields%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20extensions%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D):
 
 ```graphql
 query {
@@ -327,11 +330,11 @@ This functionality is currently not part of the GraphQL spec, but it has been re
 
 - [Proposal: Serial fields (nested mutations)](https://github.com/graphql/graphql-spec/issues/252)
 
-
 ## Configuration
 
 ### Environment variables
 
 | Environment variable | Description | Default |
 | --- | --- | --- |
-| `ENABLE_EMBEDDABLE_FIELDS` | Enable using embeddable fields | `false` |
+| `ENABLE_NESTED_MUTATIONS` | Enable using nested mutations | `false` |
+| `DISABLE_REDUNDANT_ROOT_TYPE_MUTATION_FIELDS` | Disable the redundant (or duplicate) mutation fields from the root type (to be set if nested mutations are enabled) | `false` |
