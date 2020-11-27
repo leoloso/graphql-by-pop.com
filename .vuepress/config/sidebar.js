@@ -4,6 +4,7 @@ const docsSidebar = [
         children: [
             'getting-started/intro',
             'getting-started/installation/wordpress',
+            'getting-started/novel-features',
             'getting-started/supported-php-features',
             'getting-started/configuration',
             'getting-started/directory-structure',
@@ -47,6 +48,13 @@ const docsSidebar = [
     //         'security/sanitization',
     //     ]
     // },
+    {
+        title: 'Clients',
+        children: [
+            'clients/graphiql',
+            'clients/voyager',
+        ]
+    },
     {
         title: 'Caching',
         children: [
@@ -106,6 +114,9 @@ const docsSidebar = [
             ['architecture/intro', '(x) Intro'],
             'architecture/cms-agnosticism',
             'architecture/repositories',
+            'architecture/localization',
+            'architecture/solid',
+            'architecture/subscribing-fields-to-types',
             'architecture/suppressing-n-plus-one-problem',
             'architecture/using-components-instead-of-graphs',
             'architecture/dataloading-engine',
@@ -113,6 +124,7 @@ const docsSidebar = [
             'architecture/code-first',
             'architecture/directive-design',
             'architecture/directive-pipeline',
+            'architecture/interacting-with-external-apis',
             ['architecture/decoupling-queries', 'Decoupling Queries'],
             'architecture/schema-type-directives',
             ['architecture/nested-mutations-single-source-of-code', 'Single source of code for mutations'],
