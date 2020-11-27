@@ -11,7 +11,7 @@ When providing the resolvers, we wouldn't want to provide two resolvers, one for
 
 ## Implementation details
 
-The server uses an object called `FieldResolver` to resolve fields, and an object called `MutationResolver` to execute the actual mutation. The same `MutationResolver` object can be referenced by different `FieldResolvers` implementing different fields, so the code is implemented only once and used in many places, following the [SOLID](https://en.wikipedia.org/wiki/SOLID) approach.
+The server uses an object called `FieldResolver` to resolve fields, and an object called `MutationResolver` to execute the actual mutation. The same `MutationResolver` object can be referenced by different `FieldResolvers` implementing different fields, so the code is implemented only once and used in many places, following the [SOLID](./solid.html) approach.
 
 We know if a field is a mutation or not if the `FieldResolver` declares a `MutationResolver` object for that field, done through function `resolveFieldMutationResolverClass`.
 
