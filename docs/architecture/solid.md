@@ -1,5 +1,7 @@
 # SOLID
 
+GraphQL by PoP follows the [SOLID](https://en.wikipedia.org/wiki/SOLID) approach for the software architecture.
+
 This is how the user entity is already provided by the plugin. The `User` type is provided through [this code](https://github.com/getpop/users/blob/c157600b00901ea74cc87187f55fc2e3242fe656/src/TypeResolvers/UserTypeResolver.php):
 
 ```php
