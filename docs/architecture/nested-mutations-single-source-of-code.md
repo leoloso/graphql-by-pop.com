@@ -1,4 +1,4 @@
-# Using a single source of code for (nested) mutations
+# Using a single source of code for standard and nested mutations
 
 The GraphQL server supports 2 behaviors:
 
