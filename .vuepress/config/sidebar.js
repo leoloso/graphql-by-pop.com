@@ -61,6 +61,7 @@ const docsSidebar = [
         children: [
             // ['operational/intro', '(x) Intro to Operational'],
             'operational/embeddable-fields',
+            'operational/nested-mutations',
             'operational/proactive-feedback',
             'operational/multiple-query-execution',
             'operational/export',
@@ -114,6 +115,7 @@ const docsSidebar = [
             'architecture/directive-pipeline',
             ['architecture/decoupling-queries', 'Decoupling Queries'],
             'architecture/schema-type-directives',
+            'architecture/nested-mutations-single-source-of-code',
             'architecture/downgrading-code',
             'architecture/symfony-components',
             'architecture/graphql-superset',
