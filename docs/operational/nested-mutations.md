@@ -2,7 +2,7 @@
 
 Nested mutations is the ability to perform mutations on a type other than the root type in GraphQL.
 
-For instance, this standard mutation executed at the top level:
+For instance, [this standard mutation](https://newapi.getpop.org/graphiql/?query=mutation%20%7B%0A%20%20updatePost(id%3A%201459%2C%20title%3A%20%22New%20title%22)%20%7B%0A%20%20%20%20title%0A%20%20%7D%0A%7D) executed at the top level:
 
 ```graphql
 mutation {
@@ -12,7 +12,7 @@ mutation {
 }
 ```
 
-Could also be executed through this nested mutation, on type `Post`:
+Could also be executed through [this nested mutation](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=mutation%20%7B%0A%20%20post(id%3A%201459)%20%7B%0A%20%20%20%20update(title%3A%20%22New%20title%22)%20%7B%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D), on type `Post`:
 
 ```graphql
 mutation {
@@ -33,7 +33,7 @@ mutation {
       title
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7CisPublished">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:%201459).update(title:New%20title).title">View query results</a>]
 
 :::
 
@@ -62,11 +62,16 @@ mutation {
 ```less
 /?query=
   post(id: 1459).
-    update(title:New title).
-      title
+    title|
+    addComment(comment:Nice tango!).
+      id|
+      content|
+      reply(comment:Can you dance like that?).
+        id|
+        content
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7CisPublished">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:%201459).title|addComment(comment:Nice%20tango!).id|content|reply(comment:Can%20you%20dance%20like%20that?).id|content">View query results</a>]
 
 :::
 
@@ -92,11 +97,15 @@ Producing this response:
 
 ## Changing the schema root type to `Root`
 
-For the standard behavior, queries and mutations are handled separately, through two different root types: The `QueryRoot` and the `MutationRoot`. In this arrangement, `MutationRoot` is the only type in the whole GraphQL schema which can contain mutation fields.
+For the standard behavior, queries and mutations are handled separately, through two different root types: The `QueryRoot` and the `MutationRoot`.
 
-But this situation changes with nested mutations, since then every single type can execute a mutation (not just the root type), and at any level of the query (not just at the top).
+![Standard root types](/images/schema-docs-root-types.png)
 
-Since both query and mutation fields live side by side under a same type, then the `MutationRoot` type doesn't make sense anymore, and types `QueryRoot` and `MutationRoot` are merged into a single type `Root` handling both query and mutation fields.
+In this sitatuation, `MutationRoot` is the only type in the whole GraphQL schema which can contain mutation fields. However, this situation is different with nested mutations, since then every single type can execute a mutation (not just the root type), and at any level of the query (not just at the top).
+
+Since both query and mutation fields can be added to a same type, then the `MutationRoot` type doesn't make sense anymore, and types `QueryRoot` and `MutationRoot` are merged into a single type `Root` handling both query and mutation fields.
+
+![Standard root types](/images/schema-docs-nested-mutation.png)
 
 ## Removing "duplicate" fields from the root?
 
@@ -105,12 +114,12 @@ With nested mutations, mutation fields may be added two times to the schema:
 - once under the `Root` type
 - once under the specific type
 
-For instance:
+For instance, these fields can be considered a "duplicate":
 
 - `Root.updatePost`
 - `Post.update`
 
-We can decide to keep both of them, or remove all the ones from the `Root` type, which are redundant.
+We can decide to keep both of them, or remove the ones from the `Root` type, which are redundant.
 
 ## Validating mutations via the operation type
 
