@@ -156,7 +156,6 @@ const docsSidebar = [
             ['roadmap/intro', '(x) Intro'],
             'roadmap/convention-over-configuration',
             'roadmap/scaffolding-commands',
-            'roadmap/mutations',
             'roadmap/federation',
             'roadmap/serverless-wordpress',
             ['roadmap/laravel-symfony', '(x) Laravel/Symfony'],
