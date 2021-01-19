@@ -113,7 +113,6 @@ const docsSidebar = [
         children: [
             ['architecture/intro', '(x) Intro'],
             'architecture/cms-agnosticism',
-            'architecture/repositories',
             'architecture/localization',
             'architecture/solid',
             'architecture/subscribing-fields-to-types',
