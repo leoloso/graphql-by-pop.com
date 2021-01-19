@@ -117,4 +117,4 @@ This solution is very performant, much better than the exponential complexity ex
 
 ## Implemented PHP code
 
-The data-loading process takes place on function `getModuleData` from class `Engine` in package [Component Model](https://github.com/getpop/component-model).
+The data-loading process takes place on function `getModuleData` from class `Engine` in package [Component Model](https://github.com/leoloso/PoP/tree/master/layers/Engine/packages/component-model).

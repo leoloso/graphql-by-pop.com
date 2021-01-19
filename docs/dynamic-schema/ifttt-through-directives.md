@@ -75,7 +75,7 @@ For instance, rule "Whenever directive `@cache` is found, execute directive `@lo
 
 In [this schema](https://newapi.getpop.org/graphql-interactive/), the `User` type has fields `roles` and `capabilities`, which can be considered to be sensitive information, so they should not be accessible by the random user.
 
-Package [Access Control List for User Roles](https://github.com/getpop/user-roles-acl) deals with this issue, by attaching directive `@validateDoesLoggedInUserHaveAnyRole` to these two fields, configured to validate that only a user with a given role (configured through environment variable) can access them:
+Package [Access Control List for User Roles](https://github.com/leoloso/PoP/tree/master/layers/Schema/packages/user-roles-acl) deals with this issue, by attaching directive `@validateDoesLoggedInUserHaveAnyRole` to these two fields, configured to validate that only a user with a given role (configured through environment variable) can access them:
 
 ```php
 if ($roles = Environment::anyRoleLoggedInUserMustHaveToAccessRolesFields()) {
