@@ -126,7 +126,7 @@ const docsSidebar = [
             'architecture/interacting-with-external-apis',
             ['architecture/decoupling-queries', 'Decoupling Queries'],
             'architecture/schema-type-directives',
-            'architecture/nested-mutations-single-source-of-code',
+            ['architecture/nested-mutations-single-source-of-code', 'Single source of code for mutations'],
             'architecture/downgrading-code',
             'architecture/symfony-components',
             'architecture/graphql-superset',
