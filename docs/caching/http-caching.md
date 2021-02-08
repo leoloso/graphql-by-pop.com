@@ -1,6 +1,6 @@
 # HTTP Caching
 
-Through the [Cache Control](https://github.com/getpop/cache-control) package, GraphQL by PoP caches the response from the query using standard [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
+Through the [Cache Control](https://github.com/leoloso/PoP/tree/master/layers/Engine/packages/cache-control) package, GraphQL by PoP caches the response from the query using standard [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
 
 HTTP caching works only when invoking GraphQL via GET through a persisted query (against a custom endpoint), or when sending the query using [PQL](../extended/pql).
 

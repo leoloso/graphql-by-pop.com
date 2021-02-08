@@ -2,7 +2,7 @@
 
 ## Via the "GraphQL API for WordPress" plugin
 
-[GraphQL API for WordPress](https://github.com/GraphQLAPI/graphql-api-for-wp) is the implementation for WordPress of GraphQL by PoP.
+[GraphQL API for WordPress](https://graphql-api.com) is the implementation for WordPress of GraphQL by PoP.
 
 ### Requirements
 
@@ -10,7 +10,7 @@ WordPress 5.4 or above, PHP 7.1 or above.
 
 ### Install
 
-Download [the latest version](https://github.com/GraphQLAPI/graphql-api-for-wp/releases/latest/download/graphql-api.zip) of the plugin. 
+[Download the plugin](https://graphql-api.com/download/).
 
 Then, in the WordPress admin:
 
@@ -69,14 +69,6 @@ Then complete the following steps.
 From owner `"getpop"`, only packages `"getpop/graphql"` and `"getpop/engine-wp-bootloader"` are mandatory. The other ones are required to load data from posts, pages, users, comments, taxonomies and media, and to set-up the API endpoint permalink.
 
 Package `"composer/installers"` is required to set-up some required must-use plugins.
-:::
-
-::: details Can install from tagged releases?
-We are currently creating a release for all the required components from the [PoP repo](https://github.com/getpop), and this task will take several weeks. Until then, components must be installed using the `"dev-master"` version.
-
-You can follow progress on this project: [Release components](https://github.com/GraphQLByPoP/graphql-by-pop.com/projects/4).
-
-Please notice that the README file from unreleased components may temporarily have the `build` badge showing `error`, and the `code quality` badge showing `project not found`. Their code is, however, working well; the problem comes from PSR-2 and static analysis rules executed by [Travis](https://travis-ci.com) not yet satisfied, and the component's project not yet set-up in [Scrutinizer](https://scrutinizer-ci.com). We are fixing these issues component by component, as we release them.
 :::
 
 3. Add the following `"installer-paths"` under the `extra` section of your `composer.json` file:
