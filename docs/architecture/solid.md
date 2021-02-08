@@ -1,6 +1,6 @@
 # SOLID
 
-GraphQL by PoP follows the [SOLID](https://en.wikipedia.org/wiki/SOLID) approach for the software architecture.
+GraphQL by PoP follows the [SOLID](https://en.wikipedia.org/wiki/SOLID) approach for the software architecture, providing different entities to tackle different responsibilities, as to make the code maintainable, extensible and understandable.
 
 This is how the user entity is already provided by the plugin. The `User` type is provided through [this code](https://github.com/getpop/users/blob/c157600b00901ea74cc87187f55fc2e3242fe656/src/TypeResolvers/UserTypeResolver.php):
 
@@ -14,12 +14,12 @@ class UserTypeResolver extends AbstractTypeResolver
 
   public function getSchemaTypeDescription(): ?string
   {
-    return __('Representation of a user', 'users');
+    return $this->translationAPI->__('Representation of a user', 'users');
   }
 
   public function getID(object $user)
   {
-    return $user->ID;
+    return $this->usersAPI->getUserId($user);
   }
 
   public function getTypeDataLoaderClass(): string
@@ -30,8 +30,6 @@ class UserTypeResolver extends AbstractTypeResolver
 ```
 
 The type resolver does not directly load the objects from the database, but instead delegates this task to a `TypeDataLoader` object (in the example above, from [class `UserTypeDataLoader`](https://github.com/getpop/users/blob/27221fdc23899fb4e9d8a076df87995e16fab8bf/src/TypeDataLoaders/UserTypeDataLoader.php)).
-
-This decoupling is to follow the [SOLID principles](https://en.wikipedia.org/wiki/SOLID), providing different entities to tackle different responsibilities, as to make the code maintainable, extensible and understandable.
 
 Adding fields `username`, `email` and `url` to type `User` is done via a `FieldResolver` object with [this code](https://github.com/getpop/users/blob/4ea244c419ad21bf9297d476180acf9435d9d104/src/FieldResolvers/UserFieldResolver.php):
 
@@ -59,9 +57,9 @@ class UserFieldResolver extends AbstractDBDataFieldResolver
     string $fieldName
   ): ?string {
     $descriptions = [
-      'username' => __("User's username handle", "graphql-api"),
-      'email' => __("User's email", "graphql-api"),
-      'url' => __("URL of the user's profile in the website", "graphql-api"),
+      'username' => $this->translationAPI->__("User's username handle", 'users'),
+      'email' => $this->translationAPI->__("User's email", 'users'),
+      'url' => $this->translationAPI->__("URL of the user's profile in the website", 'users'),
     ];
     return $descriptions[$fieldName];
   }
@@ -86,13 +84,13 @@ class UserFieldResolver extends AbstractDBDataFieldResolver
   ) {
     switch ($fieldName) {
       case 'username':
-        return $user->user_login;
+        return $this->usersAPI->getUserLogin($user);
 
       case 'email':
-        return $user->user_email;
+        return $this->usersAPI->getUserEmail($user);
 
       case 'url':
-        return get_author_posts_url($user->ID);
+        return $this->usersAPI->getUserURL($user);
     }
 
     return null;

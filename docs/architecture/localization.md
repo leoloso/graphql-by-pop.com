@@ -13,9 +13,9 @@ class UserFieldResolver extends AbstractDBDataFieldResolver
   ): ?string {
     $translationAPI = TranslationAPIFacade::getInstance();
     $descriptions = [
-      'username' => $translationAPI->__("User's username handle", "graphql-api"),
-      'email' => $translationAPI->__("User's email", "graphql-api"),
-      'url' => $translationAPI->__("URL of the user's profile in the website", "graphql-api"),
+      'username' => $translationAPI->__("User's username handle", 'users'),
+      'email' => $translationAPI->__("User's email", 'users'),
+      'url' => $translationAPI->__("URL of the user's profile in the website", 'users'),
     ];
     return $descriptions[$fieldName];
   }
