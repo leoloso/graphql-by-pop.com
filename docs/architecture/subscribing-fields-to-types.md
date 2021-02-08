@@ -1,6 +1,6 @@
 # Subscribing fields to types
 
-The GraphQL API uses the [Publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) to have fields be "subscribed" to types, in which a `FieldResolver` entity has fields add to some `TypeResolver` entity.
+GraphQL by PoP uses the [Publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) to have fields be "subscribed" to types, in which a `FieldResolver` entity has fields add to some `TypeResolver` entity.
 
 In this example, class `UserFieldResolver` adds fields `username`, `email` and `url` to class `UserTypeResolver`, which resolves type `User`:
 
