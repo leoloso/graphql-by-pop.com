@@ -56,7 +56,7 @@ query {
   posts(limit:5).
     --props|
     --props@spanish<
-      translate(en,es)
+      translate(from:en,to:es)
     >&
 props=
   title|
@@ -67,20 +67,20 @@ props=
   posts(limit:5).
     --props|
     --props@spanish<
-      translate(en,es)
+      translate(from:en,to:es)
     >|
     --props@french<
-      translate(en,fr)
+      translate(from:en,to:fr)
     >|
     --props@german<
-      translate(en,de)
+      translate(from:en,to:de)
     >&
 props=
   title|
   excerpt
 ```
 
-[View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).--props%7C--props@spanish<translate(en,es)>&amp;props=title%7Cexcerpt">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).--props%7C--props@spanish%3Ctranslate(en,es)%3E%7C--props@french%3Ctranslate(en,fr)%3E%7C--props@german%3Ctranslate(en,de)%3E&amp;props=title%7Cexcerpt">query #2</a>]
+[View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).--props%7C--props@spanish<translate(from:en,to:es)>&amp;props=title%7Cexcerpt">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).--props%7C--props@spanish%3Ctranslate(from:en,to:es)%3E%7C--props@french%3Ctranslate(from:en,to:fr)%3E%7C--props@german%3Ctranslate(from:en,to:de)%3E&amp;props=title%7Cexcerpt">query #2</a>]
 
 :::
 

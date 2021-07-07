@@ -46,7 +46,7 @@ query {
   posts(limit:5).
     title|
     title@spanish<
-      translate(en,es)
+      translate(from:en,to:es)
     >
 
 //2. Translate to Spanish and back to English
@@ -54,8 +54,8 @@ query {
   posts(limit:5).
     title|
     title@translateAndBack<
-      translate(en,es),
-      translate(es,en)
+      translate(from:en,to:es),
+      translate(from:es,to:en)
     >
 
 //3. Change the provider through arguments (link gives error: Azure is not implemented)
@@ -63,10 +63,10 @@ query {
   posts(limit:5).
     title|
     title@spanish<
-      translate(en,es,provider:azure)
+      translate(from:en,to:es,provider:azure)
     >
 ```
 
-[View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@spanish%3Ctranslate(en,es)%3E">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@translateAndBack%3Ctranslate(en,es),translate(es,en)%3E">query #2</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@spanish%3Ctranslate(en,es,provider:azure)%3E">query #3</a>]
+[View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@spanish%3Ctranslate(from:en,to:es)%3E">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@translateAndBack%3Ctranslate(from:en,to:es),translate(from:es,to:en)%3E">query #2</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@spanish%3Ctranslate(from:en,to:es,provider:azure)%3E">query #3</a>]
 
 :::
