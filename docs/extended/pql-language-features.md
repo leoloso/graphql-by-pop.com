@@ -107,7 +107,7 @@ In the example below, an array contains strings to translate and the language to
     [
       text: How do you like this software so far?,
       translateTo: es
-    ],
+    ]
   ])@translated<
     forEach<
       advancePointerInArray(
@@ -116,7 +116,7 @@ In the example below, an array contains strings to translate and the language to
           toLang:extract(%value%,translateTo)
         ]
       )<
-        translate(
+        translateMultiple(
           from: en,
           to: %toLang%,
           oneLanguagePerField: true,
@@ -127,7 +127,7 @@ In the example below, an array contains strings to translate and the language to
   >
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=echo(%5B%5Btext:%20Hello%20my%20friends,translateTo:%20fr%5D,%5Btext:%20How%20do%20you%20like%20this%20software%20so%20far?,translateTo:%20es%5D,%5D)@translated%3CforEach%3CadvancePointerInArray(path:%20text,appendExpressions:%20%5BtoLang:extract(%value%,translateTo)%5D)%3Ctranslate(from:%20en,to:%20%toLang%,oneLanguagePerField:%20true,override:%20true)%3E%3E%3E" target="_blank">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=echo([[text:Hello my friends,translateTo:fr],[text:How do you like this software so far?,translateTo:es]])@translated<forEach<advancePointerInArray(path:text,appendExpressions:[toLang:extract(%value%,translateTo)])<translateMultiple(from:en,to:%toLang%,oneLanguagePerField:true,override:true)>>>" target="_blank">View query results</a>]
 
 ## Skip output if null
 
