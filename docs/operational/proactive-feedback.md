@@ -190,11 +190,11 @@ Any resolver (for fields and directives) can log any piece of information, as to
 Logs are retrieved by passing parameter `actions[]=show-logs` to the GraphQL endpoint `/api/graphql/`.
 :::
 
-In [this query](https://newapi.getpop.org/graphiql/?show_logs=1&query=query%20%7B%0A%20%20post(id%3A1)%20%7B%0A%20%20%20%20title%20%40traceExecutionTime%0A%20%20%7D%0A%7D), directive `@traceExecutionTime` informs the execution time of resolving the field through the log:
+In [this query](https://newapi.getpop.org/graphiql/?show_logs=1&query=query%20%7B%0A%20%20post(by:{id%3A1})%20%7B%0A%20%20%20%20title%20%40traceExecutionTime%0A%20%20%7D%0A%7D), directive `@traceExecutionTime` informs the execution time of resolving the field through the log:
 
 ```graphql
 query {
-  post(id:1) {
+  post(by:{id:1}) {
     title @traceExecutionTime
   }
 }
@@ -211,11 +211,11 @@ This query calls the GraphiQL client with parameter `show_logs=true`, and then G
 actions[]=show-logs&
 postId=1&
 query=
-  post(id:$postId).
+  post(by:{id:$postId}).
     title<traceExecutionTime>
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?actions[]=show-logs&postId=1&query=post(id:$postId).title<traceExecutionTime>">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?actions[]=show-logs&postId=1&query=post(by:{id:$postId}).title<traceExecutionTime>">View query results</a>]
 
 :::
 
