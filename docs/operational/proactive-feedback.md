@@ -174,7 +174,7 @@ query {
 
 ```less
 /?query=
-  posts(pagination:{ limit:3.5 }).
+  posts(pagination: { limit:3.5 }).
     title
 ```
 

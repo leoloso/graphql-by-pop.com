@@ -178,11 +178,11 @@ mutation {
 
 Using nested mutations, we can mutate several fields at once without modifying or duplicating any field from the schema, as is usually required for the standard behavior (eg: to accept a param `ids: [ID]!` for the multiple objects, instead of `id: ID!`).
 
-For instance, [this query](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=%23mutation%20%7B%0A%23%20%20loginUser(%0A%23%20%20%20%20usernameOrEmail%3A%22test%22%2C%0A%23%20%20%20%20password%3A%22pass%22%0A%23%20%20)%20%7B%0A%23%20%20%20%20id%0A%23%20%20%20%20name%0A%23%20%20%7D%0A%23%7D%0Amutation%20%7B%0A%20%20posts(limit%3A%203)%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22First%20comment%20on%20several%20posts%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%20%20reply(comment%3A%20%22Response%20to%20my%20own%20parent%20comment%22)%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) adds the same comment to several posts:
+For instance, [this query](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=%23mutation%20%7B%0A%23%20%20loginUser(%0A%23%20%20%20%20usernameOrEmail%3A%22test%22%2C%0A%23%20%20%20%20password%3A%22pass%22%0A%23%20%20)%20%7B%0A%23%20%20%20%20id%0A%23%20%20%20%20name%0A%23%20%20%7D%0A%23%7D%0Amutation%20%7B%0A%20%20posts(pagination:{limit%3A%203})%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22First%20comment%20on%20several%20posts%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%20%20reply(comment%3A%20%22Response%20to%20my%20own%20parent%20comment%22)%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D) adds the same comment to several posts:
 
 ```graphql
 mutation {
-  posts(limit: 3) {
+  posts(pagination: { limit: 3 }) {
     title
     addComment(comment: "First comment on several posts") {
       id

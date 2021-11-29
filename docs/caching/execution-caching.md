@@ -2,22 +2,22 @@
 
 The `@cache` directive enables to cache the result of a heavy-to-compute operation. The first time the field is resolved, the `@cache` directive will save the value in disk or memory (Redis, Memcached), either with an expiry date or not, and from then on whenever querying this field the cached value will be retrieved and the operation will not be performed.
 
-For instance, [this query](https://newapi.getpop.org/graphiql/?show_logs=true&query=query%20%7B%0A%20%20posts(limit%3A3)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%20%40translate(from%3A%22en%22%2C%20to%3A%22es%22)%0A%20%20%7D%0A%7D) executes the `@translate` directive, which does a single connection to the Google Translate API and performs the translation of the posts' titles:
+For instance, [this query](https://newapi.getpop.org/graphiql/?show_logs=true&query=query%20%7B%0A%20%20posts(pagination:{limit%3A3})%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%20%40translate(from%3A%22en%22%2C%20to%3A%22es%22)%0A%20%20%7D%0A%7D) executes the `@translate` directive, which does a single connection to the Google Translate API and performs the translation of the posts' titles:
 
 ```graphql
 query {
-  posts(limit:3) {
+  posts(pagination: { limit: 3 }) {
     id
     title @translate(from:"en", to:"es")
   }
 }
 ```
 
-Assuming this is an expensive call, we can cache the field's value after the first response. [This query](https://newapi.getpop.org/graphiql/?show_logs=true&query=query%20%7B%0A%20%20posts(limit%3A3)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%20%40translate(from%3A%22en%22%2C%20to%3A%22es%22)%20%40cache(time%3A10)%0A%20%20%7D%0A%7D) achieves that through the `@cache` directive, passing a time expiration of 10 seconds (not passing this value, the cache does not expire):
+Assuming this is an expensive call, we can cache the field's value after the first response. [This query](https://newapi.getpop.org/graphiql/?show_logs=true&query=query%20%7B%0A%20%20posts(pagination:{limit%3A3})%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%20%40translate(from%3A%22en%22%2C%20to%3A%22es%22)%20%40cache(time%3A10)%0A%20%20%7D%0A%7D) achieves that through the `@cache` directive, passing a time expiration of 10 seconds (not passing this value, the cache does not expire):
 
 ```graphql
 query {
-  posts(limit:3) {
+  posts(pagination: { limit: 3 }) {
     id
     title @translate(from:"en", to:"es") @cache(time:10)
   }
