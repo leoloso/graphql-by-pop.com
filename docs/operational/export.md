@@ -169,7 +169,7 @@ The query below extracts the user's `name` into variable `$_authorName`, and the
 
 ```graphql
 query GetUserName {
-  user(id: 1) {
+  user(by: { id: 1 }) {
     name @export(as: "_authorName")
   }
 }
@@ -182,7 +182,7 @@ query GetPostsWithUserName($_authorName: String = "") {
 }
 ```
 
-When <a href="https://newapi.getpop.org/graphiql/?query=%23Hack%20to%20allow%20GraphiQL%20to%20send%20multiple%20queries%20to%20the%20server%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0Aquery%20GetUserName%20%7B%0A%20%20user(id%3A%201)%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%7D%0A%0Aquery%20GetPostsWithUserName(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20posts(searchfor%3A%20%24_authorName)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=__ALL">running the query</a>, it produces this response:
+When <a href="https://newapi.getpop.org/graphiql/?query=%23Hack%20to%20allow%20GraphiQL%20to%20send%20multiple%20queries%20to%20the%20server%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0Aquery%20GetUserName%20%7B%0A%20%20user(by:{id%3A%201})%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%7D%0A%0Aquery%20GetPostsWithUserName(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20posts(searchfor%3A%20%24_authorName)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=__ALL">running the query</a>, it produces this response:
 
 ![Running the first query with `@export`](/images/first-query.png)
 

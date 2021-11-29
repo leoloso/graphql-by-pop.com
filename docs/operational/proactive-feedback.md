@@ -138,11 +138,11 @@ Warning are issues which can be considered non-blocking, i.e. they enhance the q
 
 For instance, passing parameter `limit` with the wrong type will not stop execution of the query, it will just ignore this parameter (hence, the response will bring more results that are needed, but that's not a breaking issue) and provide an appropriate `warning` message.
 
-Executing [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(limit%3A3.5)%20%7B%0A%20%20%20%20title%0A%20%20%7D%0A%7D):
+Executing [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(pagination:{limit%3A3.5})%20%7B%0A%20%20%20%20title%0A%20%20%7D%0A%7D):
 
 ```graphql
 query {
-  posts(limit:3.5) {
+  posts(pagination: { limit: 3.5 }) {
     title
   }
 }
@@ -174,11 +174,11 @@ query {
 
 ```less
 /?query=
-  posts(limit:3.5).
+  posts(pagination:{ limit:3.5 }).
     title
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:3.5).title">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:3.5}).title">View query results</a>]
 
 :::
 

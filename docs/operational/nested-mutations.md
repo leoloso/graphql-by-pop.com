@@ -12,11 +12,11 @@ mutation {
 }
 ```
 
-Could also be executed through [this nested mutation](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=mutation%20%7B%0A%20%20post(id%3A%201459)%20%7B%0A%20%20%20%20update(title%3A%20%22New%20title%22)%20%7B%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D), on type `Post`:
+Could also be executed through [this nested mutation](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=mutation%20%7B%0A%20%20post(by:{id%3A%201459})%20%7B%0A%20%20%20%20update(title%3A%20%22New%20title%22)%20%7B%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D), on type `Post`:
 
 ```graphql
 mutation {
-  post(id: 1459) {
+  post(by: { id: 1459 }) {
     update(title: "New title") {
       title
     }
@@ -28,22 +28,22 @@ mutation {
 
 ```less
 /?query=
-  post(id: 1459).
+  post(by: { id: 1459 }).
     update(title: New title).
       title
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:1459).update(title:New%20title).title">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=post(by:{id:1459}).update(title:New%20title).title">View query results</a>]
 
 :::
 
 Mutations can also be nested, modifying data on the result from another mutation.
 
-In [this query](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=%23mutation%20%7B%0A%23%20%20loginUser(%0A%23%20%20%20%20usernameOrEmail%3A%22test%22%2C%0A%23%20%20%20%20password%3A%22pass%22%0A%23%20%20)%20%7B%0A%23%20%20%20%20id%0A%23%20%20%20%20name%0A%23%20%20%7D%0A%23%7D%0Amutation%20%7B%0A%20%20post(id%3A%201459)%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22Nice%20tango!%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%20%20reply(comment%3A%20%22Can%20you%20dance%20like%20that%3F%22)%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D), we obtain the post entity through `Root.post`, then execute mutation `Post.addComment` on it and obtain the created comment object, and finally execute mutation `Comment.reply` on this latter object:
+In [this query](https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=%23mutation%20%7B%0A%23%20%20loginUser(%0A%23%20%20%20%20usernameOrEmail%3A%22test%22%2C%0A%23%20%20%20%20password%3A%22pass%22%0A%23%20%20)%20%7B%0A%23%20%20%20%20id%0A%23%20%20%20%20name%0A%23%20%20%7D%0A%23%7D%0Amutation%20%7B%0A%20%20post(by:{id%3A%201459})%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22Nice%20tango!%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%20%20reply(comment%3A%20%22Can%20you%20dance%20like%20that%3F%22)%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20content%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D), we obtain the post entity through `Root.post`, then execute mutation `Post.addComment` on it and obtain the created comment object, and finally execute mutation `Comment.reply` on this latter object:
 
 ```graphql
 mutation {
-  post(id: 1459) {
+  post(by: { id: 1459 }) {
     title
     addComment(comment: "Nice tango!") {
       id
@@ -61,7 +61,7 @@ mutation {
 
 ```less
 /?query=
-  post(id: 1459).
+  post(by: { id: 1459 }).
     title|
     addComment(comment: Nice tango!).
       id|
@@ -71,7 +71,7 @@ mutation {
         content
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=post(id:1459).title|addComment(comment:Nice%20tango!).id|content|reply(comment:Can%20you%20dance%20like%20that?).id|content">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=post(by:{id:1459}).title|addComment(comment:Nice%20tango!).id|content|reply(comment:Can%20you%20dance%20like%20that?).id|content">View query results</a>]
 
 :::
 
@@ -125,11 +125,11 @@ We can decide to keep both of them, or remove the ones from the `Root` type, whi
 
 To execute mutations, the operation type must be `mutation`. This applies to nested mutations also.
 
-For instance, if <a href="(https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=query%20%7B%0A%20%20post(id%3A%201459)%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22Hi%20there%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)" target="_blank">this query</a> is executed:
+For instance, if <a href="(https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=query%20%7B%0A%20%20post(by:{id%3A%201459})%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22Hi%20there%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)" target="_blank">this query</a> is executed:
 
 ```graphql
 query {
-  post(id: 1459) {
+  post(by: { id: 1459 }) {
     title
     addComment(comment: "Hi there") {
       id
@@ -161,11 +161,11 @@ it would produce an error, indicating that mutation `addComment` cannot be execu
 }
 ```
 
-<a href="https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=%23%20%23%20Uncomment%20this%20mutation%20to%20log%20the%20user%20in%0A%23%20mutation%20%7B%0A%23%20%20%20loginUser(%0A%23%20%20%20%20%20usernameOrEmail%3A%22test%22%2C%0A%23%20%20%20%20%20password%3A%22pass%22%0A%23%20%20%20)%20%7B%0A%23%20%20%20%20%20id%0A%23%20%20%20%20%20name%0A%23%20%20%20%7D%0A%23%20%7D%0Amutation%20%7B%0A%20%20post(id%3A%201459)%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22Hi%20there%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D" target="_blank">This query</a> will instead work well:
+<a href="https://newapi.getpop.org/graphiql/?mutation_scheme=nested&query=%23%20%23%20Uncomment%20this%20mutation%20to%20log%20the%20user%20in%0A%23%20mutation%20%7B%0A%23%20%20%20loginUser(%0A%23%20%20%20%20%20usernameOrEmail%3A%22test%22%2C%0A%23%20%20%20%20%20password%3A%22pass%22%0A%23%20%20%20)%20%7B%0A%23%20%20%20%20%20id%0A%23%20%20%20%20%20name%0A%23%20%20%20%7D%0A%23%20%7D%0Amutation%20%7B%0A%20%20post(by:{id%3A%201459})%20%7B%0A%20%20%20%20title%0A%20%20%20%20addComment(comment%3A%20%22Hi%20there%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20content%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D" target="_blank">This query</a> will instead work well:
 
 ```graphql
 mutation {
-  post(id: 5) {
+  post(by: { id: 5 }) {
     title
     update(title: "New title") {
       newTitle: title
@@ -200,7 +200,7 @@ mutation {
 
 ```less
 /?query=
-  posts(limit: 3).
+  posts(pagination: { limit: 3 }).
     title|
     addComment(comment: First comment on several posts).
       id|
@@ -210,7 +210,7 @@ mutation {
         content
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:3).title|addComment(comment:First%20comment%20on%20several%20posts).id|content|reply(comment:Response%20to%20my%20own%20parent%20comment).id|content">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:3}).title|addComment(comment:First%20comment%20on%20several%20posts).id|content|reply(comment:Response%20to%20my%20own%20parent%20comment).id|content">View query results</a>]
 
 :::
 

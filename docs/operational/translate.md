@@ -4,11 +4,11 @@ Directive `@translate` executes a translation of a field using the API service u
 
 Currently, only the implementation for Google Translate has been done.
 
-Running [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(limit%3A3)%20%7B%0A%20%20%20%20title%0A%20%20%20%20spanish%3A%20title%20%40translate(from%3A%20%22en%22%2C%20to%3A%20%22es%22)%0A%20%20%7D%0A%7D):
+Running [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(pagination:{limit%3A3})%20%7B%0A%20%20%20%20title%0A%20%20%20%20spanish%3A%20title%20%40translate(from%3A%20%22en%22%2C%20to%3A%20%22es%22)%0A%20%20%7D%0A%7D):
 
 ```graphql
 query {
-  posts(limit:3) {
+  posts(pagination: { limit:3 }) {
     title
     spanish: title @translate(from: "en", to: "es")
   }
@@ -43,7 +43,7 @@ query {
 ```less
 //1. @translate calls the Google Translate API
 /?query=
-  posts(limit:5).
+  posts(pagination:{ limit:5 }).
     title|
     title@spanish<
       translate(from:en,to:es)
@@ -51,7 +51,7 @@ query {
 
 //2. Translate to Spanish and back to English
 /?query=
-  posts(limit:5).
+  posts(pagination:{ limit:5 }).
     title|
     title@translateAndBack<
       translate(from:en,to:es),
@@ -60,13 +60,13 @@ query {
 
 //3. Change the provider through arguments (link gives error: Azure is not implemented)
 /?query=
-  posts(limit:5).
+  posts(pagination:{ limit:5 }).
     title|
     title@spanish<
       translate(from:en,to:es,provider:azure)
     >
 ```
 
-[View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@spanish%3Ctranslate(from:en,to:es)%3E">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@translateAndBack%3Ctranslate(from:en,to:es),translate(from:es,to:en)%3E">query #2</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:5).title%7Ctitle@spanish%3Ctranslate(from:en,to:es,provider:azure)%3E">query #3</a>]
+[View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).title%7Ctitle@spanish%3Ctranslate(from:en,to:es)%3E">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).title%7Ctitle@translateAndBack%3Ctranslate(from:en,to:es),translate(from:es,to:en)%3E">query #2</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).title%7Ctitle@spanish%3Ctranslate(from:en,to:es,provider:azure)%3E">query #3</a>]
 
 :::
