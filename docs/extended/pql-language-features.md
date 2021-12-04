@@ -39,13 +39,13 @@ Arguments passed to a field can receive other fields or operators as input.
         "Post with ID %s, created on %s, has no comments",
         [
           id(),
-          dateAsString(d/m/Y)
+          dateStr(d/m/Y)
         ]
       )
     )@postDesc
 ```
 
-[<a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with ID %s has %s comment(s) and title '%s',[id(),commentCount(),title()]),sprintf(%22Post with ID %s, created on %s, has no comments%22,[id(),dateAsString(d/m/Y)]))@postDesc">View query results</a>]
+[<a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with ID %s has %s comment(s) and title '%s',[id(),commentCount(),title()]),sprintf(%22Post with ID %s, created on %s, has no comments%22,[id(),dateStr(d/m/Y)]))@postDesc">View query results</a>]
 
 ## Composable fields in directive arguments
 
@@ -154,7 +154,7 @@ This query...
 postId=1&
 query=
   post(by: { id: $postId }).
-    dateAsString(d/m/Y)|
+    dateStr(d/m/Y)|
     title<
       skip(false)
     >
@@ -167,10 +167,10 @@ query=
 postId=1&
 query=
   post(by:{ id: $postId }).
-    dateAsString(format: d/m/Y)|
+    dateStr(format: d/m/Y)|
     title<
       skip(if: false)
     >
 ```
 
-[View query results: <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(by:{id:%24postId}).dateAsString(d/m/Y)%7Ctitle%3Cskip(false)%3E" target="_blank">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(by:{id:%24postId}).dateAsString(format:d/m/Y)%7Ctitle<skip(if:false)>" target="_blank">query #2</a>]
+[View query results: <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(by:{id:%24postId}).dateStr(d/m/Y)%7Ctitle%3Cskip(false)%3E" target="_blank">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?postId=1&amp;query=post(by:{id:%24postId}).dateStr(format:d/m/Y)%7Ctitle<skip(if:false)>" target="_blank">query #2</a>]

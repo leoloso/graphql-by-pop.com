@@ -86,7 +86,7 @@ postId=1&
 query=
   post(by:{id:$postId}).
     title|
-    dateAsString(d/m/Y)
+    dateStr(d/m/Y)
 ```
 
-<a href="https://newapi.getpop.org/api/graphql/?actions%5B%5D=show-logs&amp;postId=1&amp;query=post(by:{id:%24postId}).title%7CdateAsString(d/m/Y)">View query results</a>
+<a href="https://newapi.getpop.org/api/graphql/?actions%5B%5D=show-logs&amp;postId=1&amp;query=post(by:{id:%24postId}).title%7CdateStr(d/m/Y)">View query results</a>
