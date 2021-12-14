@@ -95,7 +95,7 @@ For instance, in the example below, directive `<forEach>` iterates through all t
 
 An expression, defined through symbols `%...%`, is a variable used by directives to pass values to each other. An expression can be pre-defined by the directive or created on-the-fly in the query itself.
 
-In the example below, an array contains strings to translate and the language to translate the string to. The array element is passed from directive `<forEach>` to directive `<advancePointerInArray>` through pre-defined expression `%value%`, and the language code is passed from directive `<advancePointerInArray>` to directive `<translate>` through variable `%toLang%`, which is defined only in the query:
+In the example below, an array contains strings to translate and the language to translate the string to. The array element is passed from directive `<forEach>` to directive `<advancePointerInArrayOrObject>` through pre-defined expression `%value%`, and the language code is passed from directive `<advancePointerInArrayOrObject>` to directive `<translate>` through variable `%toLang%`, which is defined only in the query:
 
 ```less
 /?query=
@@ -110,7 +110,7 @@ In the example below, an array contains strings to translate and the language to
     ]
   ])@translated<
     forEach<
-      advancePointerInArray(
+      advancePointerInArrayOrObject(
         path: text,
         appendExpressions: [
           toLang:extract(%value%,translateTo)
@@ -127,7 +127,7 @@ In the example below, an array contains strings to translate and the language to
   >
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=echo([[text:Hello my friends,translateTo:fr],[text:How do you like this software so far?,translateTo:es]])@translated<forEach<advancePointerInArray(path:text,appendExpressions:[toLang:extract(%value%,translateTo)])<translateMultiple(from:en,to:%toLang%,oneLanguagePerField:true,override:true)>>>" target="_blank">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=echo([[text:Hello my friends,translateTo:fr],[text:How do you like this software so far?,translateTo:es]])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:[toLang:extract(%value%,translateTo)])<translateMultiple(from:en,to:%toLang%,oneLanguagePerField:true,override:true)>>>" target="_blank">View query results</a>]
 
 ## Skip output if null
 
