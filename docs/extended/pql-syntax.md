@@ -779,9 +779,9 @@ _**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=
 
 Directives can be nested: An outer directive can modify the behaviour of its inner, nested directive(s). It can pass values across to its composed directives through “expressions”, variables surrounded with `%...%` which can be created on runtime (coded as part of the query), or be defined in the directive itself.
 
-In the example below, directive `<forEach>` iterates through the elements of the array, for its composed directive `<applyFunction>` to do something with each of them. It passes the array item through pre-defined expression `%value%` (coded within the directive).
+In the example below, directive `<forEach>` iterates through the elements of the array, for its composed directive `<applyFunction>` to do something with each of them. It passes the array item through pre-defined expression `%{value}%` (coded within the directive).
 
-_**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=echo(%5B%5Bbanana,apple%5D,%5Bstrawberry,grape,melon%5D%5D)@fruitJoin%3CforEach%3CapplyFunction(function:arrayJoin,addArguments:%5Barray:%value%,separator:%22---%22%5D)%3E%3E)):_
+_**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=echo(%5B%5Bbanana,apple%5D,%5Bstrawberry,grape,melon%5D%5D)@fruitJoin%3CforEach%3CapplyFunction(function:arrayJoin,addArguments:%5Barray:%{value}%,separator:%22---%22%5D)%3E%3E)):_
 
 ```less
 /?query=
@@ -793,7 +793,7 @@ _**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=e
       applyFunction(
         function: arrayJoin,
         addArguments: [
-          array: %value%,
+          array: %{value}%,
           separator: "---"
         ]
       )
@@ -801,9 +801,9 @@ _**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=e
   >
 ```
 
-In the example below, directive `<advancePointerInArrayOrObject>` communicates to directive `<translate>` the language to translate to through expression `%translateTo%`, which is defined on-the-fly.
+In the example below, directive `<advancePointerInArrayOrObject>` communicates to directive `<translate>` the language to translate to through expression `%{toLang}%`, which is defined on-the-fly.
 
-_**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%value%,translateTo)})<translateMultiple(from:en,to:%toLang%,oneLanguagePerField:true,override:true)>>>">View query results</a>):_
+_**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%{value}%,translateTo)})<translateMultiple(from:en,to:%{toLang}%,oneLanguagePerField:true,override:true)>>>">View query results</a>):_
 
 ```less
 /?query=
@@ -821,12 +821,12 @@ _**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:H
       advancePointerInArrayOrObject(
         path: text,
         appendExpressions: {
-          toLang:extract(%value%,translateTo)
+          toLang:extract(%{value}%,translateTo)
         }
       )<
         translateMultiple(
           from: en,
-          to: %toLang%,
+          to: %{toLang}%,
           oneLanguagePerField: true,
           override: true
         )

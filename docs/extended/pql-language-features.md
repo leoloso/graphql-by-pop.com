@@ -69,7 +69,7 @@ The example below implements the standard GraphQL `skip` directive, however it i
 
 A directive can modify the behaviour of another directive. Values can be passed from one to another through "expressions": special variables set by each directive, wrapped with `%...%`.
 
-For instance, in the example below, directive `<forEach>` iterates through all the items in an array, passing each of them to its composed directive `<applyFunction>` through expression `%value%`.
+For instance, in the example below, directive `<forEach>` iterates through all the items in an array, passing each of them to its composed directive `<applyFunction>` through expression `%{value}%`.
 
 ```less
 ?query=
@@ -81,7 +81,7 @@ For instance, in the example below, directive `<forEach>` iterates through all t
       applyFunction(
         function: arrayJoin,
         addArguments: [
-          array: %value%,
+          array: %{value}%,
           separator: "---"
         ]
       )
@@ -89,13 +89,13 @@ For instance, in the example below, directive `<forEach>` iterates through all t
   >
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=echo([[banana,apple],[strawberry,grape,melon]])@fruitJoin%3CforEach%3CapplyFunction(function:arrayJoin,addArguments: [array:%value%,separator:%22---%22])%3E%3E">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=echo([[banana,apple],[strawberry,grape,melon]])@fruitJoin%3CforEach%3CapplyFunction(function:arrayJoin,addArguments: [array:%{value}%,separator:%22---%22])%3E%3E">View query results</a>]
 
 ## Directive expressions
 
 An expression, defined through symbols `%...%`, is a variable used by directives to pass values to each other. An expression can be pre-defined by the directive or created on-the-fly in the query itself.
 
-In the example below, an array contains strings to translate and the language to translate the string to. The array element is passed from directive `<forEach>` to directive `<advancePointerInArrayOrObject>` through pre-defined expression `%value%`, and the language code is passed from directive `<advancePointerInArrayOrObject>` to directive `<translate>` through variable `%toLang%`, which is defined only in the query:
+In the example below, an array contains strings to translate and the language to translate the string to. The array element is passed from directive `<forEach>` to directive `<advancePointerInArrayOrObject>` through pre-defined expression `%{value}%`, and the language code is passed from directive `<advancePointerInArrayOrObject>` to directive `<translate>` through variable `%{toLang}%`, which is defined only in the query:
 
 ```less
 /?query=
@@ -113,12 +113,12 @@ In the example below, an array contains strings to translate and the language to
       advancePointerInArrayOrObject(
         path: text,
         appendExpressions: {
-          toLang:extract(%value%,translateTo)
+          toLang:extract(%{value}%,translateTo)
         }
       )<
         translateMultiple(
           from: en,
-          to: %toLang%,
+          to: %{toLang}%,
           oneLanguagePerField: true,
           override: true
         )
@@ -127,7 +127,7 @@ In the example below, an array contains strings to translate and the language to
   >
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%value%,translateTo)})<translateMultiple(from:en,to:%toLang%,oneLanguagePerField:true,override:true)>>>" target="_blank">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%{value}%,translateTo)})<translateMultiple(from:en,to:%{toLang}%,oneLanguagePerField:true,override:true)>>>" target="_blank">View query results</a>]
 
 ## Skip output if null
 
