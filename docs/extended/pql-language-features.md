@@ -119,15 +119,14 @@ In the example below, an array contains strings to translate and the language to
         translateMultiple(
           from: en,
           to: %{toLang}%,
-          oneLanguagePerField: true,
-          override: true
+          oneLanguagePerField: true
         )
       >
     >
   >
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%{value}%,translateTo)})<translateMultiple(from:en,to:%{toLang}%,oneLanguagePerField:true,override:true)>>>" target="_blank">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%{value}%,translateTo)})<translateMultiple(from:en,to:%{toLang}%,oneLanguagePerField:true)>>>" target="_blank">View query results</a>]
 
 ## Skip output if null
 

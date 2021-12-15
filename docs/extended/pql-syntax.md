@@ -803,7 +803,7 @@ _**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=e
 
 In the example below, directive `<advancePointerInArrayOrObject>` communicates to directive `<translate>` the language to translate to through expression `%{toLang}%`, which is defined on-the-fly.
 
-_**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%{value}%,translateTo)})<translateMultiple(from:en,to:%{toLang}%,oneLanguagePerField:true,override:true)>>>">View query results</a>):_
+_**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%{value}%,translateTo)})<translateMultiple(from:en,to:%{toLang}%,oneLanguagePerField:true)>>>">View query results</a>):_
 
 ```less
 /?query=
@@ -827,8 +827,7 @@ _**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:H
         translateMultiple(
           from: en,
           to: %{toLang}%,
-          oneLanguagePerField: true,
-          override: true
+          oneLanguagePerField: true
         )
       >
     >
