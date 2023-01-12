@@ -51,7 +51,7 @@ query {
 }
 ```
 
-[View results: <a href="https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20%23This%20will%20produce%20version%200.1.0%0A%20%20firstVersion%3A%20userServiceURLs(versionConstraint%3A%22%5E0.1%22)%0A%20%20%23%20This%20will%20produce%20version%200.2.0%0A%20%20secondVersion%3A%20userServiceURLs(versionConstraint%3A%22%3E0.1%22)%0A%20%20%23%20This%20will%20produce%20version%200.2.0%0A%20%20thirdVersion%3A%20userServiceURLs(versionConstraint%3A%22%5E0.2%22)%0A%7D">query #1</a>, <a href="https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20post(by:{id%3A1})%20%7B%0A%20%20%20%20titleCase%3A%20title%20%40makeTitle(versionConstraint%3A%20%22%5E0.1%22)%0A%20%20%20%20upperCase%3A%20title%20%40makeTitle(versionConstraint%3A%20%22%5E0.2%22)%0A%20%20%7D%0A%7D">query #2</a>]
+<!-- [View results: <a href="https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20%23This%20will%20produce%20version%200.1.0%0A%20%20firstVersion%3A%20userServiceURLs(versionConstraint%3A%22%5E0.1%22)%0A%20%20%23%20This%20will%20produce%20version%200.2.0%0A%20%20secondVersion%3A%20userServiceURLs(versionConstraint%3A%22%3E0.1%22)%0A%20%20%23%20This%20will%20produce%20version%200.2.0%0A%20%20thirdVersion%3A%20userServiceURLs(versionConstraint%3A%22%5E0.2%22)%0A%7D">query #1</a>, <a href="https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20post(by:{id%3A1})%20%7B%0A%20%20%20%20titleCase%3A%20title%20%40makeTitle(versionConstraint%3A%20%22%5E0.1%22)%0A%20%20%20%20upperCase%3A%20title%20%40makeTitle(versionConstraint%3A%20%22%5E0.2%22)%0A%20%20%7D%0A%7D">query #2</a>] -->
 
 ## Targeted versioning through the endpoint
 
