@@ -119,7 +119,7 @@ query {
 }
 ```
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?query=
@@ -130,7 +130,7 @@ query {
 
 [<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7CisPublished">View query results</a>]
 
-:::
+::: -->
 
 ## Warnings
 
@@ -170,7 +170,7 @@ query {
 }
 ```
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?query=
@@ -180,7 +180,7 @@ query {
 
 [<a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:3.5}).title">View query results</a>]
 
-:::
+::: -->
 
 ## Logs
 
@@ -204,7 +204,7 @@ query {
 This query calls the GraphiQL client with parameter `show_logs=true`, and then GraphiQL sets `actions[]=show-logs` on the endpoint.
 :::
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?
@@ -217,7 +217,7 @@ query=
 
 [<a href="https://newapi.getpop.org/api/graphql/?actions[]=show-logs&postId=1&query=post(by:{id:$postId}).title<traceExecutionTime>">View query results</a>]
 
-:::
+::: -->
 
 ## Notices
 

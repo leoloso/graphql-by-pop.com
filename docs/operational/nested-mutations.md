@@ -29,7 +29,7 @@ mutation {
 }
 ```
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?query=
@@ -42,7 +42,7 @@ mutation {
 
 [<a href="https://newapi.getpop.org/api/graphql/?query=post(by:{id:1459}).update(input:{title:New%20title}).title">View query results</a>]
 
-:::
+::: -->
 
 Mutations can also be nested, modifying data on the result from another mutation.
 
@@ -68,7 +68,7 @@ mutation {
 }
 ```
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?query=
@@ -88,7 +88,7 @@ mutation {
 
 [<a href="https://newapi.getpop.org/api/graphql/?query=post(by:{id:1459}).title|addComment(input:{comment:Nice%20tango!}).id|content|reply(input:{comment:Can%20you%20dance%20like%20that?}).id|content">View query results</a>]
 
-:::
+::: -->
 
 Producing this response:
 
@@ -219,7 +219,7 @@ mutation {
 }
 ```
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?query=
@@ -235,7 +235,7 @@ mutation {
 
 [<a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:3}).title|addComment(input:{comment:First%20comment%20on%20several%20posts}).id|content|reply(input:{comment:Response%20to%20my%20own%20parent%20comment}).id|content">View query results</a>]
 
-:::
+::: -->
 
 Which produces this response:
 
