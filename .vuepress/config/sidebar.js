@@ -68,7 +68,7 @@ const docsSidebar = [
         title: 'Operational',
         children: [
             // ['operational/intro', '(x) Intro to Operational'],
-            'operational/embeddable-fields',
+            // 'operational/embeddable-fields',
             'operational/nested-mutations',
             'operational/proactive-feedback',
             'operational/multiple-query-execution',
