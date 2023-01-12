@@ -48,7 +48,7 @@ query {
 }
 ```
 
-::: details View PQL queries
+<!-- ::: details View PQL queries
 
 ```less
 // The Google Translate API is called once, containing 10 pieces of text to translate (2 fields, title and excerpt, for 5 posts)
@@ -82,7 +82,7 @@ props=
 
 [View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).--props%7C--props@spanish<translate(from:en,to:es)>&amp;props=title%7Cexcerpt">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).--props%7C--props@spanish%3Ctranslate(from:en,to:es)%3E%7C--props@french%3Ctranslate(from:en,to:fr)%3E%7C--props@german%3Ctranslate(from:en,to:de)%3E&amp;props=title%7Cexcerpt">query #2</a>]
 
-:::
+::: -->
 
 ## Function signature
 

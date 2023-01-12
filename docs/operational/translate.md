@@ -38,7 +38,7 @@ query {
 }
 ```
 
-::: details View PQL queries
+<!-- ::: details View PQL queries
 
 ```less
 //1. @translate calls the Google Translate API
@@ -69,4 +69,4 @@ query {
 
 [View results: <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).title%7Ctitle@spanish%3Ctranslate(from:en,to:es)%3E">query #1</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).title%7Ctitle@translateAndBack%3Ctranslate(from:en,to:es),translate(from:es,to:en)%3E">query #2</a>, <a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:5}).title%7Ctitle@spanish%3Ctranslate(from:en,to:es,provider:azure)%3E">query #3</a>]
 
-:::
+::: -->
