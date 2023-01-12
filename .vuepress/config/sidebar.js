@@ -103,7 +103,7 @@ const docsSidebar = [
             // ['going-further/intro', '(x) Intro to Going Further'],
             ['going-further/intro', '(x) Intro'],
             'going-further/multiple-endpoints',
-            'going-further/rest-integration',
+            // 'going-further/rest-integration',
             ['going-further/response-formats', '(x) Response Formats'],
             'going-further/normalized-data',
         ]
@@ -132,7 +132,7 @@ const docsSidebar = [
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
             'architecture/extensibility',
-            'architecture/converting-from-gql-to-pql',
+            // 'architecture/converting-from-gql-to-pql',
         ]
     },
     {
