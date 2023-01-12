@@ -80,23 +80,23 @@ const docsSidebar = [
             'operational/tracing',
         ]
     },
-    {
-        title: 'Extended GraphQL',
-        children: [
-            // ['extended/intro', '(x) Intro to Extended GraphQL'],
-            ['extended/intro', '(x) Intro'],
-            'extended/full-schema',
-            'extended/pql',
-            'extended/pql-language-features',
-            'extended/pql-syntax',
-            ['extended/pql-defining-field-resolution-order', 'PQL - Field Resolution Order'],
-            'extended/interact-apis-within-query',
-            'extended/gateway',
-            'extended/content-mesh',
-            'extended/persisted-fragments-and-queries',
-            'extended/granular-feedback',
-        ]
-    },
+    // {
+    //     title: 'Extended GraphQL',
+    //     children: [
+    //         // ['extended/intro', '(x) Intro to Extended GraphQL'],
+    //         ['extended/intro', '(x) Intro'],
+    //         'extended/full-schema',
+    //         'extended/pql',
+    //         'extended/pql-language-features',
+    //         'extended/pql-syntax',
+    //         ['extended/pql-defining-field-resolution-order', 'PQL - Field Resolution Order'],
+    //         'extended/interact-apis-within-query',
+    //         'extended/gateway',
+    //         'extended/content-mesh',
+    //         'extended/persisted-fragments-and-queries',
+    //         'extended/granular-feedback',
+    //     ]
+    // },
     {
         title: 'Going Further',
         children: [
