@@ -169,7 +169,7 @@ The response from the API always mirrors the GraphQL query.
 
 :::
 
-::: slot extended-graphql-1
+<!-- ::: slot extended-graphql-1
 
 # Extend your server with innovative features
 
@@ -302,7 +302,7 @@ A single query can produce complex results.
 
 </div>
 
-:::
+::: -->
 
 ::: slot superpowers
 
