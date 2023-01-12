@@ -234,7 +234,7 @@ _Filtering results **in GraphQL**:_
 
 ```graphql
 query {
-  posts(search: "something") {
+  posts(filter: { search: "template" }) {
     id
     title
     date
@@ -242,11 +242,11 @@ query {
 }
 ```
 
-_Filtering results **in PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts(searchfor:template).id|title|date)):_
+_Filtering results **in PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts(filter:{search:template}).id|title|date)):_
 
 ```less
 /?query=
-  posts(search:something).
+  posts(filter: { search: template }).
     id|
     title|
     date
@@ -259,33 +259,33 @@ query {
   posts {
     id
     title
-    date(format: "d/m/Y")
+    dateStr(format: "d/m/Y")
   }
 }
 ```
 
-_Formatting output **in PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|date(format:d/m/Y))):_
+_Formatting output **in PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|dateStr(format:d/m/Y))):_
 
 ```less
 /?query=
   posts.
     id|
     title|
-    date(format:d/m/Y)
+    dateStr(format:d/m/Y)
 ```
 
 ## Optional property name in field arguments
 
 Defining the argument name can be ignored if it can be deduced from the schema (for instance, the name can be deduced from the position of the property within the arguments in the schema definition).
 
-_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|date(d/m/Y))):_
+_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|dateStr(d/m/Y))):_
 
 ```less
 /?query=
   posts.
     id|
     title|
-    date(d/m/Y)
+    dateStr(d/m/Y)
 ```
 
 ## Aliases
@@ -299,19 +299,19 @@ query {
   posts {
     id
     title
-    formattedDate: date(format: "d/m/Y")
+    formattedDate: dateStr(format: "d/m/Y")
   }
 }
 ```
 
-_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|date(d/m/Y)@formattedDate)):_
+_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|dateStr(d/m/Y)@formattedDate)):_
 
 ```less
 /?query=
   posts.
     id|
     title|
-    date(d/m/Y)@formattedDate
+    dateStr(d/m/Y)@formattedDate
 ```
 
 Please notice that aliases are optional, differently than in GraphQL. [In GraphQL](https://graphql.org/learn/queries/#aliases), because the field arguments are not part of the field in the response, when querying the same field with different arguments it is required to use an alias to differentiate them. In PQL, however, field arguments are part of the field in the response, which already differentiates the fields.
@@ -324,19 +324,19 @@ query {
     id
     title
     date: date
-    formattedDate: date(format: "d/m/Y")
+    formattedDate: dateStr(format: "d/m/Y")
   }
 }
 ```
 
-_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|date|date(d/m/Y))):_
+_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|date|dateStr(d/m/Y))):_
 
 ```less
 /?query=posts.
   id|
   title|
   date|
-  date(d/m/Y)
+  dateStr(d/m/Y)
 ```
 
 ## Bookmarks
@@ -429,7 +429,7 @@ _API call **in GraphQL**:_
     posts {
       id
       title
-      date(format: $format)
+      dateStr(format: $format)
     }
   }",
   "variables":"{
@@ -438,7 +438,7 @@ _API call **in GraphQL**:_
 }
 ```
 
-_**In PQL** (View results: [query 1](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|date($format)&format=d/m/Y), [query 2](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|date($format)&variables[format]=d/m/Y)):_
+_**In PQL** (View results: [query 1](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|dateStr($format)&format=d/m/Y), [query 2](https://nextapi.getpop.org/api/graphql/?query=posts.id|title|dateStr($format)&variables[format]=d/m/Y)):_
 
 ```less
 1. /?
@@ -447,7 +447,7 @@ _**In PQL** (View results: [query 1](https://nextapi.getpop.org/api/graphql/?que
     posts.
       id|
       title|
-      date($format)
+      dateStr($format)
 
 2. /?
   variables[format]=d/m/Y&
@@ -455,7 +455,7 @@ _**In PQL** (View results: [query 1](https://nextapi.getpop.org/api/graphql/?que
     posts.
       id|
       title|
-      date($format)
+      dateStr($format)
 ```
 
 ## Fragments
@@ -645,7 +645,7 @@ The real benefit from having operators comes when they can receive the output fr
 
 In order to distinguish if the input to the field is a string or the name of a field, the field must have field arguments brackets `(...)` (if no arguments, then simply `()`). For instance, `"id"` means the string "id", and `"id()"` means to execute and pass the result from field "id".
 
-_**In PQL** (View results: <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|not(hasComments())">query 1</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|hasFeaturedImage|or([hasComments(),hasFeaturedImage()])">query 2</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=var(fetching-site),posts.hasFeaturedImage|and([hasFeaturedImage(), var(fetching-site)])">query 3</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with title '%s' has %s comments,[title(), commentCount()]),sprintf(Post with ID %s was created on %s, [id(),date(d/m/Y)]))@postDesc">query 4</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=users.name|equals(name(), leo)">query 5</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.featuredImage|isNull(featuredImage())">query 6</a>):_
+_**In PQL** (View results: <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|not(hasComments())">query 1</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.hasComments|hasFeaturedImage|or([hasComments(),hasFeaturedImage()])">query 2</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=var(fetching-site),posts.hasFeaturedImage|and([hasFeaturedImage(), var(fetching-site)])">query 3</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.if(hasComments(),sprintf(Post with title '%s' has %s comments,[title(), commentCount()]),sprintf(Post with ID %s was created on %s, [id(),dateStr(d/m/Y)]))@postDesc">query 4</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=users.name|equals(name(), leo)">query 5</a>, <a href="https://nextapi.getpop.org/api/graphql/?query=posts.featuredImage|isNull(featuredImage())">query 6</a>):_
 
 ```less
 1. /?query=
@@ -683,7 +683,7 @@ _**In PQL** (View results: <a href="https://nextapi.getpop.org/api/graphql/?quer
     sprintf(
       Post with ID %s was created on %s, [
       id(),
-      date(d/m/Y)
+      dateStr(d/m/Y)
     ])
   )@postDesc
 
@@ -779,9 +779,9 @@ _**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=
 
 Directives can be nested: An outer directive can modify the behaviour of its inner, nested directive(s). It can pass values across to its composed directives through “expressions”, variables surrounded with `%...%` which can be created on runtime (coded as part of the query), or be defined in the directive itself.
 
-In the example below, directive `<forEach>` iterates through the elements of the array, for its composed directive `<applyFunction>` to do something with each of them. It passes the array item through pre-defined expression `%value%` (coded within the directive).
+In the example below, directive `<forEach>` iterates through the elements of the array, for its composed directive `<applyFunction>` to do something with each of them. It passes the array item through pre-defined expression `%{value}%` (coded within the directive).
 
-_**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=echo(%5B%5Bbanana,apple%5D,%5Bstrawberry,grape,melon%5D%5D)@fruitJoin%3CforEach%3CapplyFunction(function:arrayJoin,addArguments:%5Barray:%value%,separator:%22---%22%5D)%3E%3E)):_
+_**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=echo(%5B%5Bbanana,apple%5D,%5Bstrawberry,grape,melon%5D%5D)@fruitJoin%3CforEach%3CapplyFunction(function:arrayJoin,addArguments:%5Barray:%{value}%,separator:%22---%22%5D)%3E%3E)):_
 
 ```less
 /?query=
@@ -793,7 +793,7 @@ _**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=e
       applyFunction(
         function: arrayJoin,
         addArguments: [
-          array: %value%,
+          array: %{value}%,
           separator: "---"
         ]
       )
@@ -801,34 +801,33 @@ _**In PQL** ([View query results](https://newapi.getpop.org/api/graphql/?query=e
   >
 ```
 
-In the example below, directive `<advancePointerInArray>` communicates to directive `<translate>` the language to translate to through expression `%translateTo%`, which is defined on-the-fly.
+In the example below, directive `<advancePointerInArrayOrObject>` communicates to directive `<translate>` the language to translate to through expression `%{toLang}%`, which is defined on-the-fly.
 
-_**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([[text:Hello my friends,translateTo:fr],[text:How do you like this software so far?,translateTo:es]])@translated<forEach<advancePointerInArray(path:text,appendExpressions:[toLang:extract(%value%,translateTo)])<translateMultiple(from:en,to:%toLang%,oneLanguagePerField:true,override:true)>>>">View query results</a>):_
+_**In PQL** (<a href="https://newapi.getpop.org/api/graphql/?query=echo([{text:Hello my friends,translateTo:fr},{text:How do you like this software so far?,translateTo:es}])@translated<forEach<advancePointerInArrayOrObject(path:text,appendExpressions:{toLang:extract(%{value}%,translateTo)})<translateMultiple(from:en,to:%{toLang}%,oneLanguagePerField:true)>>>">View query results</a>):_
 
 ```less
 /?query=
   echo([
-    [
+    {
       text: Hello my friends,
       translateTo: fr
-    ],
-    [
+    },
+    {
       text: How do you like this software so far?,
       translateTo: es
-    ]
+    }
   ])@translated<
     forEach<
-      advancePointerInArray(
+      advancePointerInArrayOrObject(
         path: text,
-        appendExpressions: [
-          toLang:extract(%value%,translateTo)
-        ]
+        appendExpressions: {
+          toLang:extract(%{value}%,translateTo)
+        }
       )<
         translateMultiple(
           from: en,
-          to: %toLang%,
-          oneLanguagePerField: true,
-          override: true
+          to: %{toLang}%,
+          oneLanguagePerField: true
         )
       >
     >
@@ -841,7 +840,7 @@ Different elements can be combined, such as the following examples.
 
 A fragment can contain nested paths, variables, directives and other fragments:
 
-_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts(limit:$limit).--postData|author.posts(limit:$limit).--postData&postData=id|title|--nestedPostData|date(format:$format)&nestedPostData=comments<include(if:$include)>.id|content&format=d/m/Y&include=true&limit=3)):_
+_**In PQL** ([View query results](https://nextapi.getpop.org/api/graphql/?query=posts(pagination:{limit:$limit}).--postData|author.posts(pagination:{limit:$limit}).--postData&postData=id|title|--nestedPostData|dateStr(format:$format)&nestedPostData=comments<include(if:$include)>.id|content&format=d/m/Y&include=true&limit=3)):_
 
 ```less
 /?
@@ -849,7 +848,7 @@ postData=
   id|
   title|
   --nestedPostData|
-  date(format:$format)&
+  dateStr(format:$format)&
 nestedPostData=
   comments<
     include(if:$include)
@@ -862,13 +861,19 @@ limit=3&
 order=title&
 query=
   posts(
-    limit:$limit,
-    order:$order
+    pagination: {
+      limit:$limit
+    },
+    sort: {
+      by: $order
+    }
   ).
     --postData|
     author.
       posts(
-        limit:$limit
+        pagination: {
+          limit:$limit
+        }
       ).
         --postData
 ```

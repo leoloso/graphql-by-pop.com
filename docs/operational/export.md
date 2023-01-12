@@ -18,7 +18,7 @@ query GetLoggedInUserName {
 
 ```graphql
 query GetPostsContainingString($_search: String = "") {
-  posts(search: $_search) {
+  posts(filter: { search: $_search }) {
     id
     title
   }
@@ -35,7 +35,7 @@ query GetLoggedInUserName {
 }
 
 query GetPostsContainingString($_search: String = "") {
-  posts(search: $_search) {
+  posts(filter: { search: $_search }) {
     id
     title
   }
@@ -58,7 +58,7 @@ query GetLoggedInUserFriendNames {
 }
 
 query GetPostsContainingLoggedInUserFriendNames($_search: [String] = []) {
-  posts(searchAny: $_search) {
+  posts(filter: { searchAny: $_search }) {
     id
     title
   }
@@ -84,7 +84,7 @@ query GetLoggedInUserNameAndSurname {
 }
 
 query GetPostsContainingLoggedInUserNameAndSurname($_search: Map = {}) {
-  posts(searchByAnyProperty: $_search) {
+  posts(filter: { searchByAnyProperty: $_search }) {
     id
     title
   }
@@ -106,7 +106,7 @@ query GetLoggedInUserFriendNamesAndSurnames {
 }
 
 query GetPostsContainingLoggedInUserFriendNamesAndSurnames($_search: [Map] = []) {
-  posts(searchAnyByAnyProperty: $_search) {
+  posts(filter: { searchAnyByAnyProperty: $_search }) {
     id
     title
   }
@@ -169,20 +169,20 @@ The query below extracts the user's `name` into variable `$_authorName`, and the
 
 ```graphql
 query GetUserName {
-  user(id: 1) {
+  user(by: { id: 1 }) {
     name @export(as: "_authorName")
   }
 }
 
 query GetPostsWithUserName($_authorName: String = "") {
-  posts(searchfor: $_authorName) {
+  posts(filter: { search: $_authorName }) {
     id
     title
   }
 }
 ```
 
-When <a href="https://newapi.getpop.org/graphiql/?query=%23Hack%20to%20allow%20GraphiQL%20to%20send%20multiple%20queries%20to%20the%20server%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0Aquery%20GetUserName%20%7B%0A%20%20user(id%3A%201)%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%7D%0A%0Aquery%20GetPostsWithUserName(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20posts(searchfor%3A%20%24_authorName)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=__ALL">running the query</a>, it produces this response:
+When <a href="https://newapi.getpop.org/graphiql/?query=%23Hack%20to%20allow%20GraphiQL%20to%20send%20multiple%20queries%20to%20the%20server%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0Aquery%20GetUserName%20%7B%0A%20%20user(by:{id%3A%201})%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%7D%0A%0Aquery%20GetPostsWithUserName(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20posts(filter:{search:%3A%20%24_authorName})%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=__ALL">running the query</a>, it produces this response:
 
 ![Running the first query with `@export`](/images/first-query.png)
 
@@ -194,12 +194,12 @@ This query:
 
 ```graphql
 query GetSomeData {
-  post(id: 1) {
+  post(by: { id: 1 }) {
     title @export(as:"_firstPostTitle")
     title @export(as:"_firstPostData")
     date @export(as:"_firstPostData")
   }
-  posts(limit: 2) {
+  posts(pagination: { limit: 2 }) {
     title @export(as:"_postTitles")
     title @export(as:"_postData")
     date @export(as:"_postData")
@@ -224,7 +224,7 @@ query PrintSomeData(
 Case 1 - `@export` a single value:
 
 ```graphql
-post(id: 1) {
+post(by: { id: 1 }) {
   title @export(as: "_firstPostTitle")
 }
 ```
@@ -232,7 +232,7 @@ post(id: 1) {
 Case 2 - `@export` a list of values:
 
 ```graphql
-posts(limit: 2) {
+posts(pagination: { limit: 2 }) {
   title @export(as: "_postTitles")
 }
 ```
@@ -240,7 +240,7 @@ posts(limit: 2) {
 Case 3 - `@export` a dictionary of field/value, containing 2 properties (`title` and `date`) from the same object:
 
 ```graphql
-post(id: 1) {
+post(by: { id: 1 }) {
   title @export(as: "_firstPostData")
   date @export(as: "_firstPostData")
 }
@@ -249,13 +249,13 @@ post(id: 1) {
 Case 4 - `@export` a list of dictionaries of field/value:
 
 ```graphql
-posts(limit: 2) {
+posts(pagination: { limit: 2 }) {
   title @export(as: "_postData")
   date @export(as: "_postData")
 }
 ```
 
-The query uses field `echoVar` to visualize the content of the dynamic variables. When <a href="https://newapi.getpop.org/graphiql/?query=%23Hack%20to%20allow%20GraphiQL%20to%20send%20multiple%20queries%20to%20the%20server%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0Aquery%20GetSomeData%20%7B%0A%20%20post(id%3A%201)%20%7B%0A%20%20%20%20title%20%40export(as%3A%22_firstPostTitle%22)%0A%20%20%20%20title%20%40export(as%3A%22_firstPostData%22)%0A%20%20%20%20date%20%40export(as%3A%22_firstPostData%22)%0A%20%20%7D%0A%20%20posts(limit%3A%202)%20%7B%0A%20%20%20%20title%20%40export(as%3A%22_postTitles%22)%0A%20%20%20%20title%20%40export(as%3A%22_postData%22)%0A%20%20%20%20date%20%40export(as%3A%22_postData%22)%0A%20%20%7D%0A%7D%0A%0Aquery%20PrintSomeData(%0A%20%20%24_firstPostTitle%3A%20String%20%3D%20%22%22%2C%0A%20%20%24_postTitles%3A%20%5BString%5D%20%3D%20%5B%5D%2C%0A%20%20%24_firstPostData%3A%20Mixed%20%3D%20%7B%7D%2C%0A%20%20%24_postData%3A%20%5BMixed%5D%20%3D%20%5B%5D%0A)%20%7B%0A%20%20_firstPostTitle%3A%20echoVar(variable%3A%20%24_firstPostTitle)%0A%20%20_postTitles%3A%20echoVar(variable%3A%20%24_postTitles)%0A%20%20_firstPostData%3A%20echoVar(variable%3A%20%24_firstPostData)%0A%20%20_postData%3A%20echoVar(variable%3A%20%24_postData)%0A%7D&operationName=__ALL">running the query</a>, it produces this response:
+The query uses field `echoVar` to visualize the content of the dynamic variables. When <a href="https://newapi.getpop.org/graphiql/?query=%23Hack%20to%20allow%20GraphiQL%20to%20send%20multiple%20queries%20to%20the%20server%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0Aquery%20GetSomeData%20%7B%0A%20%20post(by:{id%3A%201})%20%7B%0A%20%20%20%20title%20%40export(as%3A%22_firstPostTitle%22)%0A%20%20%20%20title%20%40export(as%3A%22_firstPostData%22)%0A%20%20%20%20date%20%40export(as%3A%22_firstPostData%22)%0A%20%20%7D%0A%20%20posts(pagination:{limit%3A%202})%20%7B%0A%20%20%20%20title%20%40export(as%3A%22_postTitles%22)%0A%20%20%20%20title%20%40export(as%3A%22_postData%22)%0A%20%20%20%20date%20%40export(as%3A%22_postData%22)%0A%20%20%7D%0A%7D%0A%0Aquery%20PrintSomeData(%0A%20%20%24_firstPostTitle%3A%20String%20%3D%20%22%22%2C%0A%20%20%24_postTitles%3A%20%5BString%5D%20%3D%20%5B%5D%2C%0A%20%20%24_firstPostData%3A%20Mixed%20%3D%20%7B%7D%2C%0A%20%20%24_postData%3A%20%5BMixed%5D%20%3D%20%5B%5D%0A)%20%7B%0A%20%20_firstPostTitle%3A%20echoVar(variable%3A%20%24_firstPostTitle)%0A%20%20_postTitles%3A%20echoVar(variable%3A%20%24_postTitles)%0A%20%20_firstPostData%3A%20echoVar(variable%3A%20%24_firstPostData)%0A%20%20_postData%3A%20echoVar(variable%3A%20%24_postData)%0A%7D&operationName=__ALL">running the query</a>, it produces this response:
 
 ![Running the second query with `@export`](/images/second-query.png)
 

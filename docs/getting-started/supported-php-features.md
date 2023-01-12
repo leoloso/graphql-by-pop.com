@@ -2,7 +2,7 @@
 
 The codebase can include the following PHP features, as to support:
 
-- PHP 7.4+ for development
+- PHP 8.1+ for development
 - PHP 7.1+ for production by [downgrading the code](../architecture/downgrading-code.html) via Rector.
 
 | PHP Version | Features |

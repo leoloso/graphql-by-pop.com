@@ -119,7 +119,7 @@ query {
 }
 ```
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?query=
@@ -130,7 +130,7 @@ query {
 
 [<a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7CisPublished">View query results</a>]
 
-:::
+::: -->
 
 ## Warnings
 
@@ -138,11 +138,11 @@ Warning are issues which can be considered non-blocking, i.e. they enhance the q
 
 For instance, passing parameter `limit` with the wrong type will not stop execution of the query, it will just ignore this parameter (hence, the response will bring more results that are needed, but that's not a breaking issue) and provide an appropriate `warning` message.
 
-Executing [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(limit%3A3.5)%20%7B%0A%20%20%20%20title%0A%20%20%7D%0A%7D):
+Executing [this query](https://newapi.getpop.org/graphiql/?query=query%20%7B%0A%20%20posts(pagination:{limit%3A3.5})%20%7B%0A%20%20%20%20title%0A%20%20%7D%0A%7D):
 
 ```graphql
 query {
-  posts(limit:3.5) {
+  posts(pagination: { limit: 3.5 }) {
     title
   }
 }
@@ -170,17 +170,17 @@ query {
 }
 ```
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?query=
-  posts(limit:3.5).
+  posts(pagination: { limit:3.5 }).
     title
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:3.5).title">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:3.5}).title">View query results</a>]
 
-:::
+::: -->
 
 ## Logs
 
@@ -190,11 +190,11 @@ Any resolver (for fields and directives) can log any piece of information, as to
 Logs are retrieved by passing parameter `actions[]=show-logs` to the GraphQL endpoint `/api/graphql/`.
 :::
 
-In [this query](https://newapi.getpop.org/graphiql/?show_logs=1&query=query%20%7B%0A%20%20post(id%3A1)%20%7B%0A%20%20%20%20title%20%40traceExecutionTime%0A%20%20%7D%0A%7D), directive `@traceExecutionTime` informs the execution time of resolving the field through the log:
+In [this query](https://newapi.getpop.org/graphiql/?show_logs=1&query=query%20%7B%0A%20%20post(by:{id%3A1})%20%7B%0A%20%20%20%20title%20%40traceExecutionTime%0A%20%20%7D%0A%7D), directive `@traceExecutionTime` informs the execution time of resolving the field through the log:
 
 ```graphql
 query {
-  post(id:1) {
+  post(by:{id:1}) {
     title @traceExecutionTime
   }
 }
@@ -204,20 +204,20 @@ query {
 This query calls the GraphiQL client with parameter `show_logs=true`, and then GraphiQL sets `actions[]=show-logs` on the endpoint.
 :::
 
-::: details View PQL query
+<!-- ::: details View PQL query
 
 ```less
 /?
 actions[]=show-logs&
 postId=1&
 query=
-  post(id:$postId).
+  post(by:{id:$postId}).
     title<traceExecutionTime>
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?actions[]=show-logs&postId=1&query=post(id:$postId).title<traceExecutionTime>">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?actions[]=show-logs&postId=1&query=post(by:{id:$postId}).title<traceExecutionTime>">View query results</a>]
 
-:::
+::: -->
 
 ## Notices
 

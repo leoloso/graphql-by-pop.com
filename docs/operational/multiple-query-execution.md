@@ -53,19 +53,19 @@ And select this one when clicking on the "Run" button.
 
 :::
 
-The [`@export` directive](export) additionally enables to have the results of a query injected as an input into another query. Running <a href="https://newapi.getpop.org/graphiql/?query=%23%20Run%20this%20query%20to%20execute%20all%20other%20queries%2C%20together%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0A%23%20Export%20the%20user%27s%20name%0Aquery%20GetUserName%20%7B%0A%20%20user(id%3A1)%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_search%22)%0A%20%20%7D%0A%7D%0A%0A%23%20Search%20for%20posts%20with%20the%20user%27s%20name%20from%20the%20previous%20query%0Aquery%20SearchPosts(%24_search%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20posts(searchfor%3A%20%24_search)%20%7B%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=__ALL">this query</a> to see how the user's name obtained in the first query is used to search for posts in the second query.
+The [`@export` directive](export) additionally enables to have the results of a query injected as an input into another query. Running <a href="https://newapi.getpop.org/graphiql/?query=%23%20Run%20this%20query%20to%20execute%20all%20other%20queries%2C%20together%0Aquery%20__ALL%20%7B%20id%20%7D%0A%0A%23%20Export%20the%20user%27s%20name%0Aquery%20GetUserName%20%7B%0A%20%20user(by:{id%3A1})%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_search%22)%0A%20%20%7D%0A%7D%0A%0A%23%20Search%20for%20posts%20with%20the%20user%27s%20name%20from%20the%20previous%20query%0Aquery%20SearchPosts(%24_search%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20posts(filter:{search%3A%20%24_search})%20%7B%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=__ALL">this query</a> to see how the user's name obtained in the first query is used to search for posts in the second query.
 
 ```graphql
 # Export the user's name
 query GetUserName {
-  user(id:1) {
+  user(by: { id: 1 }) {
     name @export(as: "_search")
   }
 }
 
 # Search for posts with the user's name from the previous query
 query SearchPosts($_search: String = "") {
-  posts(searchfor: $_search) {
+  posts(filter: { search: $_search }) {
     title
   }
 }

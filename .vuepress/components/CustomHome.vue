@@ -60,7 +60,7 @@
       :title="data.architectureTitle"
     />
 
-    <Content 
+    <!-- <Content 
       class="theme-default-content custom" 
       slot-key="extended-graphql-1"
     />
@@ -86,7 +86,7 @@
         :title=data.pqlText
         :link=data.pql2Link
       />
-    </div>
+    </div> -->
 
     <Features
       v-if="data.wordpressItems && data.wordpressItems.length"

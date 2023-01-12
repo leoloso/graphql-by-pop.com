@@ -55,17 +55,17 @@ Let's see how this plays out for executing `@export` in a single query. For our 
 
 ```graphql
 query GetPostsAuthorNames($_authorName: String = "") {
-  user(id: 1) {
+  user(by: { id: 1 }) {
     name @export(as: "_authorName")
   }
-  posts(searchfor: $_authorName) {
+  posts(filter:{ search: $_authorName }) {
     id
     title
   }
 }
 ```
 
-When [running the query](https://newapi.getpop.org/graphiql/?query=query%20GetPostsAuthorNames(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20user(id%3A%201)%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%20%20posts(searchfor%3A%20%24_authorName)%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=GetPostsAuthorNames), it produces this response:
+When [running the query](https://newapi.getpop.org/graphiql/?query=query%20GetPostsAuthorNames(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20user(by:{id%3A%201})%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%20%20posts(filter:{search%3A%20%24_authorName})%20%7B%0A%20%20%20%20id%0A%20%20%20%20title%0A%20%20%7D%0A%7D&operationName=GetPostsAuthorNames), it produces this response:
 
 ![Executing a query using a variable](/images/third-query.png)
 
@@ -89,12 +89,12 @@ Let's see why this happens. First, we analyze what types appear in the query, ad
 # Type: Root
 query GetPostsAuthorNames($_authorName: String = "") {
   # Type: User
-  user(id: 1) {
+  user(by: {id: 1}) {
     # Type: String
     name @export(as: "_authorName")
   }
   # Type: Post
-  posts(searchfor: $_authorName) {
+  posts(filter:{ search: $_authorName }) {
     # Type: ID
     id
     # Type: String
@@ -114,7 +114,7 @@ To process the types and load their data, the data-loading engine adds the query
 <tbody>
 <tr><td>0</td><td>Prepare FIFO list</td><td><code>[Root]</code></td></tr>
 <tr><td>1a</td><td>Pop the first type of the list (<code>Root</code>)</td><td><code>[]</code></td></tr>
-<tr><td>1b</td><td>Process all fields queried from the <code>Root</code> type:<br/>→ <code>user(id: 1)</code><br/>→ <code>posts(searchfor: $_authorName)</code><br/>Add their types (<code>User</code> and <code>Post</code>) to the list</td><td><code>[User, Post]</code></td></tr>
+<tr><td>1b</td><td>Process all fields queried from the <code>Root</code> type:<br/>→ <code>user(by: {id: 1})</code><br/>→ <code>posts(filter:{ search: $_authorName })</code><br/>Add their types (<code>User</code> and <code>Post</code>) to the list</td><td><code>[User, Post]</code></td></tr>
 <tr><td>2a</td><td>Pop the first type of the list (<code>User</code>)</td><td><code>[Post]</code></td></tr>
 <tr><td>2b</td><td>Process the field queried from the <code>User</code> type:<br/>→ <code>name @export(as: "_authorName")</code><br/>Because it is a scalar type (<code>String</code>), there is no need to add it to the list</td><td><code>[Post]</code></td></tr>
 <tr><td>3a</td><td>Pop the first type of the list (<code>Post</code>)</td><td><code>[]</code></td></tr>
@@ -129,15 +129,15 @@ It is here that we need to control the field execution flow. The solution implem
 
 The `self` field, as its name indicates, returns the same object; applied to the `Root` object, it returns the same `Root` object. You may wonder: "if I already have the root object, then why would I need to retrieve it again?". Because then the engine's algorithm will need to add this new reference to `Root` at the end of the FIFO list, and we can deliberately distribute the queried fields before or after every one of these iterations.
 
-That's why field `posts(searchfor: $_authorName)` is placed inside a `self` field in the query above, and [running the query](https://newapi.getpop.org/graphiql/?query=query%20GetPostsAuthorNames(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20user(id%3A%201)%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%20%20self%20%7B%0A%20%20%20%20posts(searchfor%3A%20%24_authorName)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&operationName=GetPostsAuthorNames) produces the expected response:
+That's why field `posts(filter:{ search: $_authorName })` is placed inside a `self` field in the query above, and [running the query](https://newapi.getpop.org/graphiql/?query=query%20GetPostsAuthorNames(%24_authorName%3A%20String%20%3D%20%22%22)%20%7B%0A%20%20user(by:{id%3A%201})%20%7B%0A%20%20%20%20name%20%40export(as%3A%20%22_authorName%22)%0A%20%20%7D%0A%20%20self%20%7B%0A%20%20%20%20posts(filter:{search%3A%20%24_authorName})%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&operationName=GetPostsAuthorNames) produces the expected response:
 
 ```graphql
 query GetPostsAuthorNames($_authorName: String = "") {
-  user(id: 1) {
+  user(by: {id: 1}) {
     name @export(as: "_authorName")
   }
   self {
-    posts(searchfor: $_authorName) {
+    posts(filter:{ search: $_authorName }) {
       id
       title
     }
@@ -158,11 +158,11 @@ Let's explore the order in which types are processed for this query, to understa
 <tbody>
 <tr><td>0</td><td>Prepare FIFO list</td><td><code>[Root]</code></td></tr>
 <tr><td>1a</td><td>Pop the first type of the list (<code>Root</code>)</td><td><code>[]</code></td></tr>
-<tr><td>1b</td><td>Process all fields queried from the <code>Root</code> type:<br/>→ <code>user(id: 1)</code><br/>→ <code>self</code><br/>Add their types (<code>User</code> and <code>Root</code>) to the list</td><td><code>[User, Root]</code></td></tr>
+<tr><td>1b</td><td>Process all fields queried from the <code>Root</code> type:<br/>→ <code>user(by: {id: 1})</code><br/>→ <code>self</code><br/>Add their types (<code>User</code> and <code>Root</code>) to the list</td><td><code>[User, Root]</code></td></tr>
 <tr><td>2a</td><td>Pop the first type of the list (<code>User</code>)</td><td><code>[Root]</code></td></tr>
 <tr><td>2b</td><td>Process the field queried from the <code>User</code> type:<br/>→ <code>name @export(as: "_authorName")</code><br/>Because it is a scalar type (<code>String</code>), there is no need to add it to the list</td><td><code>[Root]</code></td></tr>
 <tr><td>3a</td><td>Pop the first type of the list (<code>Root</code>)</td><td><code>[]</code></td></tr>
-<tr><td>3b</td><td>Process the field queried from the <code>Root</code> type:<br/>→ <code>posts(searchfor: $_authorName)</code><br/>Add its type (<code>Post</code>) to the list</td><td><code>[Post]</code></td></tr>
+<tr><td>3b</td><td>Process the field queried from the <code>Root</code> type:<br/>→ <code>posts(filter:{ search: $_authorName })</code><br/>Add its type (<code>Post</code>) to the list</td><td><code>[Post]</code></td></tr>
 <tr><td>4a</td><td>Pop the first type of the list (<code>Post</code>)</td><td><code>[]</code></td></tr>
 <tr><td>4b</td><td>Process all fields queried from the <code>Post</code> type:<br/>→ <code>id</code><br/>→  <code>title</code><br/>Because these are scalar types (<code>ID</code> and <code>String</code>), there is no need to add them to the list</td><td><code>[]</code></td></tr>
 <tr><td>5</td><td>List is empty, iteration ends.</td><td>&nbsp;</td></tr>

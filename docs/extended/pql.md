@@ -70,7 +70,7 @@ Example:
 /?
 query=
   posts(
-    ids: [1, 1499, 1178],
+    filter: { ids: [1, 1499, 1178] },
     order: $order
   )@posts.
     id|
@@ -87,4 +87,4 @@ props=
     url
 ```
 
-[<a href="https://newapi.getpop.org/api/graphql/?order=title%7CASC&amp;props=url%7Cauthor.name%7Curl&amp;query=posts(ids:%5B1,1499,1178%5D,order:%24order)@posts.id%7Cdate(format:d/m/Y)%7Ctitle<skip(if:false)>%7C--props">View query results</a>]
+[<a href="https://newapi.getpop.org/api/graphql/?order=title%7CASC&amp;props=url%7Cauthor.name%7Curl&amp;query=posts(filter:{ids:%5B1,1499,1178%5D},order:%24order)@posts.id%7Cdate(format:d/m/Y)%7Ctitle<skip(if:false)>%7C--props">View query results</a>]

@@ -68,7 +68,7 @@ const docsSidebar = [
         title: 'Operational',
         children: [
             // ['operational/intro', '(x) Intro to Operational'],
-            'operational/embeddable-fields',
+            // 'operational/embeddable-fields',
             'operational/nested-mutations',
             'operational/proactive-feedback',
             'operational/multiple-query-execution',
@@ -80,30 +80,30 @@ const docsSidebar = [
             'operational/tracing',
         ]
     },
-    {
-        title: 'Extended GraphQL',
-        children: [
-            // ['extended/intro', '(x) Intro to Extended GraphQL'],
-            ['extended/intro', '(x) Intro'],
-            'extended/full-schema',
-            'extended/pql',
-            'extended/pql-language-features',
-            'extended/pql-syntax',
-            ['extended/pql-defining-field-resolution-order', 'PQL - Field Resolution Order'],
-            'extended/interact-apis-within-query',
-            'extended/gateway',
-            'extended/content-mesh',
-            'extended/persisted-fragments-and-queries',
-            'extended/granular-feedback',
-        ]
-    },
+    // {
+    //     title: 'Extended GraphQL',
+    //     children: [
+    //         // ['extended/intro', '(x) Intro to Extended GraphQL'],
+    //         ['extended/intro', '(x) Intro'],
+    //         'extended/full-schema',
+    //         'extended/pql',
+    //         'extended/pql-language-features',
+    //         'extended/pql-syntax',
+    //         ['extended/pql-defining-field-resolution-order', 'PQL - Field Resolution Order'],
+    //         'extended/interact-apis-within-query',
+    //         'extended/gateway',
+    //         'extended/content-mesh',
+    //         'extended/persisted-fragments-and-queries',
+    //         'extended/granular-feedback',
+    //     ]
+    // },
     {
         title: 'Going Further',
         children: [
             // ['going-further/intro', '(x) Intro to Going Further'],
             ['going-further/intro', '(x) Intro'],
             'going-further/multiple-endpoints',
-            'going-further/rest-integration',
+            // 'going-further/rest-integration',
             ['going-further/response-formats', '(x) Response Formats'],
             'going-further/normalized-data',
         ]
@@ -132,7 +132,7 @@ const docsSidebar = [
             'architecture/graphql-superset',
             'architecture/package-hierarchy',
             'architecture/extensibility',
-            'architecture/converting-from-gql-to-pql',
+            // 'architecture/converting-from-gql-to-pql',
         ]
     },
     {

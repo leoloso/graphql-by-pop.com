@@ -272,7 +272,7 @@ When [executing this query](https://leoloso.com/posts/cache-and-logtime-directiv
 
 ```graphql
 {
-  posts(limit: 2) {
+  posts(pagination: { limit: 2 }) {
     title @translate @cache
   }
 }
@@ -282,7 +282,7 @@ The server will retrieve and cache 2 records. Then, we execute the same query, b
 
 ```graphql
 {
-  posts(limit: 4) {
+  posts(pagination: { limit: 4 }) {
     title @translate @cache
   }
 }

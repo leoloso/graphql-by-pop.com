@@ -4,25 +4,15 @@ Replace `"/graphql"` from the URL to output the data in a different format: XML 
 
 ```less
 // Output as XML: Replace /graphql with /xml
-/api/xml/?query=
-  posts.
-    id|
-    title|
-    author.
-      id|
-      name
+/api/xml/?query={posts{id title author{id name}}}
 
 // Output as props: Replace /graphql with /props
-/api/props/?query=
-  posts.
-    id|
-    title|
-    excerpt
+/api/props/?query={posts{id title excerpt}}
 ```
 
-<a href="https://newapi.getpop.org/api/xml/?query=posts.id%7Ctitle%7Cauthor.id%7Cname">View query results #1</a>
+<a href="https://newapi.getpop.org/api/xml/?query={posts{id title author{id name}}}">View query results #1</a>
 
-<a href="https://newapi.getpop.org/api/props/?query=posts.id%7Ctitle%7Cexcerpt">View query results #2</a>
+<a href="https://newapi.getpop.org/api/props/?query={posts{id title excerpt}}">View query results #2</a>
 
 ## XML
 

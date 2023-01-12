@@ -15,13 +15,13 @@ Issues are handled differently depending on their severity:
 
 //2. Schema warning
 /?query=
-  posts(limit:3.5).
+  posts(pagination:{ limit:3.5 }).
     title
 
 //3. Database warning
 /?query=
   users.
-    posts(limit:name()).
+    posts(pagination:{ limit:name() }).
       title
 
 //4. Query error
@@ -40,9 +40,9 @@ Issues are handled differently depending on their severity:
 
 <a href="https://newapi.getpop.org/api/graphql/?query=posts.title%7Cpublished">View query results #1</a>
 
-<a href="https://newapi.getpop.org/api/graphql/?query=posts(limit:3.5).title">View query results #2</a>
+<a href="https://newapi.getpop.org/api/graphql/?query=posts(pagination:{limit:3.5}).title">View query results #2</a>
 
-<a href="https://newapi.getpop.org/api/graphql/?query=users.posts(limit:name()).title">View query results #3</a>
+<a href="https://newapi.getpop.org/api/graphql/?query=users.posts(pagination:{limit:name()}).title">View query results #3</a>
 
 <a href="https://newapi.getpop.org/api/graphql/?query=posts.id%5Bbook%5D(key:value)">View query results #4</a>
 
@@ -54,11 +54,11 @@ If a field or directive fails and it is input to another field, this one may als
 
 ```less
 /?query=
-  post(divide(a,4)).
+  post(by: { id: divide(a,4) }).
     title
 ```
 
-<a href="https://newapi.getpop.org/api/graphql/?query=post(divide(a,4)).title">View query results</a>
+<a href="https://newapi.getpop.org/api/graphql/?query=post(by:{id:divide(a,4)}).title">View query results</a>
 
 ## Path to the issue
 
@@ -84,9 +84,9 @@ Any informative piece of information can be logged (enabled/disabled through con
 actions[]=show-logs&
 postId=1&
 query=
-  post($postId).
+  post(by:{id:$postId}).
     title|
-    date(d/m/Y)
+    dateStr(d/m/Y)
 ```
 
-<a href="https://newapi.getpop.org/api/graphql/?actions%5B%5D=show-logs&amp;postId=1&amp;query=post(%24postId).title%7Cdate(d/m/Y)">View query results</a>
+<a href="https://newapi.getpop.org/api/graphql/?actions%5B%5D=show-logs&amp;postId=1&amp;query=post(by:{id:%24postId}).title%7CdateStr(d/m/Y)">View query results</a>
