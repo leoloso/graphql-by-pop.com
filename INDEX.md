@@ -94,7 +94,7 @@
       "actions": [
         {
           "text": "Download plugin for WordPress  →",
-          "link": "https://graphql-api.com/download/"
+          "link": "https://gatographql.com/download/"
         },
         {
           "text": "Visit GitHub repo  →",

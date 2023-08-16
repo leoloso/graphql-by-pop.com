@@ -2,7 +2,7 @@
 
 ## Via the "GraphQL API for WordPress" plugin
 
-[GraphQL API for WordPress](https://graphql-api.com) is the implementation for WordPress of GraphQL by PoP.
+[GraphQL API for WordPress](https://gatographql.com) is the implementation for WordPress of GraphQL by PoP.
 
 ### Requirements
 
@@ -10,7 +10,7 @@ WordPress 5.4 or above, PHP 7.1 or above.
 
 ### Install
 
-[Download the plugin](https://graphql-api.com/download/).
+[Download the plugin](https://gatographql.com/download/).
 
 Then, in the WordPress admin:
 
