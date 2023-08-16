@@ -98,7 +98,7 @@
         },
         {
           "text": "Visit GitHub repo  →",
-          "link": "https://github.com/leoloso/PoP/tree/master/layers/GraphQLAPIForWP/plugins/graphql-api-for-wp",
+          "link": "https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/GraphQLAPIForWP/plugins/graphql-api-for-wp",
         }
       ]
     }

@@ -59,7 +59,7 @@ If we run it again, now all 6 items will be cached:
 
 GraphQL by PoP uses Symfony's [Cache Component](https://symfony.com/doc/current/components/cache.html) for caching.
 
-By default it stores the cache in the file system, through the [Filesystem Cache Adapter](https://symfony.com/doc/current/components/cache/adapters/filesystem_adapter.html), as configured in file `services.yaml` from package [Component Model](https://github.com/leoloso/PoP/tree/master/layers/Engine/packages/component-model):
+By default it stores the cache in the file system, through the [Filesystem Cache Adapter](https://symfony.com/doc/current/components/cache/adapters/filesystem_adapter.html), as configured in file `services.yaml` from package [Component Model](https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/Engine/packages/component-model):
 
 ```yml
 services:

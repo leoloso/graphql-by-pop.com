@@ -180,4 +180,4 @@ RewriteRule ^api/graphql/?$ /?scheme=api&datastructure=graphql [L,P,QSA]
 
 ## Scaffold a new WordPress site with the API installed, via Composer and WP-CLI
 
-Follow the instructions under project [Bootstrap a PoP API for WordPress](https://github.com/leoloso/PoP-API-WP#creating-a-new-wordpress-site-with-pop-installed).
+Follow the instructions under project [Bootstrap a PoP API for WordPress](https://github.com/GatoGraphQL/GatoGraphQL-API-WP#creating-a-new-wordpress-site-with-pop-installed).

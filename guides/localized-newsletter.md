@@ -386,7 +386,7 @@ The string can't have character `"&"` in it, or it will create trouble when appe
 :::
 
 ::: tip
-The PoP API (over which GraphQL by PoP is based) can also satisfy REST, through the [REST API package](https://github.com/leoloso/PoP/tree/master/layers/API/packages/api-rest). That's the case with the [REST endpoint used in this guide](https://newapi.getpop.org/users/api/rest/).
+The PoP API (over which GraphQL by PoP is based) can also satisfy REST, through the [REST API package](https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/API/packages/api-rest). That's the case with the [REST endpoint used in this guide](https://newapi.getpop.org/users/api/rest/).
 :::
 
 Having generated the URL, we execute `getJSON` on it:

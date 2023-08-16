@@ -46,5 +46,5 @@ GraphQL by PoP uses this mechanism to produce the executable query, in the follo
 - Adding system-type directives (such as `@validate` and `@resolveValueAndMerge`)
 - Adding any directive through [IFTTT through directives](../dynamic-schema/ifttt-through-directives.html)
 - Defining a strict [field-execution order when in PQL](../extended/pql-defining-field-resolution-order.html) (the `;` token in the requested query is transformed to a series of `self` fields in the executable query)
-- Support for the flat chain syntax (feature [coming soon](https://github.com/leoloso/PoP/issues/213))
+- Support for the flat chain syntax (feature [coming soon](https://github.com/GatoGraphQL/GatoGraphQL/issues/213))
 
