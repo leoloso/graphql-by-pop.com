@@ -1,6 +1,6 @@
 # PQL - PoP Query Language
 
-The PQL (PoP Query Language) is the URL-based query syntax natively adopted by [PoP](https://github.com/leoloso/PoP) (the component model over which GraphQL by PoP is based). Based on the GraphQL syntax, the PQL attempts to address the issues produced by sending the query through the body of the request, as dony by GraphQL, by sending the query as a URL parameter instead.
+The PQL (PoP Query Language) is the URL-based query syntax natively adopted by [PoP](https://github.com/GatoGraphQL/GatoGraphQL) (the component model over which GraphQL by PoP is based). Based on the GraphQL syntax, the PQL attempts to address the issues produced by sending the query through the body of the request, as dony by GraphQL, by sending the query as a URL parameter instead.
 
 PQL is a superset of GQL (the Graph Query Language), hence every query written in GQL can also be written in PQL. GraphQL by PoP supports PQL natively, and GQL by converting it into PQL after parsing the query. The developer can choose to execute queries against the GraphQL by PoP server using either syntax.
 

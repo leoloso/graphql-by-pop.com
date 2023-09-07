@@ -1,6 +1,6 @@
 # (*) Integrating with REST
 
-By installing the [REST package](https://github.com/leoloso/PoP/tree/master/layers/API/packages/api-rest), the GraphQL server can also satisfy REST endpoints, from a single source of truth. Check out these example links:
+By installing the [REST package](https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/API/packages/api-rest), the GraphQL server can also satisfy REST endpoints, from a single source of truth. Check out these example links:
 
 - [List of posts](https://newapi.getpop.org/posts/api/rest/)
 - [Single post](https://newapi.getpop.org/posts/cope-with-wordpress-post-demo-containing-plenty-of-blocks/api/rest/)
@@ -31,7 +31,7 @@ This package deliver the best from both GraphQL and REST, allowing to query reso
 
 ## Configuration
 
-To enable pretty API endpoint `/api/rest/`, follow the instructions [here](https://github.com/leoloso/PoP/tree/master/layers/API/packages/api#enable-pretty-permalinks)
+To enable pretty API endpoint `/api/rest/`, follow the instructions [here](https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/API/packages/api#enable-pretty-permalinks)
 
 <!--
 Add the following code in the `.htaccess` file to enable API endpoint `/api/rest/`:
@@ -57,7 +57,7 @@ RewriteRule ^api/rest/?$ /?scheme=api&datastructure=rest [L,P,QSA]
 
 ## Usage
 
-Append `/api/rest/` to the URL to fetch the pre-defined fields, and optionally add a `query` URL parameter to retrieve specific data fields using [this syntax](https://github.com/leoloso/PoP/tree/master/layers/Engine/packages/field-query).
+Append `/api/rest/` to the URL to fetch the pre-defined fields, and optionally add a `query` URL parameter to retrieve specific data fields using [this syntax](https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/Engine/packages/field-query).
 
 Examples:
 

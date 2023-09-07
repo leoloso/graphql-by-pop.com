@@ -90,15 +90,15 @@
     {
       "image": "/assets/wordpress-logo.png",
       "title": "WordPress-ready!",
-      "details": "The GraphQL API for WordPress plugin brings all the power of GraphQL by PoP into your WordPress site",
+      "details": "The Gato GraphQL plugin brings all the power of GraphQL by PoP into your WordPress site",
       "actions": [
         {
           "text": "Download plugin for WordPress  →",
-          "link": "https://graphql-api.com/download/"
+          "link": "https://gatographql.com/download/"
         },
         {
           "text": "Visit GitHub repo  →",
-          "link": "https://github.com/leoloso/PoP/tree/master/layers/GraphQLAPIForWP/plugins/graphql-api-for-wp",
+          "link": "https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/GatoGraphQLForWP/plugins/gatographql",
         }
       ]
     }

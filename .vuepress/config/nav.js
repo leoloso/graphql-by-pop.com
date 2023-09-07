@@ -13,7 +13,7 @@ module.exports = [
     },
     {
         text: 'GitHub',
-        link: 'https://github.com/leoloso/PoP/tree/master/layers/GraphQLByPoP'
+        link: 'https://github.com/GatoGraphQL/GatoGraphQL/tree/master/layers/GraphQLByPoP'
     },
     {
         text: 'Sponsor',

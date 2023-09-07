@@ -98,7 +98,7 @@ query {
 {
   "data": {
     "versionByFieldArg": {
-      "github": "https://api.github.com/repos/leoloso/PoP"
+      "github": "https://api.github.com/repos/GatoGraphQL/GatoGraphQL"
     },
     "versionByURLParam": {
       "github": "https://api.github.com/repos/getpop/component-model"
@@ -169,7 +169,7 @@ Will produce different results, from the 2 different versions of the same field:
       "github": "https://api.github.com/repos/getpop/component-model"
     },
     "explicitVersion": {
-      "github": "https://api.github.com/repos/leoloso/PoP"
+      "github": "https://api.github.com/repos/GatoGraphQL/GatoGraphQL"
     }
   }
 }
